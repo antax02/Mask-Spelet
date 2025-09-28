@@ -1,0 +1,29 @@
+[gd_scene load_steps=3 format=3 uid="uid://l5xwkiyk7f8m"]
+
+[ext_resource type="PackedScene" uid="uid://bggnwmnubx1wk" path="res://Scene/worm.tscn" id="1_f6udf"]
+[ext_resource type="PackedScene" uid="uid://dr2whnta44ipn" path="res://Scene/ground_basic.tscn" id="2_sblpm"]
+
+[node name="Main" type="Node2D"]
+
+[node name="Worm" parent="." instance=ExtResource("1_f6udf")]
+position = Vector2(520, 268)
+scale = Vector2(0.5, 0.5743592)
+
+[node name="Ground" type="Node" parent="."]
+
+[node name="GroundBasic" parent="Ground" instance=ExtResource("2_sblpm")]
+position = Vector2(508, 464)
+scale = Vector2(16.296297, 5.0035853)
+
+[node name="GroundBasic2" parent="Ground" instance=ExtResource("2_sblpm")]
+position = Vector2(503, -166)
+scale = Vector2(1.1202881, 2.8608737)
+
+[node name="GroundBasic3" parent="Ground" instance=ExtResource("2_sblpm")]
+position = Vector2(501, -684)
+scale = Vector2(3.1197784, 2.1364853)
+
+[node name="GroundBasic4" parent="Ground" instance=ExtResource("2_sblpm")]
+position = Vector2(708, -1412)
+rotation = 0.40673026
+scale = Vector2(1.0164595, 5.6585016)

@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://nqfmptmdr0p0"]
+
+[ext_resource type="Script" uid="uid://b33s50bia84jq" path="res://antons mapp/worm.gd" id="1_8eujf"]
+
+[node name="Worm" type="Node2D"]
+script = ExtResource("1_8eujf")

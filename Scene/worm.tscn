@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://bggnwmnubx1wk"]
+[gd_scene load_steps=5 format=3 uid="uid://bggnwmnubx1wk"]
 
 [ext_resource type="Script" uid="uid://ct47vaipg3wj6" path="res://Script/worm.gd" id="1_qbvv4"]
 [ext_resource type="Texture2D" uid="uid://dbxt8py5723yj" path="res://icon.svg" id="2_gptef"]
@@ -6,20 +6,26 @@
 [sub_resource type="CircleShape2D" id="CircleShape2D_gptef"]
 radius = 65.9242
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_gptef"]
+radius = 64.0
+height = 136.0
+
 [node name="Worm" type="CharacterBody2D"]
 scale = Vector2(0.5, 0.5)
 script = ExtResource("1_qbvv4")
-gravity = 2.0
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("2_gptef")
-
-[node name="Camera2D" type="Camera2D" parent="."]
 
 [node name="Area2D" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource("CircleShape2D_gptef")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_gptef")
 
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
 [connection signal="area_exited" from="Area2D" to="." method="_on_area_2d_area_exited"]

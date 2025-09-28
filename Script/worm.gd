@@ -5,6 +5,13 @@ extends CharacterBody2D
 @export var min_speed: float = 50
 var is_in_ground = false
 
+func _ready():
+	add_to_group("player")
+
+func is_player() -> bool:
+	return true
+
+
 func _physics_process(delta: float) -> void:
 	# Get direction to mouse
 	var mouse_pos = get_global_mouse_position()

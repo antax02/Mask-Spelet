@@ -1,8 +1,8 @@
 [gd_scene load_steps=4 format=3 uid="uid://l5xwkiyk7f8m"]
 
-[ext_resource type="PackedScene" uid="uid://bggnwmnubx1wk" path="res://scenes/player.tscn" id="1_ipv86"]
-[ext_resource type="PackedScene" uid="uid://dr2whnta44ipn" path="res://scenes/basic_ground.tscn" id="3_mr7is"]
-[ext_resource type="PackedScene" uid="uid://cwx7frkabknei" path="res://scenes/finish.tscn" id="4_aq6h5"]
+[ext_resource type="PackedScene" uid="uid://bggnwmnubx1wk" path="res://scenes/player/player.tscn" id="1_ipv86"]
+[ext_resource type="PackedScene" uid="uid://52gps2rhq7b7" path="res://scenes/ui/timer.tscn" id="3_fr1um"]
+[ext_resource type="PackedScene" uid="uid://dr2whnta44ipn" path="res://scenes/enviroment/ground_basic.tscn" id="3_mr7is"]
 
 [node name="TestLevel" type="Node2D"]
 
@@ -170,6 +170,16 @@ position = Vector2(2169, -6505)
 rotation = -0.838644
 scale = Vector2(0.691944, 1.26202)
 
-[node name="FinishLine" parent="." instance=ExtResource("4_aq6h5")]
-position = Vector2(2501, -6417)
-scale = Vector2(2.84415, 2.15809)
+[node name="GroundBasic33" parent="Ground" groups=["finish"] instance=ExtResource("3_mr7is")]
+position = Vector2(2546.0002, -6441)
+rotation = -1.5707964
+scale = Vector2(1.3686339, 2.7281866)
+
+[node name="Sprite2D" parent="Ground/GroundBasic33" index="0" groups=["finish"]]
+self_modulate = Color(0, 0.34922138, 0.7371704, 0.32941177)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Timer" parent="CanvasLayer" instance=ExtResource("3_fr1um")]
+
+[editable path="Ground/GroundBasic33"]

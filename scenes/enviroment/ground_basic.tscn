@@ -5,13 +5,11 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_q5u81"]
 size = Vector2(128, 128)
 
-[node name="GroundBasic" type="Node2D"]
-
-[node name="Area2D" type="Area2D" parent="."]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-shape = SubResource("RectangleShape2D_q5u81")
+[node name="GroundBasic" type="Area2D" groups=["ground"]]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 self_modulate = Color(0, 0.4509804, 0, 0.32941177)
 texture = ExtResource("1_x7ils")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_q5u81")

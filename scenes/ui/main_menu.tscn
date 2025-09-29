@@ -1,4 +1,7 @@
-[gd_scene format=3 uid="uid://b1c6ieu7toiy7"]
+[gd_scene load_steps=3 format=3 uid="uid://b1c6ieu7toiy7"]
+
+[ext_resource type="Script" uid="uid://co8k7hslt63q" path="res://scripts/ui/main_menu.gd" id="1_sl1te"]
+[ext_resource type="Theme" uid="uid://ymoxu6tkn4db" path="res://resources/ui_theme.tres" id="2_fe2o3"]
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -7,3 +10,64 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_sl1te")
+
+[node name="Background" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.101960786, 0.101960786, 0.18039216, 1)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="TitleContainer" type="MarginContainer" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 70
+theme_override_constants/margin_top = 50
+theme_override_constants/margin_right = 20
+
+[node name="TitleLabel" type="Label" parent="VBoxContainer/TitleContainer"]
+layout_mode = 2
+theme = ExtResource("2_fe2o3")
+theme_override_font_sizes/font_size = 64
+text = "MASKSPELET"
+horizontal_alignment = 1
+
+[node name="Spacer" type="MarginContainer" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_top = 75
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer"]
+custom_minimum_size = Vector2(400, 300)
+layout_mode = 2
+theme_override_constants/margin_left = 50
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="PlayButton" type="Button" parent="VBoxContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "Play"
+
+[node name="OptionsButton" type="Button" parent="VBoxContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "Options"
+
+[node name="CreditsButton" type="Button" parent="VBoxContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "Credits"
+
+[node name="QuitButton" type="Button" parent="VBoxContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "Quit"

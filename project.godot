@@ -37,4 +37,4 @@ restart={
 
 [rendering]
 
-environment/defaults/default_clear_color=Color(0.45406502, 0.47364306, 0.5939517, 1)
+environment/defaults/default_clear_color=Color(0.11858138, 0.11858139, 0.11858133, 1)

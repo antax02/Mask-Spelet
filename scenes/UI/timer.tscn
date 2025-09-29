@@ -1,12 +1,6 @@
-[gd_scene load_steps=4 format=3 uid="uid://blp4d7idks2cp"]
+[gd_scene load_steps=2 format=3 uid="uid://52gps2rhq7b7"]
 
-[ext_resource type="Script" uid="uid://codqpxn6tswk4" path="res://scripts/timer.gd" id="1_fkwmc"]
-
-[sub_resource type="LabelSettings" id="LabelSettings_fkwmc"]
-font_size = 36
-
-[sub_resource type="LabelSettings" id="LabelSettings_npa5i"]
-font_size = 36
+[ext_resource type="Script" uid="uid://codqpxn6tswk4" path="res://scripts/ui/timer.gd" id="1_fkwmc"]
 
 [node name="Timer" type="Control"]
 layout_mode = 3
@@ -17,14 +11,14 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_fkwmc")
 
-[node name="TimerLabel" type="Label" parent="."]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 23.0
-label_settings = SubResource("LabelSettings_fkwmc")
-
-[node name="FinalTimeLabel" type="Label" parent="."]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 23.0
-label_settings = SubResource("LabelSettings_npa5i")
+[node name="TimeLabel" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -112.0
+offset_right = 112.0
+offset_bottom = 137.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 50
+text = "00:00:00.000"

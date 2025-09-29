@@ -1,0 +1,26 @@
+[gd_scene load_steps=4 format=3 uid="uid://bggnwmnubx1wk"]
+
+[ext_resource type="Script" uid="uid://ct47vaipg3wj6" path="res://scripts/player/player.gd" id="1_qbvv4"]
+[ext_resource type="PackedScene" uid="uid://nqfmptmdr0p0" path="res://scenes/player/procedural_animation.tscn" id="2_gptef"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_gptef"]
+radius = 65.9242
+
+[node name="Player" type="CharacterBody2D" groups=["player"]]
+scale = Vector2(0.5, 0.5)
+script = ExtResource("1_qbvv4")
+
+[node name="DetectionArea" type="Area2D" parent="."]
+
+[node name="DetectionCollision" type="CollisionShape2D" parent="DetectionArea"]
+shape = SubResource("CircleShape2D_gptef")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="ProceduralAnimation" parent="." instance=ExtResource("2_gptef")]
+
+[node name="Camera2D2" type="Camera2D" parent="."]
+visible = false
+
+[connection signal="area_entered" from="DetectionArea" to="." method="_on_area_2d_area_entered"]
+[connection signal="area_exited" from="DetectionArea" to="." method="_on_area_2d_area_exited"]

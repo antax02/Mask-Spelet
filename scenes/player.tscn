@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://bggnwmnubx1wk"]
 
-[ext_resource type="Script" uid="uid://ct47vaipg3wj6" path="res://Script/worm.gd" id="1_qbvv4"]
-[ext_resource type="PackedScene" uid="uid://nqfmptmdr0p0" path="res://antons mapp/worm.tscn" id="2_gptef"]
+[ext_resource type="Script" uid="uid://ct47vaipg3wj6" path="res://scripts/player.gd" id="1_qbvv4"]
+[ext_resource type="PackedScene" uid="uid://nqfmptmdr0p0" path="res://scenes/procedural_animation.tscn" id="2_gptef"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_gptef"]
 radius = 65.9242
@@ -10,7 +10,7 @@ radius = 65.9242
 radius = 64.0
 height = 136.0
 
-[node name="Worm" type="CharacterBody2D"]
+[node name="Player" type="CharacterBody2D"]
 scale = Vector2(0.5, 0.5)
 script = ExtResource("1_qbvv4")
 
@@ -24,7 +24,7 @@ shape = SubResource("CircleShape2D_gptef")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_gptef")
 
-[node name="Worm" parent="." instance=ExtResource("2_gptef")]
+[node name="ProceduralAnimation" parent="." instance=ExtResource("2_gptef")]
 
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
 [connection signal="area_exited" from="Area2D" to="." method="_on_area_2d_area_exited"]

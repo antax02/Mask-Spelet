@@ -1,12 +1,12 @@
 [gd_scene load_steps=4 format=3 uid="uid://cwx7frkabknei"]
 
 [ext_resource type="Texture2D" uid="uid://dbxt8py5723yj" path="res://icon.svg" id="1_4piks"]
-[ext_resource type="Script" uid="uid://d084ucl1757ec" path="res://Script/finish_line.gd" id="1_nrefy"]
+[ext_resource type="Script" uid="uid://d084ucl1757ec" path="res://scripts/finish.gd" id="1_nrefy"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_f815f"]
 size = Vector2(127, 127)
 
-[node name="FinishLine" type="Area2D"]
+[node name="Finish" type="Area2D"]
 script = ExtResource("1_nrefy")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

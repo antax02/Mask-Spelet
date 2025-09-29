@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://l5xwkiyk7f8m"]
+[gd_scene load_steps=5 format=3 uid="uid://l5xwkiyk7f8m"]
 
 [ext_resource type="PackedScene" uid="uid://bggnwmnubx1wk" path="res://scenes/player/player.tscn" id="1_ipv86"]
 [ext_resource type="PackedScene" uid="uid://52gps2rhq7b7" path="res://scenes/ui/timer.tscn" id="3_fr1um"]
 [ext_resource type="PackedScene" uid="uid://dr2whnta44ipn" path="res://scenes/enviroment/ground_basic.tscn" id="3_mr7is"]
+[ext_resource type="PackedScene" uid="uid://dynd43xihgas1" path="res://scenes/ui/escape_menu.tscn" id="4_v45ci"]
 
 [node name="TestLevel" type="Node2D"]
 
@@ -181,5 +182,7 @@ self_modulate = Color(0, 0.34922138, 0.7371704, 0.32941177)
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="Timer" parent="CanvasLayer" instance=ExtResource("3_fr1um")]
+
+[node name="Escape menu" parent="CanvasLayer" instance=ExtResource("4_v45ci")]
 
 [editable path="Ground/GroundBasic33"]

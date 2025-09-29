@@ -90,29 +90,16 @@ func _on_button_unhover(button: Button):
 
 
 func _on_play_pressed():
-	_transition_to_scene("res://scenes/levels/test_level.tscn")
+	SceneTransition.change_scene("res://scenes/levels/test_level.tscn")
 
 
 func _on_options_pressed():
-	_transition_to_scene("res://scenes/ui/options_menu.tscn")
+	SceneTransition.change_scene("res://scenes/ui/options_menu.tscn")
 
 
 func _on_credits_pressed():
-	_transition_to_scene("res://scenes/ui/credits.tscn")
+	SceneTransition.change_scene("res://scenes/ui/credits.tscn")
 
 
 func _on_quit_pressed():
 	get_tree().quit()
-
-
-func _transition_to_scene(scene_path: String):
-	var tween = create_tween()
-	tween.tween_property(self, "modulate:a", 0.0, FADE_DURATION)
-	await tween.finished
-	
-	if ResourceLoader.exists(scene_path):
-		get_tree().change_scene_to_file(scene_path)
-	else:
-		push_error("Scene not found: " + scene_path)
-		var fade_in = create_tween()
-		fade_in.tween_property(self, "modulate:a", 1.0, FADE_DURATION)

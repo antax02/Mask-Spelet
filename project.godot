@@ -11,9 +11,14 @@ config_version=5
 [application]
 
 config/name="Mask Spelet"
-run/main_scene="uid://l5xwkiyk7f8m"
+run/main_scene="uid://b1c6ieu7toiy7"
 config/features=PackedStringArray("4.5", "Forward Plus")
 config/icon="res://icon.svg"
+
+[autoload]
+
+Global="*res://scripts/global.gd"
+SceneTransition="*res://scripts/ui/scene_transition.gd"
 
 [display]
 
@@ -37,4 +42,4 @@ restart={
 
 [rendering]
 
-environment/defaults/default_clear_color=Color(0.11858138, 0.11858139, 0.11858133, 1)
+environment/defaults/default_clear_color=Color(0.19648615, 0.31997445, 0.38915083, 1)

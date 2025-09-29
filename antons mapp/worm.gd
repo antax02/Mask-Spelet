@@ -6,7 +6,7 @@ extends Node2D
 @export var segment_radius: float = 15.0  # Visual radius of each segment
 @export var head_radius: float = 20.0  # Slightly bigger head
 @export var worm_color: Color = Color(0.8, 0.3, 0.3)  # Reddish color
-@export var outline_color: Color = Color.WHITE
+@export var outline_color: Color = Color(0.6, 0.2, 0.2)
 @export var outline_width: float = 2.0
 
 # --- New Visual Properties ---

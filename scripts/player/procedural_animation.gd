@@ -7,10 +7,9 @@ extends Node2D
 @export var max_angle_per_segment: float = PI / 6
 
 @export_group("Colors")
-@export var worm_color: Color = Color(0.8, 0.3, 0.3)
-@export var outline_color: Color = Color(0.6, 0.2, 0.2)
-@export var band_color: Color = Color(0.9, 0.8, 0.5)
-@export var segment_detail_color: Color = Color(0.6, 0.2, 0.2)
+@export var worm_color: Color = Color(0.75, 0.50, 0.50)
+@export var outline_color: Color = Color(0.50, 0.30, 0.30)
+@export var band_color: Color = Color(0.85, 0.70, 0.60)
 @export var outline_width: float = 2.0
 
 @export_group("Details")
@@ -62,7 +61,6 @@ func _draw():
 	
 	_draw_outline(radii)
 	_draw_body(radii, colors)
-	_draw_segment_details(radii)
 	_draw_head_features(radii)
 
 func _calculate_radii() -> Array:
@@ -129,20 +127,6 @@ func _draw_body(radii: Array, colors: Array):
 		if radii[i] > 0:
 			draw_circle(to_local(segments[i]), radii[i], colors[i])
 
-func _draw_segment_details(radii: Array):
-	for i in range(1, segments.size()):
-		if i == band_segment_index or radii[i] < outline_width:
-			continue
-		
-		var local_pos = to_local(segments[i])
-		var direction = (segments[i-1] - segments[i]).normalized()
-		if direction.length_squared() == 0:
-			continue
-		
-		var perp = direction.orthogonal()
-		draw_line(local_pos - perp * radii[i], local_pos + perp * radii[i], 
-				  segment_detail_color, outline_width)
-
 func _draw_head_features(radii: Array):
 	if segments.size() < 2 or radii[0] < outline_width:
 		return
@@ -157,10 +141,26 @@ func _draw_head_features(radii: Array):
 	var perpendicular = direction.orthogonal()
 	var eye_base_pos = local_pos + direction * radius * 0.4
 	
-	var left_eye = eye_base_pos - perpendicular * radius * 0.45
-	var right_eye = eye_base_pos + perpendicular * radius * 0.45
+	var left_eye_pos = eye_base_pos - perpendicular * radius * 0.45
+	var right_eye_pos = eye_base_pos + perpendicular * radius * 0.45
 	
-	draw_circle(left_eye, eye_radius, Color.WHITE)
-	draw_circle(right_eye, eye_radius, Color.WHITE)
-	draw_circle(left_eye, eye_radius * 0.5, Color.BLACK)
-	draw_circle(right_eye, eye_radius * 0.5, Color.BLACK)
+	# Draw eye whites
+	draw_circle(left_eye_pos, eye_radius, Color.WHITE)
+	draw_circle(right_eye_pos, eye_radius, Color.WHITE)
+	
+	# Get mouse position and calculate pupil positions
+	var mouse_pos = get_global_mouse_position()
+	var pupil_radius = eye_radius * 0.5
+	var max_pupil_offset = eye_radius * 0.4
+	
+	# Left pupil
+	var left_eye_global = to_global(left_eye_pos)
+	var left_to_mouse = (mouse_pos - left_eye_global).normalized()
+	var left_pupil_offset = left_to_mouse * max_pupil_offset
+	draw_circle(left_eye_pos + left_pupil_offset, pupil_radius, Color.BLACK)
+	
+	# Right pupil
+	var right_eye_global = to_global(right_eye_pos)
+	var right_to_mouse = (mouse_pos - right_eye_global).normalized()
+	var right_pupil_offset = right_to_mouse * max_pupil_offset
+	draw_circle(right_eye_pos + right_pupil_offset, pupil_radius, Color.BLACK)

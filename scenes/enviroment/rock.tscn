@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://diaamrlicrfi4"]
 
 [ext_resource type="PhysicsMaterial" uid="uid://bpp202scb04tp" path="res://resources/frictionless_physics_material.tres" id="1_syqrr"]
-[ext_resource type="Texture2D" uid="uid://dssvwtdwtfl75" path="res://Assets/sprites/rock_01.png" id="2_l5cr4"]
+[ext_resource type="Texture2D" uid="uid://dssvwtdwtfl75" path="res://assets/sprites/rock_01.png" id="2_l5cr4"]
 
 [node name="rock" type="StaticBody2D"]
 z_index = 1
@@ -11,3 +11,4 @@ physics_material_override = ExtResource("1_syqrr")
 texture = ExtResource("2_l5cr4")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(-34, -41, 4, -49, 40, -33, 46, -20, 34, -7, 33, 28, 21, 47, 7, 50, -45, 35, -57, -8)

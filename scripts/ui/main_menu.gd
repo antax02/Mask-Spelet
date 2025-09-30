@@ -90,7 +90,7 @@ func _on_button_unhover(button: Button):
 
 
 func _on_play_pressed():
-	SceneTransition.change_scene("res://scenes/levels/test_level.tscn")
+	SceneTransition.change_scene("res://scenes/levels/main.tscn")
 
 
 func _on_options_pressed():

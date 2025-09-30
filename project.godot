@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Mask Spelet"
-run/main_scene="uid://dvlrrtadli7d3"
+run/main_scene="uid://b1c6ieu7toiy7"
 config/features=PackedStringArray("4.5", "Forward Plus")
 config/icon="res://icon.svg"
 

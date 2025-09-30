@@ -3,10 +3,6 @@ extends Area2D
 @export var blow_force: float = 500.0
 var bodies_inside: Array[RigidBody2D] = []
 
-func _ready():
-	body_entered.connect(_on_body_entered)
-	body_exited.connect(_on_body_exited)
-
 func _on_body_entered(body: Node2D):
 	if body is RigidBody2D and body not in bodies_inside:
 		bodies_inside.append(body)

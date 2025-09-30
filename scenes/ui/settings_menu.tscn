@@ -1,0 +1,115 @@
+[gd_scene load_steps=3 format=3 uid="uid://0wi7ra3ptidk"]
+
+[ext_resource type="Script" uid="uid://dvkrptcs5ft5n" path="res://scripts/ui/settings_menu.gd" id="1_mhswj"]
+[ext_resource type="Theme" uid="uid://ymoxu6tkn4db" path="res://resources/ui_theme.tres" id="1_qwcqe"]
+
+[node name="SettingsMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_mhswj")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="Panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -68.5
+offset_top = -50.0
+offset_right = 68.5
+offset_bottom = 50.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel/MarginContainer"]
+layout_mode = 2
+
+[node name="SettingsLabel" type="Label" parent="Panel/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("1_qwcqe")
+theme_override_font_sizes/font_size = 64
+text = "Settings"
+horizontal_alignment = 1
+
+[node name="Spacer" type="MarginContainer" parent="Panel/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_top = 30
+
+[node name="MasterVolumeContainer" type="HBoxContainer" parent="Panel/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="MasterVolumeLabel" type="Label" parent="Panel/MarginContainer/VBoxContainer/MasterVolumeContainer"]
+custom_minimum_size = Vector2(200, 30)
+layout_mode = 2
+theme = ExtResource("1_qwcqe")
+theme_override_font_sizes/font_size = 24
+text = "Master Volume"
+
+[node name="MasterVolumeSlider" type="HSlider" parent="Panel/MarginContainer/VBoxContainer/MasterVolumeContainer"]
+custom_minimum_size = Vector2(200, 25)
+layout_mode = 2
+value = 80.0
+
+[node name="MusicVolumeContainer" type="HBoxContainer" parent="Panel/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="MusicVolumeLabel" type="Label" parent="Panel/MarginContainer/VBoxContainer/MusicVolumeContainer"]
+custom_minimum_size = Vector2(200, 30)
+layout_mode = 2
+theme = ExtResource("1_qwcqe")
+theme_override_font_sizes/font_size = 24
+text = "Music Volume"
+
+[node name="MusicVolumeSlider" type="HSlider" parent="Panel/MarginContainer/VBoxContainer/MusicVolumeContainer"]
+custom_minimum_size = Vector2(200, 25)
+layout_mode = 2
+value = 100.0
+
+[node name="SFXVolumeContainer" type="HBoxContainer" parent="Panel/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="SFXVolumeLabel" type="Label" parent="Panel/MarginContainer/VBoxContainer/SFXVolumeContainer"]
+custom_minimum_size = Vector2(200, 30)
+layout_mode = 2
+theme = ExtResource("1_qwcqe")
+theme_override_font_sizes/font_size = 24
+text = "SFX Volume"
+
+[node name="SFXVolumeSlider" type="HSlider" parent="Panel/MarginContainer/VBoxContainer/SFXVolumeContainer"]
+custom_minimum_size = Vector2(200, 25)
+layout_mode = 2
+value = 100.0
+
+[node name="CheckBox" type="CheckBox" parent="Panel/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("1_qwcqe")
+theme_override_font_sizes/font_size = 24
+text = "Fullscreen"
+
+[node name="CheckBox2" type="CheckBox" parent="Panel/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("1_qwcqe")
+theme_override_font_sizes/font_size = 24
+text = "Screen Shake"
+
+[node name="Spacer2" type="MarginContainer" parent="Panel/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_top = 30
+
+[node name="Back" type="Button" parent="Panel/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "Back"

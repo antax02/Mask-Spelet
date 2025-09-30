@@ -94,7 +94,7 @@ func _on_play_pressed():
 
 
 func _on_options_pressed():
-	SceneTransition.change_scene("res://scenes/ui/options_menu.tscn")
+	SceneTransition.change_scene("res://scenes/ui/settings_menu.tscn")
 
 
 func _on_credits_pressed():

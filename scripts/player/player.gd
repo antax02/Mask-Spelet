@@ -6,6 +6,9 @@ signal finished_level
 @export var max_speed: float = 300.0
 @export var min_speed: float = 50
 
+@onready var rock_smash_entrance_sfx: AudioStreamPlayer = $RockSmashEntranceSFX
+@onready var rock_smash_exit_sfx: AudioStreamPlayer = $RockSmashExitSFX
+
 var is_in_ground = false
 var default_gravity_scale: float
 
@@ -32,6 +35,8 @@ func _physics_process(delta: float) -> void:
 func _on_area_2d_area_entered(area: Area2D) -> void:
 	if area.is_in_group("ground"):
 		is_in_ground = true
+		rock_smash_entrance_sfx.play();
+		$Camera.shake(2)
 	
 	if area.is_in_group("finish"):
 		finished_level.emit()
@@ -39,7 +44,9 @@ func _on_area_2d_area_entered(area: Area2D) -> void:
 func _on_area_2d_area_exited(area: Area2D) -> void:
 	if area.is_in_group("ground"):
 		is_in_ground = false
-
+		rock_smash_exit_sfx.play();
+		$Camera.shake(2)
+		
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("restart"):
 		get_tree().reload_current_scene()

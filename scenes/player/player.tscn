@@ -1,7 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://bggnwmnubx1wk"]
+[gd_scene load_steps=8 format=3 uid="uid://bggnwmnubx1wk"]
 
 [ext_resource type="Script" uid="uid://ct47vaipg3wj6" path="res://scripts/player/player.gd" id="1_qbvv4"]
 [ext_resource type="PackedScene" uid="uid://nqfmptmdr0p0" path="res://scenes/player/procedural_animation.tscn" id="2_gptef"]
+[ext_resource type="Script" uid="uid://dly3wj02xs5q5" path="res://scripts/player/camera.gd" id="2_p47bc"]
+[ext_resource type="AudioStream" uid="uid://rkllmvd2dnd4" path="res://assets/audio/sfx/rock_smash_01.wav" id="3_gmlin"]
+[ext_resource type="AudioStream" uid="uid://ctsqwxlu3qs05" path="res://assets/audio/sfx/rock_smash_02.wav" id="4_lvxji"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_gptef"]
 radius = 25.0
@@ -20,13 +23,20 @@ script = ExtResource("1_qbvv4")
 [node name="DetectionCollision" type="CollisionShape2D" parent="DetectionArea"]
 shape = SubResource("CircleShape2D_gptef")
 
-[node name="Camera2D" type="Camera2D" parent="."]
+[node name="Camera" type="Camera2D" parent="."]
+script = ExtResource("2_p47bc")
 
 [node name="ProceduralAnimation" parent="." instance=ExtResource("2_gptef")]
 segment_length = 15.0
 
 [node name="PhysicsCollision" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_dovo2")
+
+[node name="RockSmashEntranceSFX" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_gmlin")
+
+[node name="RockSmashExitSFX" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_lvxji")
 
 [connection signal="area_entered" from="DetectionArea" to="." method="_on_area_2d_area_entered"]
 [connection signal="area_exited" from="DetectionArea" to="." method="_on_area_2d_area_exited"]

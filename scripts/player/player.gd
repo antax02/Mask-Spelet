@@ -35,8 +35,10 @@ func _physics_process(delta: float) -> void:
 func _on_area_2d_area_entered(area: Area2D) -> void:
 	if area.is_in_group("ground"):
 		is_in_ground = true
+		if (rock_smash_entrance_sfx.playing):
+			rock_smash_entrance_sfx.stop()
 		rock_smash_entrance_sfx.play();
-		$Camera.shake(2)
+		$Camera.shake(1)
 	
 	if area.is_in_group("finish"):
 		finished_level.emit()
@@ -44,8 +46,10 @@ func _on_area_2d_area_entered(area: Area2D) -> void:
 func _on_area_2d_area_exited(area: Area2D) -> void:
 	if area.is_in_group("ground"):
 		is_in_ground = false
+		if (rock_smash_exit_sfx.playing):
+			rock_smash_exit_sfx.stop()
 		rock_smash_exit_sfx.play();
-		$Camera.shake(2)
+		$Camera.shake(1)
 		
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("restart"):

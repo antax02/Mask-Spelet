@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://2lwf135igyfq"]
+
+[ext_resource type="Script" uid="uid://jp04ifg2sptd" path="res://scripts/util/wind.gd" id="1_vqgfe"]
+[ext_resource type="Texture2D" uid="uid://dbxt8py5723yj" path="res://icon.svg" id="2_n4wxg"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vki8m"]
+size = Vector2(43.000004, 21.5)
+
+[node name="Wind" type="Area2D" groups=["wind"]]
+script = ExtResource("1_vqgfe")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0.5000038, 0.50000095)
+scale = Vector2(3, 6)
+shape = SubResource("RectangleShape2D_vki8m")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+modulate = Color(0, 0, 0, 0.33333334)
+self_modulate = Color(0.83137256, 1, 0.5529412, 1)
+texture = ExtResource("2_n4wxg")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

@@ -1,0 +1,338 @@
+[gd_scene load_steps=7 format=3 uid="uid://dvlrrtadli7d3"]
+
+[ext_resource type="PackedScene" uid="uid://bggnwmnubx1wk" path="res://scenes/player/player.tscn" id="1_2vj2h"]
+[ext_resource type="PackedScene" uid="uid://dmsqs4k3jx847" path="res://scenes/UI/hud.tscn" id="2_y0acb"]
+[ext_resource type="PackedScene" uid="uid://dr2whnta44ipn" path="res://scenes/enviroment/ground_basic.tscn" id="3_y0acb"]
+[ext_resource type="PackedScene" uid="uid://bjg75r1hpp535" path="res://scenes/enviroment/floor.tscn" id="4_u81e1"]
+[ext_resource type="PackedScene" uid="uid://diaamrlicrfi4" path="res://scenes/enviroment/rock.tscn" id="5_b6bv0"]
+[ext_resource type="PackedScene" uid="uid://2lwf135igyfq" path="res://scenes/enviroment/wind.tscn" id="6_b6bv0"]
+
+[node name="Main" type="Node2D"]
+
+[node name="Player" parent="." instance=ExtResource("1_2vj2h")]
+position = Vector2(-4, 45)
+max_speed = 750.0
+
+[node name="HUD" parent="." instance=ExtResource("2_y0acb")]
+follow_viewport_enabled = true
+
+[node name="1" type="Node" parent="."]
+
+[node name="GroundBasic" parent="1" instance=ExtResource("3_y0acb")]
+position = Vector2(-10, 247)
+scale = Vector2(15.293771, 4.865671)
+
+[node name="GroundBasic24" parent="1" instance=ExtResource("3_y0acb")]
+position = Vector2(4031, -3729)
+scale = Vector2(15.293771, 4.865671)
+
+[node name="GroundBasic2" parent="1" instance=ExtResource("3_y0acb")]
+position = Vector2(1.1920929e-07, -405)
+scale = Vector2(1.2267375, 4.1196475)
+
+[node name="GroundBasic3" parent="1" instance=ExtResource("3_y0acb")]
+position = Vector2(-265, -656)
+scale = Vector2(2.0986886, 1.3595506)
+
+[node name="GroundBasic4" parent="1" instance=ExtResource("3_y0acb")]
+position = Vector2(-615, -776)
+scale = Vector2(2.5773375, 2.1310315)
+
+[node name="GroundBasic5" parent="1" instance=ExtResource("3_y0acb")]
+position = Vector2(-550, -1026)
+
+[node name="GroundBasic6" parent="1" instance=ExtResource("3_y0acb")]
+position = Vector2(-593, -1204)
+
+[node name="GroundBasic7" parent="1" instance=ExtResource("3_y0acb")]
+position = Vector2(-567, -1406)
+
+[node name="GroundBasic8" parent="1" instance=ExtResource("3_y0acb")]
+position = Vector2(-445, -1605)
+scale = Vector2(0.8269501, 1.1213053)
+
+[node name="StaticBody2D3" parent="1" instance=ExtResource("4_u81e1")]
+position = Vector2(274.99997, -1639.9999)
+rotation = 0.22195208
+scale = Vector2(1.7123559, 1)
+
+[node name="GroundBasic9" parent="1" instance=ExtResource("3_y0acb")]
+position = Vector2(736, -1387)
+scale = Vector2(3.526582, 2.081431)
+
+[node name="GroundBasic10" parent="1" instance=ExtResource("3_y0acb")]
+position = Vector2(1004, -1757)
+scale = Vector2(1.9932678, 1.5957696)
+
+[node name="GroundBasic11" parent="1" instance=ExtResource("3_y0acb")]
+position = Vector2(1656, -1762)
+scale = Vector2(1.9932678, 1.5957696)
+
+[node name="GroundBasic12" parent="1" instance=ExtResource("3_y0acb")]
+position = Vector2(1857, -1509.0001)
+scale = Vector2(1.9932678, 1.5957696)
+
+[node name="GroundBasic13" parent="1" instance=ExtResource("3_y0acb")]
+position = Vector2(2111, -1237)
+scale = Vector2(1.9932678, 1.5957696)
+
+[node name="GroundBasic14" parent="1" instance=ExtResource("3_y0acb")]
+position = Vector2(2448.0002, -1055)
+scale = Vector2(1.9932678, 1.5957696)
+
+[node name="GroundBasic15" parent="1" instance=ExtResource("3_y0acb")]
+position = Vector2(2818.0002, -1026.0001)
+scale = Vector2(1.9932678, 1.5957696)
+
+[node name="GroundBasic16" parent="1" instance=ExtResource("3_y0acb")]
+position = Vector2(3188, -1044.0001)
+scale = Vector2(1.9932678, 1.5957696)
+
+[node name="GroundBasic17" parent="1" instance=ExtResource("3_y0acb")]
+position = Vector2(3516.0002, -1224)
+scale = Vector2(1.9932678, 1.5957696)
+
+[node name="GroundBasic18" parent="1" instance=ExtResource("3_y0acb")]
+position = Vector2(3838, -1526)
+scale = Vector2(1.9932678, 1.5957696)
+
+[node name="GroundBasic19" parent="1" instance=ExtResource("3_y0acb")]
+position = Vector2(4006, -1863.0001)
+scale = Vector2(1.9932678, 1.5957696)
+
+[node name="GroundBasic20" parent="1" instance=ExtResource("3_y0acb")]
+position = Vector2(5164, -1480)
+scale = Vector2(4.833268, 4.55577)
+
+[node name="GroundBasic21" parent="1" instance=ExtResource("3_y0acb")]
+position = Vector2(6168, -1355)
+scale = Vector2(4.833268, 4.55577)
+
+[node name="GroundBasic22" parent="1" instance=ExtResource("3_y0acb")]
+position = Vector2(7217.9995, -1695.9998)
+rotation = -0.4339416
+scale = Vector2(1.5775341, 20.222895)
+
+[node name="rock" parent="1" instance=ExtResource("5_b6bv0")]
+position = Vector2(863, -1499)
+
+[node name="rock2" parent="1" instance=ExtResource("5_b6bv0")]
+position = Vector2(6635, -1619)
+
+[node name="rock3" parent="1" instance=ExtResource("5_b6bv0")]
+position = Vector2(6813, -1178)
+
+[node name="rock4" parent="1" instance=ExtResource("5_b6bv0")]
+position = Vector2(6726, -1403)
+
+[node name="GroundBasic23" parent="1" instance=ExtResource("3_y0acb")]
+position = Vector2(5549, -3675.0002)
+rotation = -3.1377902
+scale = Vector2(6.8098497, 1)
+
+[node name="StaticBody2D4" parent="1" instance=ExtResource("4_u81e1")]
+position = Vector2(6464.9995, -3074)
+rotation = 0.883566
+scale = Vector2(2.28, 1)
+
+[node name="StaticBody2D5" parent="1" instance=ExtResource("4_u81e1")]
+position = Vector2(1021, 462)
+scale = Vector2(9.319999, 1)
+
+[node name="StaticBody2D6" parent="1" instance=ExtResource("4_u81e1")]
+position = Vector2(4261, -3633.0002)
+rotation = 0.16875775
+scale = Vector2(9.319998, 1)
+
+[node name="StaticBody2D9" parent="1" instance=ExtResource("4_u81e1")]
+position = Vector2(16506, -9944)
+rotation = -0.46708724
+scale = Vector2(41.62999, -3.3163943)
+
+[node name="StaticBody2D7" parent="1" instance=ExtResource("4_u81e1")]
+position = Vector2(4313.9995, -415.99976)
+rotation = -0.33651006
+scale = Vector2(9.319999, 0.99999994)
+
+[node name="StaticBody2D8" parent="1" instance=ExtResource("4_u81e1")]
+position = Vector2(-2382, 190)
+rotation = 0.3808572
+scale = Vector2(9.319998, 0.99999994)
+
+[node name="2" type="Node" parent="."]
+
+[node name="GroundBasic2" parent="2" instance=ExtResource("3_y0acb")]
+position = Vector2(4279.0005, -4352)
+scale = Vector2(1.12029, 2.86087)
+
+[node name="GroundBasic3" parent="2" instance=ExtResource("3_y0acb")]
+position = Vector2(3873, -4545)
+scale = Vector2(3.11978, 2.13649)
+
+[node name="GroundBasic4" parent="2" instance=ExtResource("3_y0acb")]
+position = Vector2(3629, -5029)
+rotation = 0.40673
+scale = Vector2(1.01646, 5.6585)
+
+[node name="GroundBasic5" parent="2" instance=ExtResource("3_y0acb")]
+position = Vector2(3671, -5815)
+rotation = -0.643894
+scale = Vector2(1.01646, 5.6585)
+
+[node name="GroundBasic6" parent="2" instance=ExtResource("3_y0acb")]
+position = Vector2(3019, -6339)
+rotation = -0.643894
+scale = Vector2(1.01646, 5.6585)
+
+[node name="GroundBasic7" parent="2" instance=ExtResource("3_y0acb")]
+position = Vector2(2584, -7074)
+rotation = 0.0534606
+scale = Vector2(1.75032, 3.14924)
+
+[node name="GroundBasic8" parent="2" instance=ExtResource("3_y0acb")]
+position = Vector2(2626, -7797)
+rotation = 0.0534606
+scale = Vector2(1.75032, 3.14924)
+
+[node name="GroundBasic9" parent="2" instance=ExtResource("3_y0acb")]
+position = Vector2(3218, -8156)
+rotation = 0.0534606
+scale = Vector2(1.75032, 3.14924)
+
+[node name="GroundBasic10" parent="2" instance=ExtResource("3_y0acb")]
+position = Vector2(3863, -7795)
+rotation = 0.0534606
+scale = Vector2(1.75032, 3.14924)
+
+[node name="GroundBasic11" parent="2" instance=ExtResource("3_y0acb")]
+position = Vector2(4576, -7103)
+rotation = -0.587072
+scale = Vector2(1.75032, 8.995872)
+
+[node name="GroundBasic12" parent="2" instance=ExtResource("3_y0acb")]
+position = Vector2(5374, -6639.9995)
+rotation = -1.44925
+scale = Vector2(1.75032, 5.11262)
+
+[node name="GroundBasic13" parent="2" instance=ExtResource("3_y0acb")]
+position = Vector2(6260, -6714.9995)
+rotation = -1.9113
+scale = Vector2(1.75032, 5.11262)
+
+[node name="GroundBasic14" parent="2" instance=ExtResource("3_y0acb")]
+position = Vector2(7000, -7141)
+rotation = -2.28145
+scale = Vector2(1.75032, 5.11262)
+
+[node name="GroundBasic15" parent="2" instance=ExtResource("3_y0acb")]
+position = Vector2(7739, -7801)
+rotation = -2.28145
+scale = Vector2(0.691944, 5.11262)
+
+[node name="GroundBasic16" parent="2" instance=ExtResource("3_y0acb")]
+position = Vector2(7968, -8319)
+rotation = -0.838644
+scale = Vector2(0.691944, 5.11262)
+
+[node name="GroundBasic17" parent="2" instance=ExtResource("3_y0acb")]
+position = Vector2(7451, -8776)
+rotation = -0.838644
+scale = Vector2(0.691944, 1.26202)
+
+[node name="GroundBasic18" parent="2" instance=ExtResource("3_y0acb")]
+position = Vector2(7037, -8924)
+rotation = -0.838644
+scale = Vector2(0.691944, 1.26202)
+
+[node name="GroundBasic19" parent="2" instance=ExtResource("3_y0acb")]
+position = Vector2(6529, -8954)
+rotation = -0.838644
+scale = Vector2(0.691944, 1.26202)
+
+[node name="GroundBasic20" parent="2" instance=ExtResource("3_y0acb")]
+position = Vector2(6243, -9023)
+rotation = -0.838644
+scale = Vector2(0.691944, 1.26202)
+
+[node name="GroundBasic21" parent="2" instance=ExtResource("3_y0acb")]
+position = Vector2(5812, -8759)
+rotation = -0.838644
+scale = Vector2(-4.55784, 1.55051)
+
+[node name="GroundBasic22" parent="2" instance=ExtResource("3_y0acb")]
+position = Vector2(5515, -8934)
+rotation = -0.838644
+scale = Vector2(0.691944, 1.26202)
+
+[node name="GroundBasic23" parent="2" instance=ExtResource("3_y0acb")]
+position = Vector2(5343, -9126)
+rotation = -0.838644
+scale = Vector2(0.691944, 1.26202)
+
+[node name="GroundBasic24" parent="2" instance=ExtResource("3_y0acb")]
+position = Vector2(5211, -9379)
+rotation = -0.838644
+scale = Vector2(0.691944, 1.26202)
+
+[node name="GroundBasic25" parent="2" instance=ExtResource("3_y0acb")]
+position = Vector2(5152, -9627)
+rotation = -0.838644
+scale = Vector2(0.691944, 1.26202)
+
+[node name="GroundBasic26" parent="2" instance=ExtResource("3_y0acb")]
+position = Vector2(5106, -9886)
+rotation = -0.838644
+scale = Vector2(0.691944, 1.26202)
+
+[node name="GroundBasic27" parent="2" instance=ExtResource("3_y0acb")]
+position = Vector2(5075, -10118)
+rotation = -0.838644
+scale = Vector2(0.691944, 1.26202)
+
+[node name="GroundBasic28" parent="2" instance=ExtResource("3_y0acb")]
+position = Vector2(5082, -10332)
+rotation = -0.838644
+scale = Vector2(0.691944, 1.26202)
+
+[node name="GroundBasic29" parent="2" instance=ExtResource("3_y0acb")]
+position = Vector2(5135, -10505)
+rotation = -0.838644
+scale = Vector2(0.691944, 1.26202)
+
+[node name="GroundBasic30" parent="2" instance=ExtResource("3_y0acb")]
+position = Vector2(5272, -10626)
+rotation = -0.838644
+scale = Vector2(0.691944, 1.26202)
+
+[node name="GroundBasic31" parent="2" instance=ExtResource("3_y0acb")]
+position = Vector2(5440, -10689)
+rotation = -0.838644
+scale = Vector2(0.691944, 1.26202)
+
+[node name="GroundBasic32" parent="2" instance=ExtResource("3_y0acb")]
+position = Vector2(5675, -10701)
+rotation = -0.838644
+scale = Vector2(0.691944, 1.26202)
+
+[node name="GroundBasic33" parent="2" groups=["finish"] instance=ExtResource("3_y0acb")]
+position = Vector2(6052, -10637)
+rotation = -1.5707964
+scale = Vector2(1.3686339, 2.7281866)
+
+[node name="Sprite2D" parent="2/GroundBasic33" index="0"]
+self_modulate = Color(0, 0.34922138, 0.7371704, 0.32941177)
+
+[node name="Wind" parent="2" instance=ExtResource("6_b6bv0")]
+position = Vector2(2598, -7416)
+
+[node name="Wind5" parent="2" instance=ExtResource("6_b6bv0")]
+position = Vector2(2905, -8058)
+rotation = 0.96984035
+
+[node name="Wind3" parent="2" instance=ExtResource("6_b6bv0")]
+position = Vector2(6764, -8921)
+
+[node name="Wind4" parent="2" instance=ExtResource("6_b6bv0")]
+position = Vector2(7403, -7446)
+
+[editable path="2/GroundBasic33"]

@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://bjg75r1hpp535"]
+
+[ext_resource type="PhysicsMaterial" uid="uid://bpp202scb04tp" path="res://resources/frictionless_physics_material.tres" id="1_bkgwm"]
+[ext_resource type="Texture2D" uid="uid://dbxt8py5723yj" path="res://icon.svg" id="2_56lvu"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6xh4u"]
+size = Vector2(376, 120)
+
+[node name="StaticBody2D3" type="StaticBody2D"]
+physics_material_override = ExtResource("1_bkgwm")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-106, 128)
+shape = SubResource("RectangleShape2D_6xh4u")
+
+[node name="Icon" type="Sprite2D" parent="."]
+position = Vector2(-105, 130)
+scale = Vector2(2.9375, 1)
+texture = ExtResource("2_56lvu")

@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://l5xwkiyk7f8m"]
+[gd_scene load_steps=11 format=3 uid="uid://l5xwkiyk7f8m"]
 
 [ext_resource type="PackedScene" uid="uid://bggnwmnubx1wk" path="res://scenes/player/player.tscn" id="1_ipv86"]
 [ext_resource type="PackedScene" uid="uid://dmsqs4k3jx847" path="res://scenes/UI/hud.tscn" id="3_cyt5c"]
@@ -6,7 +6,9 @@
 [ext_resource type="PackedScene" uid="uid://diaamrlicrfi4" path="res://scenes/enviroment/rock.tscn" id="5_48ne7"]
 [ext_resource type="Texture2D" uid="uid://dssvwtdwtfl75" path="res://Assets/sprites/rock_01.png" id="6_6xh4u"]
 [ext_resource type="PhysicsMaterial" uid="uid://bpp202scb04tp" path="res://resources/frictionless_physics_material.tres" id="7_cyt5c"]
+[ext_resource type="PackedScene" uid="uid://bjg75r1hpp535" path="res://scenes/enviroment/floor.tscn" id="8_2mu0v"]
 [ext_resource type="Texture2D" uid="uid://dbxt8py5723yj" path="res://icon.svg" id="8_7x1jh"]
+[ext_resource type="PackedScene" uid="uid://2lwf135igyfq" path="res://scenes/enviroment/wind.tscn" id="8_hfwtw"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6xh4u"]
 size = Vector2(376, 120)
@@ -220,18 +222,8 @@ position = Vector2(-105, 130)
 scale = Vector2(2.9375, 1)
 texture = ExtResource("8_7x1jh")
 
-[node name="StaticBody2D3" type="StaticBody2D" parent="."]
+[node name="StaticBody2D3" parent="." instance=ExtResource("8_2mu0v")]
 position = Vector2(468, -3)
-physics_material_override = ExtResource("7_cyt5c")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D3"]
-position = Vector2(-106, 128)
-shape = SubResource("RectangleShape2D_6xh4u")
-
-[node name="Icon" type="Sprite2D" parent="StaticBody2D3"]
-position = Vector2(-105, 130)
-scale = Vector2(2.9375, 1)
-texture = ExtResource("8_7x1jh")
 
 [node name="StaticBody2D2" type="StaticBody2D" parent="."]
 position = Vector2(-9, -67)
@@ -247,6 +239,15 @@ position = Vector2(-288, 144)
 rotation = 0.3910037
 scale = Vector2(2.9375, 1)
 texture = ExtResource("8_7x1jh")
+
+[node name="Wind" parent="." instance=ExtResource("8_hfwtw")]
+position = Vector2(1092, -53)
+rotation = -0.6487839
+blow_force = 1000.0
+
+[node name="Wind2" parent="." instance=ExtResource("8_hfwtw")]
+position = Vector2(-900, -3241)
+rotation = 0.06584528
 
 [editable path="Ground/GroundBasic33"]
 [editable path="rock"]

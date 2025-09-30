@@ -1,6 +1,6 @@
 [gd_resource type="Theme" load_steps=2 format=3 uid="uid://ymoxu6tkn4db"]
 
-[ext_resource type="FontFile" uid="uid://ciwv1nxsex0wx" path="res://fonts/JetBrainsMono-Regular.ttf" id="1_cviax"]
+[ext_resource type="FontFile" uid="uid://ciwv1nxsex0wx" path="res://assets/fonts/JetBrainsMono-Regular.ttf" id="1_cviax"]
 
 [resource]
 default_font = ExtResource("1_cviax")

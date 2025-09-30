@@ -2,9 +2,9 @@ extends Node2D
 
 @export var segment_count: int = 20
 @export var segment_length: float = 20.0
-@export var segment_radius: float = 15.0
-@export var head_radius: float = 20.0
-@export var max_angle_per_segment: float = PI / 6
+@export var segment_radius: float = 10.0
+@export var head_radius: float = 15.0
+@export var max_angle_per_segment: float = PI / 4
 
 @export_group("Colors")
 @export var worm_color: Color = Color(0.75, 0.50, 0.50)
@@ -144,22 +144,18 @@ func _draw_head_features(radii: Array):
 	var left_eye_pos = eye_base_pos - perpendicular * radius * 0.45
 	var right_eye_pos = eye_base_pos + perpendicular * radius * 0.45
 	
-	# Draw eye whites
 	draw_circle(left_eye_pos, eye_radius, Color.WHITE)
 	draw_circle(right_eye_pos, eye_radius, Color.WHITE)
 	
-	# Get mouse position and calculate pupil positions
 	var mouse_pos = get_global_mouse_position()
 	var pupil_radius = eye_radius * 0.5
 	var max_pupil_offset = eye_radius * 0.4
 	
-	# Left pupil
 	var left_eye_global = to_global(left_eye_pos)
 	var left_to_mouse = (mouse_pos - left_eye_global).normalized()
 	var left_pupil_offset = left_to_mouse * max_pupil_offset
 	draw_circle(left_eye_pos + left_pupil_offset, pupil_radius, Color.BLACK)
 	
-	# Right pupil
 	var right_eye_global = to_global(right_eye_pos)
 	var right_to_mouse = (mouse_pos - right_eye_global).normalized()
 	var right_pupil_offset = right_to_mouse * max_pupil_offset

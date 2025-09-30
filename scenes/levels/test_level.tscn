@@ -1,9 +1,15 @@
-[gd_scene load_steps=5 format=3 uid="uid://l5xwkiyk7f8m"]
+[gd_scene load_steps=9 format=3 uid="uid://l5xwkiyk7f8m"]
 
 [ext_resource type="PackedScene" uid="uid://bggnwmnubx1wk" path="res://scenes/player/player.tscn" id="1_ipv86"]
-[ext_resource type="PackedScene" uid="uid://52gps2rhq7b7" path="res://scenes/ui/timer.tscn" id="3_fr1um"]
+[ext_resource type="PackedScene" uid="uid://dmsqs4k3jx847" path="res://scenes/ui/hud.tscn" id="3_cyt5c"]
 [ext_resource type="PackedScene" uid="uid://dr2whnta44ipn" path="res://scenes/enviroment/ground_basic.tscn" id="3_mr7is"]
-[ext_resource type="PackedScene" uid="uid://dynd43xihgas1" path="res://scenes/ui/escape_menu.tscn" id="4_v45ci"]
+[ext_resource type="PackedScene" uid="uid://diaamrlicrfi4" path="res://scenes/enviroment/rock.tscn" id="5_48ne7"]
+[ext_resource type="Texture2D" uid="uid://dssvwtdwtfl75" path="res://assets/sprites/rock_01.png" id="6_6xh4u"]
+[ext_resource type="PhysicsMaterial" uid="uid://bpp202scb04tp" path="res://resources/frictionless_physics_material.tres" id="7_cyt5c"]
+[ext_resource type="Texture2D" uid="uid://dbxt8py5723yj" path="res://icon.svg" id="8_7x1jh"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6xh4u"]
+size = Vector2(376, 120)
 
 [node name="TestLevel" type="Node2D"]
 
@@ -179,10 +185,69 @@ scale = Vector2(1.3686339, 2.7281866)
 [node name="Sprite2D" parent="Ground/GroundBasic33" index="0" groups=["finish"]]
 self_modulate = Color(0, 0.34922138, 0.7371704, 0.32941177)
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
+[node name="HUD" parent="." instance=ExtResource("3_cyt5c")]
 
-[node name="Timer" parent="CanvasLayer" instance=ExtResource("3_fr1um")]
+[node name="rock" parent="." instance=ExtResource("5_48ne7")]
+position = Vector2(-38, 313)
 
-[node name="Escape menu" parent="CanvasLayer" instance=ExtResource("4_v45ci")]
+[node name="Sprite2D" parent="rock" index="0"]
+texture = ExtResource("6_6xh4u")
+
+[node name="CollisionPolygon2D" parent="rock" index="1"]
+polygon = PackedVector2Array(-32, -42, 3, -48, 41, -32, 47, -21, 33, -6, 33, 24, 22, 47, 7, 50, -45, 34, -56, -9)
+
+[node name="rock2" parent="." instance=ExtResource("5_48ne7")]
+position = Vector2(109, -6)
+
+[node name="Sprite2D" parent="rock2" index="0"]
+texture = ExtResource("6_6xh4u")
+
+[node name="CollisionPolygon2D" parent="rock2" index="1"]
+z_index = 1
+polygon = PackedVector2Array(-32, -42, 3, -48, 41, -32, 47, -21, 33, -6, 33, 24, 22, 47, 7, 50, -45, 34, -56, -9)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2(-337, 7)
+rotation = -0.27417132
+physics_material_override = ExtResource("7_cyt5c")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(-106, 128)
+shape = SubResource("RectangleShape2D_6xh4u")
+
+[node name="Icon" type="Sprite2D" parent="StaticBody2D"]
+position = Vector2(-105, 130)
+scale = Vector2(2.9375, 1)
+texture = ExtResource("8_7x1jh")
+
+[node name="StaticBody2D3" type="StaticBody2D" parent="."]
+position = Vector2(468, -3)
+physics_material_override = ExtResource("7_cyt5c")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D3"]
+position = Vector2(-106, 128)
+shape = SubResource("RectangleShape2D_6xh4u")
+
+[node name="Icon" type="Sprite2D" parent="StaticBody2D3"]
+position = Vector2(-105, 130)
+scale = Vector2(2.9375, 1)
+texture = ExtResource("8_7x1jh")
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="."]
+position = Vector2(-337, 7)
+physics_material_override = ExtResource("7_cyt5c")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2"]
+position = Vector2(-298, 134)
+rotation = 0.46335393
+shape = SubResource("RectangleShape2D_6xh4u")
+
+[node name="Icon" type="Sprite2D" parent="StaticBody2D2"]
+position = Vector2(-288, 144)
+rotation = 0.3910037
+scale = Vector2(2.9375, 1)
+texture = ExtResource("8_7x1jh")
 
 [editable path="Ground/GroundBasic33"]
+[editable path="rock"]
+[editable path="rock2"]

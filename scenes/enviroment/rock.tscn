@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://diaamrlicrfi4"]
+
+[ext_resource type="PhysicsMaterial" uid="uid://bpp202scb04tp" path="res://resources/frictionless_physics_material.tres" id="1_syqrr"]
+
+[node name="rock" type="StaticBody2D"]
+z_index = 1
+physics_material_override = ExtResource("1_syqrr")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]

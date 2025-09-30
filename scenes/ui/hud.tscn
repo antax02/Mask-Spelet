@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://dmsqs4k3jx847"]
+
+[ext_resource type="PackedScene" uid="uid://52gps2rhq7b7" path="res://scenes/ui/timer.tscn" id="1_hqnrr"]
+[ext_resource type="PackedScene" uid="uid://dynd43xihgas1" path="res://scenes/ui/escape_menu.tscn" id="2_bo48s"]
+
+[node name="HUD" type="CanvasLayer"]
+
+[node name="Timer" parent="." instance=ExtResource("1_hqnrr")]
+
+[node name="Escape menu" parent="." instance=ExtResource("2_bo48s")]

@@ -26,7 +26,7 @@ func _physics_process(delta: float) -> void:
 	
 	if linear_velocity.length() > max_speed:
 		linear_velocity = linear_velocity.normalized() * max_speed
-	if linear_velocity.length() < min_speed and linear_velocity.length() > 0:
+	if linear_velocity.length() < min_speed and linear_velocity.length() > 0 and is_in_ground:
 		linear_velocity = linear_velocity.normalized() * min_speed
 
 func _on_area_2d_area_entered(area: Area2D) -> void:

@@ -1,10 +1,10 @@
 [gd_scene load_steps=9 format=3 uid="uid://l5xwkiyk7f8m"]
 
 [ext_resource type="PackedScene" uid="uid://bggnwmnubx1wk" path="res://scenes/player/player.tscn" id="1_ipv86"]
-[ext_resource type="PackedScene" uid="uid://dmsqs4k3jx847" path="res://scenes/ui/hud.tscn" id="3_cyt5c"]
+[ext_resource type="PackedScene" uid="uid://dmsqs4k3jx847" path="res://scenes/UI/hud.tscn" id="3_cyt5c"]
 [ext_resource type="PackedScene" uid="uid://dr2whnta44ipn" path="res://scenes/enviroment/ground_basic.tscn" id="3_mr7is"]
 [ext_resource type="PackedScene" uid="uid://diaamrlicrfi4" path="res://scenes/enviroment/rock.tscn" id="5_48ne7"]
-[ext_resource type="Texture2D" uid="uid://dssvwtdwtfl75" path="res://assets/sprites/rock_01.png" id="6_6xh4u"]
+[ext_resource type="Texture2D" uid="uid://dssvwtdwtfl75" path="res://Assets/sprites/rock_01.png" id="6_6xh4u"]
 [ext_resource type="PhysicsMaterial" uid="uid://bpp202scb04tp" path="res://resources/frictionless_physics_material.tres" id="7_cyt5c"]
 [ext_resource type="Texture2D" uid="uid://dbxt8py5723yj" path="res://icon.svg" id="8_7x1jh"]
 
@@ -234,7 +234,7 @@ scale = Vector2(2.9375, 1)
 texture = ExtResource("8_7x1jh")
 
 [node name="StaticBody2D2" type="StaticBody2D" parent="."]
-position = Vector2(-337, 7)
+position = Vector2(-9, -67)
 physics_material_override = ExtResource("7_cyt5c")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2"]

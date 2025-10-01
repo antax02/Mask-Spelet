@@ -108,6 +108,13 @@ theme_override_font_sizes/font_size = 24
 text = "Hampus Vadstöm, Composer"
 horizontal_alignment = 1
 
+[node name="StevenLabel" type="Label" parent="Panel/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("1_oap8i")
+theme_override_font_sizes/font_size = 24
+text = "Steven Yousif, Composer"
+horizontal_alignment = 1
+
 [node name="Spacer3" type="MarginContainer" parent="Panel/MarginContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_constants/margin_top = 40

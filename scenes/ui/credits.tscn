@@ -1,4 +1,26 @@
-[gd_scene format=3 uid="uid://s25l2jr7rxb1"]
+[gd_scene load_steps=3 format=3 uid="uid://s25l2jr7rxb1"]
+
+[ext_resource type="Theme" uid="uid://ymoxu6tkn4db" path="res://resources/ui_theme.tres" id="1_oap8i"]
+
+[sub_resource type="GDScript" id="GDScript_oap8i"]
+resource_name = "credits"
+script/source = "extends Control
+
+@onready var back_button: Button = $Panel/MarginContainer/VBoxContainer/BackButton
+
+
+
+func _ready() -> void:
+	back_button.pressed.connect(_on_back_pressed)
+	ButtonStyler.apply_button_style(back_button)
+	
+func _input(event):
+	if event.is_action_pressed(\"ui_cancel\"):
+		SceneTransition.change_scene(\"res://scenes/ui/main_menu.tscn\")
+
+func _on_back_pressed():
+	SceneTransition.change_scene(\"res://scenes/ui/main_menu.tscn\")
+"
 
 [node name="Credits" type="Control"]
 layout_mode = 3
@@ -7,3 +29,90 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = SubResource("GDScript_oap8i")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="Panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -134.5
+offset_top = -66.0
+offset_right = 134.5
+offset_bottom = 66.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel/MarginContainer"]
+layout_mode = 2
+
+[node name="CreditsLabel" type="Label" parent="Panel/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("1_oap8i")
+theme_override_font_sizes/font_size = 64
+text = "Credits"
+horizontal_alignment = 1
+
+[node name="Spacer" type="MarginContainer" parent="Panel/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_top = 30
+
+[node name="CreatedByLabel" type="Label" parent="Panel/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 60)
+layout_mode = 2
+theme = ExtResource("1_oap8i")
+theme_override_font_sizes/font_size = 36
+text = "Created By"
+horizontal_alignment = 1
+
+[node name="AntonLabel" type="Label" parent="Panel/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("1_oap8i")
+theme_override_font_sizes/font_size = 24
+text = "Anton Axelsson, Developer"
+horizontal_alignment = 1
+
+[node name="AlbinLabel" type="Label" parent="Panel/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("1_oap8i")
+theme_override_font_sizes/font_size = 24
+text = "Albin Folkesson, Developer"
+horizontal_alignment = 1
+
+[node name="Spacer2" type="MarginContainer" parent="Panel/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_top = 30
+
+[node name="ContributorsLabel" type="Label" parent="Panel/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 60)
+layout_mode = 2
+theme = ExtResource("1_oap8i")
+theme_override_font_sizes/font_size = 36
+text = "Contributors"
+horizontal_alignment = 1
+
+[node name="HampusLabel" type="Label" parent="Panel/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("1_oap8i")
+theme_override_font_sizes/font_size = 24
+text = "Hampus Vadstöm, Composer"
+horizontal_alignment = 1
+
+[node name="Spacer3" type="MarginContainer" parent="Panel/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_top = 40
+
+[node name="BackButton" type="Button" parent="Panel/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "Back"

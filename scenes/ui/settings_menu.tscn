@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://0wi7ra3ptidk"]
 
-[ext_resource type="Script" uid="uid://dvkrptcs5ft5n" path="res://scripts/ui/settings_menu.gd" id="1_mhswj"]
+[ext_resource type="Script" uid="uid://stmmgeey2uys" path="res://scripts/ui/settings_menu.gd" id="1_mhswj"]
 [ext_resource type="Theme" uid="uid://ymoxu6tkn4db" path="res://resources/ui_theme.tres" id="1_qwcqe"]
 
 [node name="SettingsMenu" type="Control"]
@@ -93,13 +93,13 @@ custom_minimum_size = Vector2(200, 25)
 layout_mode = 2
 value = 100.0
 
-[node name="CheckBox" type="CheckBox" parent="Panel/MarginContainer/VBoxContainer"]
+[node name="FullscreenCheckBox" type="CheckBox" parent="Panel/MarginContainer/VBoxContainer"]
 layout_mode = 2
 theme = ExtResource("1_qwcqe")
 theme_override_font_sizes/font_size = 24
 text = "Fullscreen"
 
-[node name="CheckBox2" type="CheckBox" parent="Panel/MarginContainer/VBoxContainer"]
+[node name="screenshakeCheckBox" type="CheckBox" parent="Panel/MarginContainer/VBoxContainer"]
 layout_mode = 2
 theme = ExtResource("1_qwcqe")
 theme_override_font_sizes/font_size = 24

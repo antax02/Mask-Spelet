@@ -7,10 +7,10 @@
 [ext_resource type="AudioStream" uid="uid://ctsqwxlu3qs05" path="res://assets/audio/sfx/rock_smash_02.wav" id="4_lvxji"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_gptef"]
-radius = 25.0
+radius = 21.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_dovo2"]
-radius = 19.0
+radius = 16.0
 
 [node name="Player" type="RigidBody2D" groups=["player"]]
 z_index = 1

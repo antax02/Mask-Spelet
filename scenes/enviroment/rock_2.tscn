@@ -1,43 +1,20 @@
-[gd_scene format=3 uid="uid://duj85t2set7o1"]
+[gd_scene load_steps=2 format=3 uid="uid://duj85t2set7o1"]
 
-[node name="Node2D" type="Node2D"]
+[ext_resource type="PhysicsMaterial" uid="uid://bpp202scb04tp" path="res://resources/frictionless_physics_material.tres" id="1_0uspq"]
+
+[node name="Node2D" type="StaticBody2D"]
+physics_material_override = ExtResource("1_0uspq")
 
 [node name="Polygon2D" type="Polygon2D" parent="."]
-color = Color(0.30692267, 0.3069227, 0.3069227, 1)
+color = Color(0.4700758, 0.47007585, 0.47007567, 1)
 polygon = PackedVector2Array(17, -120, 132, -61, 96, 25, 25, 30, -10, 61, -76, -12, -19, -50, -31, -114)
 
 [node name="Polygon2D2" type="Polygon2D" parent="."]
-color = Color(0.3403393, 0.34033933, 0.3403393, 1)
+color = Color(0.5409909, 0.5409904, 0.5409904, 1)
 polygon = PackedVector2Array(17, -111, 123, -55, 89, 22, 26, 18, -12, 48, -68, -12, -13, -48, -20, -108)
 
-[node name="Polygon2D3" type="Polygon2D" parent="."]
-color = Color(0.30588236, 0.30588236, 0.30588236, 1)
-polygon = PackedVector2Array(-20, -76, 37, -62, 48, -21, 78, 4, 86, 23, 91, 22, 83, 3, 53, -21, 46, -67, -19, -79)
-
-[node name="Polygon2D4" type="Polygon2D" parent="."]
-color = Color(0.30588236, 0.30588236, 0.30588236, 1)
-polygon = PackedVector2Array(-56, 3, -23, -1, 8, -28, 50, -21, 53, -17, 9, -25, -20, 3, -55, 5)
-
-[node name="Polygon2D5" type="Polygon2D" parent="."]
-color = Color(0.42745098, 0.42745098, 0.42745098, 1)
-polygon = PackedVector2Array(-16, -105, 15, -109, 44, -94, 41, -93, 15, -106, -16, -101)
-
 [node name="Polygon2D6" type="Polygon2D" parent="."]
-color = Color(0.42745098, 0.42745098, 0.42745098, 1)
-polygon = PackedVector2Array(-14, -72, 34, -61, 35, -56, 9, -64, -12, -66)
 
-[node name="Polygon2D7" type="Polygon2D" parent="."]
-color = Color(0.427493, 0.42749307, 0.42749307, 1)
-polygon = PackedVector2Array(53, -13, 75, 4, 78, 14, 70, 4, 47, -14)
-
-[node name="Polygon2D8" type="Polygon2D" parent="."]
-color = Color(0.28235295, 0.28235295, 0.28235295, 1)
-polygon = PackedVector2Array(-44, 8, -12, 43, 24, 17, 34, 10, -10, 26, -25, 15)
-
-[node name="Polygon2D9" type="Polygon2D" parent="."]
-color = Color(0.28235295, 0.28235295, 0.28235295, 1)
-polygon = PackedVector2Array(-63, -12, -52, -1, -24, -3, -14, -11, -35, -9, -49, -14, -51, -21, -58, -17)
-
-[node name="Polygon2D10" type="Polygon2D" parent="."]
-color = Color(0.28485027, 0.28485027, 0.28485027, 1)
-polygon = PackedVector2Array(56, -22, 86, 1, 90, 12, 95, 1, 88, -2, 72, -21, 58, -25)
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+visible = false
+polygon = PackedVector2Array(-76, -12, -10, 61, 25, 30, 96, 25, 132, -61, 17, -121, -31, -114, -19, -50)

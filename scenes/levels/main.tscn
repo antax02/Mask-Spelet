@@ -21,10 +21,6 @@ max_speed = 750.0
 position = Vector2(4031, -3729)
 scale = Vector2(15.293771, 4.865671)
 
-[node name="GroundBasic2" parent="1" instance=ExtResource("3_y0acb")]
-position = Vector2(1.1920929e-07, -405)
-scale = Vector2(1.2267375, 4.1196475)
-
 [node name="GroundBasic5" parent="1" instance=ExtResource("3_y0acb")]
 position = Vector2(-550, -1026)
 
@@ -166,6 +162,27 @@ polygon = PackedVector2Array(-5109, 17, -2118, 24, -1734, -4, -1526, 0, -1125, 5
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="1/Area2D"]
 polygon = PackedVector2Array(-5106, -11, -2114, 7, -1733, -29, -1527, -17, -1126, 30, -902, 6, -433, -10, 155, 14, 1116, -32, 1773, 29, 2346, 21, 3008, -18, 4823, 49, 5029, 2451, -5057, 2493)
+
+[node name="Area2D2" type="Area2D" parent="1" groups=["ground"]]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="1/Area2D2"]
+polygon = PackedVector2Array(-90, -627, 10, -649, 131, -641, 130, -625, 124, -625, 122, -533, 95, -486, 90, -371, 49, -265, 19, -211, 5, -234, -31, -189, -52, -222, -69, -360, -74, -476, -81, -497, -87, -614)
+
+[node name="Polygon2D" type="Polygon2D" parent="1/Area2D2"]
+color = Color(0.45882353, 0.39215687, 0.3254902, 1)
+polygon = PackedVector2Array(-87, -615, -81, -497, -74, -476, -70, -359, -62, -362, -37, -289, -24, -221, 0, -254, 20, -247, 58, -310, 65, -308, 90, -371, 95, -486, 122, -533, 124, -627, 11, -634)
+
+[node name="Polygon2D2" type="Polygon2D" parent="1/Area2D2"]
+color = Color(0.4117647, 0.34901962, 0.2901961, 1)
+polygon = PackedVector2Array(-70, -360, -52, -222, -31, -188, 5, -234, 19, -212, 49, -266, 65, -309, 58, -311, 20, -247, 1, -255, -24, -223, -37, -289, -62, -362)
+
+[node name="Polygon2D3" type="Polygon2D" parent="1/Area2D2"]
+color = Color(0.45882353, 0.5568628, 0.3372549, 1)
+polygon = PackedVector2Array(-88, -614, -90, -627, 10, -649, 131, -641, 130, -625, 11, -633)
+
+[node name="Polygon2D4" type="Polygon2D" parent="1/Area2D2"]
+color = Color(0.40392157, 0.49411765, 0.2901961, 1)
+polygon = PackedVector2Array(-87, -616, -87, -613, 11, -631, 124, -624, 124, -628, 10, -633)
 
 [node name="2" type="Node" parent="."]
 
@@ -337,11 +354,6 @@ position = Vector2(2598, -7416)
 position = Vector2(2905, -8058)
 rotation = 0.96984035
 
-[node name="Wind6" parent="2" instance=ExtResource("6_b6bv0")]
-position = Vector2(400, -260)
-rotation = 0.7380212
-blow_force = 300.0
-
 [node name="Wind3" parent="2" instance=ExtResource("6_b6bv0")]
 position = Vector2(6764, -8921)
 
@@ -349,6 +361,9 @@ position = Vector2(6764, -8921)
 position = Vector2(7403, -7446)
 
 [node name="Area2D" type="Area2D" parent="2" groups=["ground"]]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="2/Area2D"]
+polygon = PackedVector2Array(-405, -743, -404, -733, -400, -733, -383, -651, -350, -629, -321, -592, -303, -615, -283, -577, -256, -627, -240, -590, -227, -614, -200, -578, -138, -682, -133, -724, -130, -724, -126, -737, -179, -751, -246, -736, -322, -750)
 
 [node name="Polygon2D" type="Polygon2D" parent="2/Area2D"]
 color = Color(0.45882353, 0.5568628, 0.3372549, 1)
@@ -358,16 +373,13 @@ polygon = PackedVector2Array(-405, -743, -322, -750, -245, -736, -179, -750, -12
 color = Color(0.40392157, 0.49411765, 0.2901961, 1)
 polygon = PackedVector2Array(-404, -735, -320, -737, -245, -724, -178, -741, -129, -726, -130, -724, -178, -739, -244, -722, -321, -735, -404, -733)
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="2/Area2D"]
-polygon = PackedVector2Array(-405, -743, -404, -733, -400, -733, -383, -651, -350, -629, -321, -592, -303, -615, -283, -577, -256, -627, -240, -590, -227, -614, -200, -578, -138, -682, -133, -724, -130, -724, -126, -737, -179, -751, -246, -736, -322, -750)
-
 [node name="Polygon2D3" type="Polygon2D" parent="2/Area2D"]
 color = Color(0.45882353, 0.39215687, 0.3254902, 1)
 polygon = PackedVector2Array(-400, -733, -321, -735, -244, -722, -178, -739, -133, -725, -138, -682, -179, -615, -199, -577, -227, -614, -239, -589, -256, -627, -283, -577, -303, -615, -321, -591, -351, -630, -384, -652)
 
 [node name="Polygon2D4" type="Polygon2D" parent="2/Area2D"]
 color = Color(0.4117647, 0.34901962, 0.2901961, 1)
-polygon = PackedVector2Array(-386, -662, -384, -652, -351, -630, -321, -591, -303, -615, -283, -577, -256, -627, -239, -589, -227, -614, -199, -577, -179, -615, -170, -630, -177, -634, -200, -599, -226, -633, -236, -623, -249, -639, -261, -640, -278, -612, -285, -623, -300, -629, -321, -607, -343, -640)
+polygon = PackedVector2Array(-386, -662, -384, -651, -351, -629, -321, -591, -303, -615, -283, -577, -256, -627, -239, -589, -227, -614, -199, -577, -179, -615, -170, -630, -177, -634, -200, -599, -226, -633, -236, -623, -249, -639, -261, -640, -278, -612, -285, -623, -300, -629, -321, -607, -343, -640)
 
 [node name="HUD" parent="." instance=ExtResource("2_y0acb")]
 

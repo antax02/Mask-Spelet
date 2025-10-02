@@ -2,13 +2,12 @@ extends Node
 
 const SETTINGS_FILE = "user://settings.cfg"
 
-var master_volume = 80.0
-var music_volume = 70.0
-var sfx_volume = 80.0
+var master_volume = 50.0
+var music_volume = 100.0
+var sfx_volume = 100.0
 
 var fullscreen = false
 var screen_shake = true
-var particles_enabled = true
 
 func _ready():
 	load_settings()
@@ -33,7 +32,6 @@ func save_settings():
 	
 	config.set_value("game", "fullscreen", fullscreen)
 	config.set_value("game", "screen_shake", screen_shake)
-	config.set_value("game", "particles_enabled", particles_enabled)
 	
 	config.save(SETTINGS_FILE)
 
@@ -48,4 +46,3 @@ func load_settings():
 	
 	fullscreen = config.get_value("game", "fullscreen", fullscreen)
 	screen_shake = config.get_value("game", "screen_shake", screen_shake)
-	particles_enabled = config.get_value("game", "particles_enabled", particles_enabled)

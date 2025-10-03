@@ -21,10 +21,11 @@ buses/default_bus_layout="res://resources/default_bus_layout.tres"
 
 [autoload]
 
-Global="*res://scripts/util/global.gd"
+PauseManager="*res://scripts/util/pause_manager.gd"
 SceneTransition="*res://scripts/ui/scene_transition.gd"
 ButtonStyler="*res://scripts/util/button_styler.gd"
 SettingsManager="*res://scripts/util/settings_manager.gd"
+ParticleManager="*res://scripts/util/particle_manager.gd"
 
 [display]
 

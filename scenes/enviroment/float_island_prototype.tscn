@@ -2,6 +2,10 @@
 
 [node name="Node2D" type="Area2D" groups=["ground"]]
 
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+position = Vector2(-631.4, -422.9)
+polygon = PackedVector2Array(265, 264, 480, 205, 702, 239, 832, 286, 987, 292, 979, 307, 970, 310, 955, 390, 849, 618, 799, 553, 719, 712, 668, 664, 621, 722, 542, 593, 468, 656, 382, 550, 298, 511, 275, 281, 266, 283)
+
 [node name="Polygon2D" type="Polygon2D" parent="."]
 position = Vector2(-631.4, -422.9)
 color = Color(0.45882353, 0.39215687, 0.3254902, 1)
@@ -39,8 +43,3 @@ polygon = PackedVector2Array(296, 496, 298, 510, 382, 550, 468, 656, 542, 593, 6
 position = Vector2(-631.4, -422.9)
 color = Color(0.40392157, 0.49411765, 0.2901961, 1)
 polygon = PackedVector2Array(267, 279, 484, 229, 717, 261, 829, 302, 977, 306, 976, 310, 828, 307, 716, 265, 484, 233, 266, 283)
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
-visible = false
-position = Vector2(-631.4, -422.9)
-polygon = PackedVector2Array(265, 264, 480, 205, 702, 239, 832, 286, 987, 292, 979, 307, 970, 310, 955, 390, 849, 618, 799, 553, 719, 712, 668, 664, 621, 722, 542, 593, 468, 656, 382, 550, 298, 511, 275, 281, 266, 283)

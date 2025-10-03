@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://dfteof1vqdacg"]
+[gd_scene load_steps=10 format=3 uid="uid://dfteof1vqdacg"]
 
 [ext_resource type="PackedScene" uid="uid://bggnwmnubx1wk" path="res://scenes/player/player.tscn" id="1_2vj2h"]
 [ext_resource type="PackedScene" uid="uid://dmsqs4k3jx847" path="res://scenes/ui/hud.tscn" id="2_y0acb"]
@@ -8,11 +8,12 @@
 [ext_resource type="PackedScene" uid="uid://58tl2hgk0swg" path="res://scenes/enviroment/float_island_prototype.tscn" id="5_ubwgw"]
 [ext_resource type="PackedScene" uid="uid://bdbrjrh82eloc" path="res://scenes/enviroment/wind.tscn" id="6_b6bv0"]
 [ext_resource type="PackedScene" uid="uid://duj85t2set7o1" path="res://scenes/enviroment/rock_2.tscn" id="6_vkq25"]
+[ext_resource type="PhysicsMaterial" uid="uid://bpp202scb04tp" path="res://resources/frictionless_physics_material.tres" id="7_7lrji"]
 
 [node name="Main" type="Node2D"]
 
 [node name="Player" parent="." instance=ExtResource("1_2vj2h")]
-position = Vector2(-4, 45)
+position = Vector2(-4, 291)
 max_speed = 750.0
 
 [node name="1" type="Node" parent="."]
@@ -22,6 +23,7 @@ position = Vector2(4031, -3729)
 scale = Vector2(15.293771, 4.865671)
 
 [node name="GroundBasic5" parent="1" instance=ExtResource("3_y0acb")]
+modulate = Color(1, 1, 1, 0.1764706)
 position = Vector2(-550, -1026)
 
 [node name="GroundBasic6" parent="1" instance=ExtResource("3_y0acb")]
@@ -133,10 +135,11 @@ position = Vector2(-608, -791)
 scale = Vector2(0.6250554, 0.6092179)
 
 [node name="Node2D2" parent="1" instance=ExtResource("6_vkq25")]
-position = Vector2(-533, -781)
+position = Vector2(-511, -779)
 scale = Vector2(0.33372116, 0.3923237)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="1"]
+physics_material_override = ExtResource("7_7lrji")
 
 [node name="Polygon2D" type="Polygon2D" parent="1/StaticBody2D"]
 z_index = 1
@@ -147,6 +150,9 @@ polygon = PackedVector2Array(-2997, -4, -3507, -1025, -3752, -1099, -4011, -1884
 polygon = PackedVector2Array(-6305, -2620, -4706, -2772, -4564, -2469, -4448, -2444, -4228, -2208, -4116, -1885, -4013, -1882, -3754, -1096, -3509, -1024, -2998, -5, -3080, 552, -2348, 1379, -1510, 1255, -569, 1195, 207, 1436, 692, 1236, 1996, 1347, 3277, 1106, 4426, 990, 4752, 46, 6591, -109, 7376, -288, 8161, -686, 8533, -710, 9194, -1535, 9959, -1614, 10664, -2231, 12228, -2086, 12864, -2017, 13364, -1965, 13547, 2196, -6507, 2344)
 
 [node name="Area2D" type="Area2D" parent="1" groups=["ground"]]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="1/Area2D"]
+polygon = PackedVector2Array(-5106, -11, -2114, 7, -1733, -29, -1527, -17, -1126, 30, -902, 6, -433, -10, 155, 14, 1116, -32, 1773, 29, 2346, 21, 3008, -18, 4823, 49, 5029, 2451, -5057, 2493)
 
 [node name="Polygon2D" type="Polygon2D" parent="1/Area2D"]
 color = Color(0.45882353, 0.39215687, 0.3254902, 1)
@@ -159,9 +165,6 @@ polygon = PackedVector2Array(-5107, -11, -2615, -1, -2117, 7, -1734, -29, -1527,
 [node name="Polygon2D3" type="Polygon2D" parent="1/Area2D"]
 color = Color(0.40392157, 0.49411765, 0.2901961, 1)
 polygon = PackedVector2Array(-5109, 17, -2118, 24, -1734, -4, -1526, 0, -1125, 55, -900, 22, -438, 7, 155, 33, 1117, -16, 1773, 46, 2348, 38, 3004, 0, 4827, 68, 4825, 72, 3003, 3, 2347, 41, 1772, 49, 1116, -13, 155, 36, -438, 10, -900, 25, -1126, 58, -1528, 4, -1734, -2, -2118, 27, -5109, 20)
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="1/Area2D"]
-polygon = PackedVector2Array(-5106, -11, -2114, 7, -1733, -29, -1527, -17, -1126, 30, -902, 6, -433, -10, 155, 14, 1116, -32, 1773, 29, 2346, 21, 3008, -18, 4823, 49, 5029, 2451, -5057, 2493)
 
 [node name="Area2D2" type="Area2D" parent="1" groups=["ground"]]
 

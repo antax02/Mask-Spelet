@@ -1,16 +1,20 @@
-[gd_scene load_steps=8 format=3 uid="uid://bggnwmnubx1wk"]
+[gd_scene load_steps=10 format=3 uid="uid://bggnwmnubx1wk"]
 
 [ext_resource type="Script" uid="uid://ct47vaipg3wj6" path="res://scripts/player/player.gd" id="1_qbvv4"]
 [ext_resource type="PackedScene" uid="uid://nqfmptmdr0p0" path="res://scenes/player/procedural_animation.tscn" id="2_gptef"]
 [ext_resource type="Script" uid="uid://dly3wj02xs5q5" path="res://scripts/player/camera.gd" id="2_p47bc"]
 [ext_resource type="AudioStream" uid="uid://rkllmvd2dnd4" path="res://assets/audio/sfx/rock_smash_01.wav" id="3_gmlin"]
 [ext_resource type="AudioStream" uid="uid://ctsqwxlu3qs05" path="res://assets/audio/sfx/rock_smash_02.wav" id="4_lvxji"]
+[ext_resource type="AudioStream" uid="uid://iwg4nc08dbjr" path="res://assets/audio/sfx/earth_rumble.wav" id="6_75vfm"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_gptef"]
 radius = 21.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_dovo2"]
 radius = 16.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_p47bc"]
+radius = 13.0
 
 [node name="Player" type="RigidBody2D" groups=["player"]]
 z_index = 1
@@ -32,6 +36,11 @@ segment_length = 15.0
 [node name="PhysicsCollision" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_dovo2")
 
+[node name="EffectsArea" type="Area2D" parent="."]
+
+[node name="EffectsCollision" type="CollisionShape2D" parent="EffectsArea"]
+shape = SubResource("CircleShape2D_p47bc")
+
 [node name="RockSmashEntranceSFX" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_gmlin")
 bus = &"SFX"
@@ -40,5 +49,11 @@ bus = &"SFX"
 stream = ExtResource("4_lvxji")
 bus = &"SFX"
 
+[node name="RumbleSFX" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_75vfm")
+bus = &"SFX"
+
 [connection signal="area_entered" from="DetectionArea" to="." method="_on_area_2d_area_entered"]
 [connection signal="area_exited" from="DetectionArea" to="." method="_on_area_2d_area_exited"]
+[connection signal="area_entered" from="EffectsArea" to="." method="_on_effects_area_area_entered"]
+[connection signal="area_exited" from="EffectsArea" to="." method="_on_effects_area_area_exited"]

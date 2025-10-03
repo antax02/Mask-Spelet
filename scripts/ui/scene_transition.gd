@@ -3,7 +3,7 @@ extends CanvasLayer
 @onready var color_rect = ColorRect.new()
 
 const FADE_COLOR = Color(0.05, 0.05, 0.1, 1.0)
-const FADE_DURATION = 0.4
+const FADE_DURATION = 0.2
 
 func _ready():
 	color_rect.color = FADE_COLOR

@@ -9,7 +9,7 @@ func _ready():
 	process_mode = Node.PROCESS_MODE_ALWAYS
 	visible = false
 	
-	Global.game_paused.connect(_on_game_paused)
+	PauseManager.game_paused.connect(_on_game_paused)
 	resume_button.pressed.connect(_on_resume_pressed)
 	restart_button.pressed.connect(_on_restart_pressed)
 	menu_button.pressed.connect(_on_menu_pressed)
@@ -19,7 +19,7 @@ func _ready():
 
 func _input(event):
 	if event.is_action_pressed("ui_cancel"):
-		Global.toggle_pause()
+		PauseManager.toggle_pause()
 
 
 func _on_game_paused(paused: bool):
@@ -31,11 +31,11 @@ func get_all_buttons() -> Array[Button]:
 
 
 func _on_resume_pressed():
-	Global.resume_game()
+	PauseManager.resume_game()
 
 
 func _on_restart_pressed():
-	Global.is_paused = false
+	PauseManager.is_paused = false
 	get_tree().paused = false
 	
 	var current_scene = get_tree().current_scene.scene_file_path
@@ -43,7 +43,7 @@ func _on_restart_pressed():
 
 
 func _on_menu_pressed():
-	Global.is_paused = false
+	PauseManager.is_paused = false
 	get_tree().paused = false
 	
 	SceneTransition.change_scene("res://scenes/ui/main_menu.tscn")

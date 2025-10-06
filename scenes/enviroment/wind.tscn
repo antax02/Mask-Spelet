@@ -1,7 +1,7 @@
 [gd_scene load_steps=22 format=3 uid="uid://bdbrjrh82eloc"]
 
 [ext_resource type="Script" uid="uid://jp04ifg2sptd" path="res://scripts/enviorment/wind.gd" id="1_vqgfe"]
-[ext_resource type="Texture2D" uid="uid://cnbp7k8g6uwl8" path="res://assets/sprites/wind_01.png" id="3_rl53s"]
+[ext_resource type="Texture2D" uid="uid://cnbp7k8g6uwl8" path="res://Assets/sprites/wind_01.png" id="3_rl53s"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vki8m"]
 size = Vector2(256, 256)
@@ -135,7 +135,6 @@ animations = [{
 
 [node name="Wind" type="Area2D" groups=["wind"]]
 script = ExtResource("1_vqgfe")
-blow_force = 20000.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0.5000038, 0.50000095)

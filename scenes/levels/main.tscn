@@ -13,7 +13,7 @@
 [node name="Main" type="Node2D"]
 
 [node name="Player" parent="." instance=ExtResource("1_2vj2h")]
-position = Vector2(-30369, -5482)
+position = Vector2(-26784, 38)
 max_speed = 750.0
 
 [node name="1" type="Node" parent="."]
@@ -569,5 +569,11 @@ position = Vector2(-28702, -8572)
 [node name="StaticBody2D3" parent="." instance=ExtResource("4_u81e1")]
 position = Vector2(-29759, -4035)
 scale = Vector2(1, 0.16000003)
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_left = -36349.0
+offset_top = -15259.0
+offset_right = -35785.0
+offset_bottom = 483.0
 
 [editable path="2/GroundBasic33"]

@@ -13,7 +13,7 @@
 [node name="Main" type="Node2D"]
 
 [node name="Player" parent="." instance=ExtResource("1_2vj2h")]
-position = Vector2(-26784, 38)
+position = Vector2(-32078, -19184)
 max_speed = 750.0
 
 [node name="1" type="Node" parent="."]
@@ -393,8 +393,8 @@ position = Vector2(-27182, 229)
 scale = Vector2(49.201515, 10.561625)
 
 [node name="GroundBasic32" parent="hell" instance=ExtResource("3_y0acb")]
-position = Vector2(-28298, -11811)
-scale = Vector2(49.201515, 10.561625)
+position = Vector2(-28331.002, -11437)
+scale = Vector2(49.699883, 4.4712143)
 
 [node name="GroundBasic7" parent="hell" instance=ExtResource("3_y0acb")]
 position = Vector2(-27202, -856)
@@ -566,14 +566,233 @@ position = Vector2(-28825, -8623)
 [node name="rock11" parent="hell" instance=ExtResource("5_b6bv0")]
 position = Vector2(-28702, -8572)
 
-[node name="StaticBody2D3" parent="." instance=ExtResource("4_u81e1")]
+[node name="StaticBody2D3" parent="hell" instance=ExtResource("4_u81e1")]
 position = Vector2(-29759, -4035)
 scale = Vector2(1, 0.16000003)
 
 [node name="ColorRect" type="ColorRect" parent="."]
 offset_left = -36349.0
-offset_top = -15259.0
+offset_top = -11535.0
 offset_right = -35785.0
 offset_bottom = 483.0
+
+[node name="GroundLevel" type="Node" parent="."]
+
+[node name="GroundBasic" parent="GroundLevel" instance=ExtResource("3_y0acb")]
+position = Vector2(-28287, -12087.999)
+scale = Vector2(1, 2.28)
+
+[node name="GroundBasic2" parent="GroundLevel" instance=ExtResource("3_y0acb")]
+position = Vector2(-28473, -12487)
+rotation = -0.63795894
+scale = Vector2(1, 2.28)
+
+[node name="Node2D" parent="GroundLevel" instance=ExtResource("6_vkq25")]
+position = Vector2(-29165, -12467)
+rotation = -0.42306215
+scale = Vector2(2.7690918, 1)
+
+[node name="GroundBasic3" parent="GroundLevel" instance=ExtResource("3_y0acb")]
+position = Vector2(-29586.002, -12481.999)
+rotation = -1.4982228
+scale = Vector2(1.455879, 5.5200295)
+
+[node name="GroundBasic4" parent="GroundLevel" instance=ExtResource("3_y0acb")]
+position = Vector2(-30528.002, -12687.001)
+rotation = -1.1971649
+scale = Vector2(1.455879, 5.52003)
+
+[node name="GroundBasic5" parent="GroundLevel" instance=ExtResource("3_y0acb")]
+position = Vector2(-31261.002, -13079.998)
+rotation = -0.7309079
+scale = Vector2(1.455879, 5.52003)
+
+[node name="GroundBasic6" parent="GroundLevel" instance=ExtResource("3_y0acb")]
+position = Vector2(-31762.002, -13785.998)
+rotation = -0.37298274
+scale = Vector2(1.455879, 5.5200295)
+
+[node name="GroundBasic7" parent="GroundLevel" instance=ExtResource("3_y0acb")]
+position = Vector2(-31916.996, -14668.001)
+rotation = 0.0104177
+scale = Vector2(1.4558791, 5.5200295)
+
+[node name="Wind" parent="GroundLevel" instance=ExtResource("6_b6bv0")]
+position = Vector2(-31933, -15277)
+rotation = 1.5620341
+scale = Vector2(1, 3.2826953)
+blow_force = 250.0
+
+[node name="GroundBasic8" parent="GroundLevel" instance=ExtResource("3_y0acb")]
+position = Vector2(-31903, -15631)
+scale = Vector2(2.600078, 2.88)
+
+[node name="StaticBody2D4" parent="GroundLevel" instance=ExtResource("4_u81e1")]
+position = Vector2(-30059, -11214)
+scale = Vector2(17.72, 1)
+
+[node name="StaticBody2D5" parent="GroundLevel" instance=ExtResource("4_u81e1")]
+position = Vector2(-22801, -11214)
+scale = Vector2(17.72, 1)
+
+[node name="GroundBasic9" parent="GroundLevel" instance=ExtResource("3_y0acb")]
+position = Vector2(-31774, -16052)
+rotation = 0.4582091
+scale = Vector2(1.36, 2.4)
+
+[node name="GroundBasic10" parent="GroundLevel" instance=ExtResource("3_y0acb")]
+position = Vector2(-31051.002, -15856.001)
+rotation = -0.6512717
+scale = Vector2(1.36, 4.9863477)
+
+[node name="GroundBasic11" parent="GroundLevel" instance=ExtResource("3_y0acb")]
+position = Vector2(-29966, -15710)
+rotation = 0.8518486
+scale = Vector2(1.36, 4.9863477)
+
+[node name="GroundBasic12" parent="GroundLevel" instance=ExtResource("3_y0acb")]
+position = Vector2(-30593.002, -15287)
+rotation = -1.4964086
+scale = Vector2(2.1387112, 2.9269724)
+
+[node name="rock" parent="GroundLevel" instance=ExtResource("5_b6bv0")]
+position = Vector2(-32096, -15932)
+rotation = 0.47433072
+scale = Vector2(2.0399218, 1)
+
+[node name="Node2D2" parent="GroundLevel" instance=ExtResource("6_vkq25")]
+position = Vector2(-31719.998, -15877.999)
+rotation = -1.136343
+scale = Vector2(0.99999994, 0.99999994)
+
+[node name="Node2D3" parent="GroundLevel" instance=ExtResource("6_vkq25")]
+position = Vector2(-30999, -16140)
+
+[node name="rock2" parent="GroundLevel" instance=ExtResource("5_b6bv0")]
+position = Vector2(-30768, -15986)
+
+[node name="Node2D4" parent="GroundLevel" instance=ExtResource("6_vkq25")]
+position = Vector2(-30334, -15789)
+
+[node name="rock3" parent="GroundLevel" instance=ExtResource("5_b6bv0")]
+position = Vector2(-30574, -15527)
+
+[node name="rock4" parent="GroundLevel" instance=ExtResource("5_b6bv0")]
+position = Vector2(-30759, -15133)
+
+[node name="Node2D5" parent="GroundLevel" instance=ExtResource("6_vkq25")]
+position = Vector2(-30528, -15084)
+
+[node name="rock5" parent="GroundLevel" instance=ExtResource("5_b6bv0")]
+position = Vector2(-32041, -14220)
+
+[node name="Node2D6" parent="GroundLevel" instance=ExtResource("6_vkq25")]
+position = Vector2(-31079, -15279)
+rotation = -2.9853013
+scale = Vector2(2.0471094, 0.25546867)
+
+[node name="Wind2" parent="GroundLevel" instance=ExtResource("6_b6bv0")]
+position = Vector2(-29565, -16071)
+rotation = -1.3196828
+scale = Vector2(1.3828164, 0.9550097)
+blow_force = 1000.0
+
+[node name="GroundBasic13" parent="GroundLevel" instance=ExtResource("3_y0acb")]
+position = Vector2(-30232.002, -16465.002)
+rotation = 0.5853816
+scale = Vector2(6.1600003, 1.4000001)
+
+[node name="GroundBasic14" parent="GroundLevel" instance=ExtResource("3_y0acb")]
+position = Vector2(-30856, -16832)
+
+[node name="GroundBasic15" parent="GroundLevel" instance=ExtResource("3_y0acb")]
+position = Vector2(-31323, -17012)
+
+[node name="GroundBasic16" parent="GroundLevel" instance=ExtResource("3_y0acb")]
+position = Vector2(-32373, -16948)
+rotation = 0.08166975
+scale = Vector2(1, 10.28)
+
+[node name="Node2D7" parent="GroundLevel" instance=ExtResource("6_vkq25")]
+position = Vector2(-32606.002, -17111)
+rotation = 0.5608965
+
+[node name="Node2D8" parent="GroundLevel" instance=ExtResource("6_vkq25")]
+position = Vector2(-32610, -16632)
+
+[node name="rock6" parent="GroundLevel" instance=ExtResource("5_b6bv0")]
+position = Vector2(-32479, -16976)
+
+[node name="Node2D9" parent="GroundLevel" instance=ExtResource("6_vkq25")]
+position = Vector2(-32530, -16233)
+
+[node name="Node2D10" parent="GroundLevel" instance=ExtResource("6_vkq25")]
+position = Vector2(-32626, -17350)
+rotation = 0.8486237
+
+[node name="Node2D11" parent="GroundLevel" instance=ExtResource("6_vkq25")]
+position = Vector2(-32671, -16809)
+
+[node name="rock7" parent="GroundLevel" instance=ExtResource("5_b6bv0")]
+position = Vector2(-32530, -16466)
+
+[node name="GroundBasic17" parent="GroundLevel" instance=ExtResource("3_y0acb")]
+position = Vector2(-31112.002, -16942)
+rotation = -3.1161988
+
+[node name="rock8" parent="GroundLevel" instance=ExtResource("5_b6bv0")]
+position = Vector2(-31733.002, -17640)
+rotation = -0.2365964
+scale = Vector2(5.221437, 4.354994)
+
+[node name="GroundBasic18" parent="GroundLevel" instance=ExtResource("3_y0acb")]
+position = Vector2(-32273, -18421.002)
+rotation = 0.09346079
+scale = Vector2(2.4, 3.9120708)
+
+[node name="GroundBasic19" parent="GroundLevel" instance=ExtResource("3_y0acb")]
+position = Vector2(-32097.002, -19256)
+rotation = 1.5620992
+scale = Vector2(2.4, 2.0766795)
+
+[node name="GroundBasic21" parent="GroundLevel" instance=ExtResource("3_y0acb")]
+position = Vector2(-32436.002, -19653)
+rotation = 1.5620992
+scale = Vector2(2.4, 2.0766795)
+
+[node name="GroundBasic22" parent="GroundLevel" instance=ExtResource("3_y0acb")]
+position = Vector2(-32458.002, -20203)
+rotation = 1.5620992
+scale = Vector2(2.4, 2.0766795)
+
+[node name="GroundBasic23" parent="GroundLevel" instance=ExtResource("3_y0acb")]
+position = Vector2(-31787, -20064.002)
+rotation = 1.5620992
+scale = Vector2(2.4, 2.0766795)
+
+[node name="GroundBasic20" parent="GroundLevel" instance=ExtResource("3_y0acb")]
+position = Vector2(-31704, -18245.002)
+rotation = -0.22172406
+scale = Vector2(0.54937506, 7.775929)
+
+[node name="rock9" parent="GroundLevel" instance=ExtResource("5_b6bv0")]
+position = Vector2(-32398, -18199)
+
+[node name="rock10" parent="GroundLevel" instance=ExtResource("5_b6bv0")]
+position = Vector2(-32176, -18185)
+
+[node name="StaticBody2D3" parent="GroundLevel" instance=ExtResource("4_u81e1")]
+position = Vector2(-31939, -18320)
+rotation = 1.5329791
+scale = Vector2(1.5604298, 0.28)
+
+[node name="Node2D12" parent="GroundLevel" instance=ExtResource("6_vkq25")]
+position = Vector2(-32156, -20296)
+
+[node name="rock11" parent="GroundLevel" instance=ExtResource("5_b6bv0")]
+position = Vector2(-32126, -20051)
+
+[node name="Node2D13" parent="GroundLevel" instance=ExtResource("6_vkq25")]
+position = Vector2(-32134, -19813)
 
 [editable path="2/GroundBasic33"]

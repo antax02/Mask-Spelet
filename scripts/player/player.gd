@@ -10,7 +10,7 @@ signal finished_level
 @onready var rock_smash_exit_sfx: AudioStreamPlayer = $RockSmashExitSFX
 @onready var rumble_sfx: AudioStreamPlayer = $RumbleSFX
 
-var is_in_ground = false
+var ground_count = 0
 var default_gravity_scale: float
 
 func _ready():
@@ -22,7 +22,7 @@ func _physics_process(delta: float) -> void:
 	var mouse_pos = get_global_mouse_position()
 	var direction = (mouse_pos - global_position).normalized()
 	
-	if is_in_ground:
+	if ground_count > 0:
 		gravity_scale = 0
 		linear_velocity += direction * acceleration * delta
 	else:
@@ -30,7 +30,7 @@ func _physics_process(delta: float) -> void:
 	
 	if linear_velocity.length() > max_speed:
 		linear_velocity = linear_velocity.normalized() * max_speed
-	if linear_velocity.length() < min_speed and linear_velocity.length() > 0 and is_in_ground:
+	if linear_velocity.length() < min_speed and linear_velocity.length() > 0 and ground_count > 0:
 		linear_velocity = linear_velocity.normalized() * min_speed
 	
 	if rumble_sfx.playing:
@@ -41,7 +41,7 @@ func _physics_process(delta: float) -> void:
 
 func _on_area_2d_area_entered(area: Area2D) -> void:
 	if area.is_in_group("ground"):
-		is_in_ground = true
+		ground_count += 1
 	
 	if area.is_in_group("finish"):
 		finished_level.emit()
@@ -50,7 +50,7 @@ func _on_area_2d_area_entered(area: Area2D) -> void:
 
 func _on_area_2d_area_exited(area: Area2D) -> void:
 	if area.is_in_group("ground"):
-		is_in_ground = false
+		ground_count -= 1
 		
 	rumble_sfx.stop()
 

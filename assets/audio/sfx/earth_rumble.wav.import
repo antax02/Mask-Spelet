@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://iwg4nc08dbjr"
-path="res://.godot/imported/earth_rumble.wav-43750ab8558e7c6327e8984fec4d5890.sample"
+path="res://.godot/imported/earth_rumble.wav-c07802177af4897ef4c2cce5a282a6bf.sample"
 
 [deps]
 
-source_file="res://Assets/audio/sfx/earth_rumble.wav"
-dest_files=["res://.godot/imported/earth_rumble.wav-43750ab8558e7c6327e8984fec4d5890.sample"]
+source_file="res://assets/audio/sfx/earth_rumble.wav"
+dest_files=["res://.godot/imported/earth_rumble.wav-c07802177af4897ef4c2cce5a282a6bf.sample"]
 
 [params]
 

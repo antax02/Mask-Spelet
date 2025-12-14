@@ -13,6 +13,7 @@
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_hwp66"]
 shader = ExtResource("10_rssyh")
+shader_parameter/stretch_x = 1.0
 shader_parameter/time_scale = 0.05000000167648
 shader_parameter/flame_intensity = 1.6970000568575
 shader_parameter/turbulence = 2.0
@@ -26,7 +27,7 @@ shader_parameter/fire_color_dark = Color(0.4, 0.05, 0.02, 1)
 [node name="Main" type="Node2D"]
 
 [node name="Player" parent="." instance=ExtResource("1_2vj2h")]
-position = Vector2(-1100, 788)
+position = Vector2(721, -246)
 max_speed = 750.0
 
 [node name="1" type="Node" parent="."]
@@ -405,189 +406,202 @@ polygon = PackedVector2Array(-386, -662, -384, -651, -351, -629, -321, -591, -30
 
 [node name="hell" type="Node" parent="."]
 
-[node name="GroundBasic6" parent="hell" instance=ExtResource("3_y0acb")]
+[node name="dep" type="Node" parent="hell"]
+
+[node name="GroundBasic6" parent="hell/dep" instance=ExtResource("3_y0acb")]
+visible = false
 position = Vector2(-27182, 229)
 scale = Vector2(49.201515, 10.561625)
 
-[node name="GroundBasic32" parent="hell" instance=ExtResource("3_y0acb")]
+[node name="GroundBasic32" parent="hell/dep" instance=ExtResource("3_y0acb")]
 position = Vector2(-28331.002, -11437)
 scale = Vector2(49.699883, 4.4712143)
 
-[node name="GroundBasic7" parent="hell" instance=ExtResource("3_y0acb")]
+[node name="GroundBasic7" parent="hell/dep" instance=ExtResource("3_y0acb")]
 position = Vector2(-27202, -856)
 
-[node name="GroundBasic29" parent="hell" instance=ExtResource("3_y0acb")]
+[node name="GroundBasic29" parent="hell/dep" instance=ExtResource("3_y0acb")]
 position = Vector2(-29688, -7530)
 
-[node name="GroundBasic8" parent="hell" instance=ExtResource("3_y0acb")]
+[node name="GroundBasic8" parent="hell/dep" instance=ExtResource("3_y0acb")]
 position = Vector2(-27002, -600)
 
-[node name="GroundBasic9" parent="hell" instance=ExtResource("3_y0acb")]
+[node name="GroundBasic9" parent="hell/dep" instance=ExtResource("3_y0acb")]
 position = Vector2(-27658.002, -1092.9999)
-rotation = 0.4350104
+rotation = 0.43501037
 scale = Vector2(4.24, 1)
 
-[node name="GroundBasic10" parent="hell" instance=ExtResource("3_y0acb")]
+[node name="GroundBasic10" parent="hell/dep" instance=ExtResource("3_y0acb")]
 position = Vector2(-28422, -1310.0002)
-rotation = 0.11476198
-scale = Vector2(4.24, 1)
+rotation = 0.11476197
+scale = Vector2(4.2400002, 1)
 
-[node name="GroundBasic11" parent="hell" instance=ExtResource("3_y0acb")]
+[node name="GroundBasic11" parent="hell/dep" instance=ExtResource("3_y0acb")]
 position = Vector2(-29298, -1267)
 rotation = 2.5047822
-scale = Vector2(7.402031, 1)
+scale = Vector2(7.4020314, 1)
 
-[node name="GroundBasic12" parent="hell" instance=ExtResource("3_y0acb")]
+[node name="GroundBasic12" parent="hell/dep" instance=ExtResource("3_y0acb")]
 position = Vector2(-28605.002, -1814.9988)
 rotation = 2.5047822
 scale = Vector2(2.4016976, -2.8527992)
 
-[node name="GroundBasic13" parent="hell" instance=ExtResource("3_y0acb")]
+[node name="GroundBasic13" parent="hell/dep" instance=ExtResource("3_y0acb")]
 position = Vector2(-28951, -2212.001)
-rotation = 3.8129263
+rotation = -2.470259
 scale = Vector2(3.7050312, -0.7831373)
 
-[node name="GroundBasic14" parent="hell" instance=ExtResource("3_y0acb")]
+[node name="GroundBasic14" parent="hell/dep" instance=ExtResource("3_y0acb")]
 position = Vector2(-29490, -2428.999)
-rotation = 3.8129263
+rotation = -2.470259
 scale = Vector2(3.7050312, -0.7831373)
 
-[node name="GroundBasic15" parent="hell" instance=ExtResource("3_y0acb")]
+[node name="GroundBasic15" parent="hell/dep" instance=ExtResource("3_y0acb")]
 position = Vector2(-30029, -2683.001)
-rotation = 3.8129263
+rotation = -2.470259
 scale = Vector2(3.7050312, -0.7831373)
 
-[node name="GroundBasic16" parent="hell" instance=ExtResource("3_y0acb")]
+[node name="GroundBasic16" parent="hell/dep" instance=ExtResource("3_y0acb")]
 position = Vector2(-30391.002, -3162)
-rotation = 4.176408
-scale = Vector2(3.7050312, -0.7831373)
+rotation = -2.1067774
+scale = Vector2(3.7050314, -0.7831373)
 
-[node name="GroundBasic17" parent="hell" instance=ExtResource("3_y0acb")]
+[node name="GroundBasic17" parent="hell/dep" instance=ExtResource("3_y0acb")]
 position = Vector2(-30682, -3753.001)
-rotation = 3.1415927
+rotation = -3.1415925
 scale = Vector2(2.8251092, -3.0631375)
 
-[node name="GroundBasic18" parent="hell" instance=ExtResource("3_y0acb")]
+[node name="GroundBasic18" parent="hell/dep" instance=ExtResource("3_y0acb")]
 position = Vector2(-30659, -4318)
-rotation = 3.1415927
+rotation = -3.1415925
 scale = Vector2(2.8251092, -3.0631375)
 
-[node name="GroundBasic19" parent="hell" instance=ExtResource("3_y0acb")]
+[node name="GroundBasic19" parent="hell/dep" instance=ExtResource("3_y0acb")]
 position = Vector2(-29862, -4215)
-rotation = 3.1415927
+rotation = -3.1415925
 scale = Vector2(2.8251092, -3.0631375)
 
-[node name="GroundBasic20" parent="hell" instance=ExtResource("3_y0acb")]
+[node name="GroundBasic20" parent="hell/dep" instance=ExtResource("3_y0acb")]
 position = Vector2(-29176, -3885)
-rotation = 3.1415927
+rotation = -3.1415925
 scale = Vector2(2.8251092, -3.0631375)
 
-[node name="GroundBasic24" parent="hell" instance=ExtResource("3_y0acb")]
+[node name="GroundBasic24" parent="hell/dep" instance=ExtResource("3_y0acb")]
 position = Vector2(-29082.998, -5625)
-rotation = 3.3628762
-scale = Vector2(4.893962, -0.95530343)
+rotation = -2.920309
+scale = Vector2(4.893962, -0.9553034)
 
-[node name="GroundBasic25" parent="hell" instance=ExtResource("3_y0acb")]
+[node name="GroundBasic25" parent="hell/dep" instance=ExtResource("3_y0acb")]
 position = Vector2(-29217.998, -6114.9995)
-rotation = 4.511999
-scale = Vector2(4.893962, -0.35237372)
+rotation = -1.7711862
+scale = Vector2(4.893962, -0.35237375)
 
-[node name="GroundBasic26" parent="hell" instance=ExtResource("3_y0acb")]
+[node name="GroundBasic26" parent="hell/dep" instance=ExtResource("3_y0acb")]
 position = Vector2(-29444, -6600.0005)
 rotation = 3.1307497
 scale = Vector2(1.2607198, -0.9145027)
 
-[node name="GroundBasic28" parent="hell" instance=ExtResource("3_y0acb")]
+[node name="GroundBasic28" parent="hell/dep" instance=ExtResource("3_y0acb")]
 position = Vector2(-29496, -8223)
 rotation = 3.1307497
 scale = Vector2(3.5806026, -5.1881943)
 
-[node name="GroundBasic30" parent="hell" instance=ExtResource("3_y0acb")]
+[node name="GroundBasic30" parent="hell/dep" instance=ExtResource("3_y0acb")]
 position = Vector2(-28339.004, -8235.999)
 rotation = 3.1307497
 scale = Vector2(3.5806026, -5.1881943)
 
-[node name="GroundBasic27" parent="hell" instance=ExtResource("3_y0acb")]
+[node name="GroundBasic27" parent="hell/dep" instance=ExtResource("3_y0acb")]
 position = Vector2(-30119.002, -6163.001)
-rotation = 3.4773655
-scale = Vector2(0.8592608, -12.847403)
+rotation = -2.8058197
+scale = Vector2(0.85926086, -12.847403)
 
-[node name="GroundBasic31" parent="hell" instance=ExtResource("3_y0acb")]
+[node name="GroundBasic31" parent="hell/dep" instance=ExtResource("3_y0acb")]
 position = Vector2(-28329, -9540.001)
-rotation = 3.1415927
+rotation = -3.1415925
 scale = Vector2(0.8592608, -12.847403)
 
-[node name="GroundBasic21" parent="hell" instance=ExtResource("3_y0acb")]
+[node name="GroundBasic21" parent="hell/dep" instance=ExtResource("3_y0acb")]
 position = Vector2(-28309.996, -3217.9998)
 rotation = 2.3461967
 scale = Vector2(0.938117, -6.2783327)
 
-[node name="GroundBasic22" parent="hell" instance=ExtResource("3_y0acb")]
+[node name="GroundBasic22" parent="hell/dep" instance=ExtResource("3_y0acb")]
 position = Vector2(-27631, -3090.0012)
-rotation = 3.882326
+rotation = -2.4008594
 scale = Vector2(1.1494017, -6.2695556)
 
-[node name="GroundBasic23" parent="hell" instance=ExtResource("3_y0acb")]
+[node name="GroundBasic23" parent="hell/dep" instance=ExtResource("3_y0acb")]
 position = Vector2(-27755, -4308)
 rotation = 2.5390403
 scale = Vector2(1.1494017, -16.341587)
 
-[node name="rock" parent="hell" instance=ExtResource("5_b6bv0")]
+[node name="rock" parent="hell/dep" instance=ExtResource("5_b6bv0")]
 position = Vector2(-29324, -2521)
 
-[node name="rock2" parent="hell" instance=ExtResource("5_b6bv0")]
+[node name="rock2" parent="hell/dep" instance=ExtResource("5_b6bv0")]
 position = Vector2(-30793, -3541)
 rotation = 0.26088095
-scale = Vector2(3.4400392, 1.36)
+scale = Vector2(3.4400394, 1.36)
 
-[node name="rock3" parent="hell" instance=ExtResource("5_b6bv0")]
+[node name="rock3" parent="hell/dep" instance=ExtResource("5_b6bv0")]
 position = Vector2(-30266.998, -4265.001)
 rotation = 0.8567612
-scale = Vector2(1, 3.12)
+scale = Vector2(1, 3.1199996)
 
-[node name="rock4" parent="hell" instance=ExtResource("5_b6bv0")]
+[node name="rock4" parent="hell/dep" instance=ExtResource("5_b6bv0")]
 position = Vector2(-30303, -5063.002)
 rotation = 2.078803
-scale = Vector2(1, 5.8127346)
+scale = Vector2(1, 5.812734)
 
-[node name="rock5" parent="hell" instance=ExtResource("5_b6bv0")]
+[node name="rock5" parent="hell/dep" instance=ExtResource("5_b6bv0")]
 position = Vector2(-29637, -4902.0005)
-rotation = 4.1938524
-scale = Vector2(1, 6.4480667)
+rotation = -2.0893328
+scale = Vector2(1, 6.448066)
 
-[node name="Node2D" parent="hell" instance=ExtResource("6_vkq25")]
+[node name="Node2D" parent="hell/dep" instance=ExtResource("6_vkq25")]
 position = Vector2(-29276.002, -5207.0005)
-rotation = -0.5736187
+rotation = -0.57361865
 scale = Vector2(1.2508601, 0.9063486)
 
-[node name="rock6" parent="hell" instance=ExtResource("5_b6bv0")]
+[node name="rock6" parent="hell/dep" instance=ExtResource("5_b6bv0")]
 position = Vector2(-30037, -4660)
 
-[node name="Node2D2" parent="hell" instance=ExtResource("6_vkq25")]
+[node name="Node2D2" parent="hell/dep" instance=ExtResource("6_vkq25")]
 position = Vector2(-29628, -6852)
 
-[node name="rock7" parent="hell" instance=ExtResource("5_b6bv0")]
+[node name="rock7" parent="hell/dep" instance=ExtResource("5_b6bv0")]
 position = Vector2(-29082, -7127.001)
 rotation = -0.65967876
 scale = Vector2(5.56, 3.833914)
 
-[node name="rock8" parent="hell" instance=ExtResource("5_b6bv0")]
+[node name="rock8" parent="hell/dep" instance=ExtResource("5_b6bv0")]
 position = Vector2(-29098, -8576)
 
-[node name="rock9" parent="hell" instance=ExtResource("5_b6bv0")]
+[node name="rock9" parent="hell/dep" instance=ExtResource("5_b6bv0")]
 position = Vector2(-28966, -8631)
 
-[node name="rock10" parent="hell" instance=ExtResource("5_b6bv0")]
+[node name="rock10" parent="hell/dep" instance=ExtResource("5_b6bv0")]
 position = Vector2(-28825, -8623)
 
-[node name="rock11" parent="hell" instance=ExtResource("5_b6bv0")]
+[node name="rock11" parent="hell/dep" instance=ExtResource("5_b6bv0")]
 position = Vector2(-28702, -8572)
 
-[node name="StaticBody2D3" parent="hell" instance=ExtResource("4_u81e1")]
+[node name="StaticBody2D3" parent="hell/dep" instance=ExtResource("4_u81e1")]
 position = Vector2(-29759, -4035)
 scale = Vector2(1, 0.16000003)
 
+[node name="Area2D" type="Area2D" parent="hell" groups=["ground"]]
+position = Vector2(-27009, -35)
+
+[node name="Polygon2D" type="Polygon2D" parent="hell/Area2D"]
+polygon = PackedVector2Array(-6046, 201, -2471, 58, 449, 117, 4108, -228, 4930, 860, 2855, 1846, 33, 1506, -3333, 2050, -6224, 1336)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="hell/Area2D"]
+polygon = PackedVector2Array(-6048, 199, -2467, 55, 444, 117, 4108, -228, 4931, 861, 2858, 1845, 29, 1504, -3335, 2053, -6226, 1339)
+
 [node name="ColorRect" type="ColorRect" parent="."]
+visible = false
 material = SubResource("ShaderMaterial_hwp66")
 offset_left = -5000.0
 offset_top = -12088.0
@@ -813,4 +827,5 @@ position = Vector2(-32126, -20051)
 [node name="Node2D13" parent="GroundLevel" instance=ExtResource("6_vkq25")]
 position = Vector2(-32134, -19813)
 
+[editable path="1/Node2D"]
 [editable path="2/GroundBasic33"]

@@ -1,5 +1,7 @@
 shader_type canvas_item;
 
+uniform float stretch_x : hint_range(0.1, 5.0) = 1.0;
+
 uniform float time_scale : hint_range(0.01, 3.0) = 1.0;
 uniform float flame_intensity : hint_range(0.5, 2.0) = 1.2;
 uniform float turbulence : hint_range(0.1, 2.0) = 0.8;
@@ -83,45 +85,40 @@ float fire_pattern(vec2 uv, float time) {
 
 void fragment() {
     vec2 uv = UV;
-    float time = TIME * time_scale; // Apply time_scale to time, not directions
-    
-    // Create main fire pattern
+
+    // apply stretch
+    uv.x *= stretch_x;
+
+    float time = TIME * time_scale;
+
     float fire = fire_pattern(uv, time);
-    
-    // Add secondary layer with different movement for depth
+
+    // second layer also stretched
     vec2 uv2 = uv * 1.2 + vec2(0.05, 0.05);
     float fire_secondary = fire_pattern(uv2, time * 1.3) * 0.3;
     fire += fire_secondary;
-    
-    // Create flickering hot spots at higher frequency
+
     float flicker = noise(vec2(uv.x * 20.0, time * 4.0)) * 0.2;
-    fire += flicker * uv.y; // Fixed: now uv.y is correct (bottom = 1.0)
-    
-    // Posterize the fire value for distinct color bands
+    fire += flicker * uv.y;
+
     fire = floor(fire * color_bands) / color_bands;
-    
-    // Map fire intensity to colors
+
     vec3 color;
     if (fire > 0.7) {
-        // Hot white/yellow flames
         float t = (fire - 0.7) / 0.3;
         color = mix(fire_color_mid, fire_color_hot, t);
     } else if (fire > 0.3) {
-        // Orange/red flames
         float t = (fire - 0.3) / 0.4;
         color = mix(fire_color_dark, fire_color_mid, t);
     } else {
-        // Dark red/ember base
         float t = fire / 0.3;
         color = mix(vec3(0.1, 0.0, 0.0), fire_color_dark, t);
     }
-    
-    // Add some brightness variation for depth
+
     float brightness = 1.0 + noise(uv * 15.0 + time * 0.5) * 0.2;
     color *= brightness;
-    
-    // Ensure we don't go completely black for that hell glow
+
     color = max(color, vec3(0.05, 0.0, 0.0));
-    
+
     COLOR = vec4(color, 1.0);
 }

@@ -1,0 +1,893 @@
+[gd_scene load_steps=10 format=3 uid="uid://5njmrv3ailqa"]
+
+[ext_resource type="PackedScene" uid="uid://bggnwmnubx1wk" path="res://scenes/player/player.tscn" id="1_f0jk7"]
+[ext_resource type="PackedScene" uid="uid://dr2whnta44ipn" path="res://scenes/enviroment/ground_basic.tscn" id="2_iw8sm"]
+[ext_resource type="PackedScene" uid="uid://diaamrlicrfi4" path="res://scenes/enviroment/rock.tscn" id="3_ahky1"]
+[ext_resource type="PackedScene" uid="uid://duj85t2set7o1" path="res://scenes/enviroment/rock_2.tscn" id="4_jgvmg"]
+[ext_resource type="PackedScene" uid="uid://bjg75r1hpp535" path="res://scenes/enviroment/floor.tscn" id="5_s3lan"]
+[ext_resource type="PackedScene" uid="uid://bdbrjrh82eloc" path="res://scenes/enviroment/wind.tscn" id="6_5sc0d"]
+[ext_resource type="Shader" uid="uid://cn4fx3wjsl5k0" path="res://resources/fire.gdshader" id="6_iw8sm"]
+[ext_resource type="PhysicsMaterial" uid="uid://bpp202scb04tp" path="res://resources/frictionless_physics_material.tres" id="7_ahky1"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ahky1"]
+shader = ExtResource("6_iw8sm")
+shader_parameter/stretch_x = 3.0000001392401203
+shader_parameter/time_scale = 0.05000000167648
+shader_parameter/flame_intensity = 1.6970000568575
+shader_parameter/turbulence = 2.0
+shader_parameter/color_bands = 6.000000142499999
+shader_parameter/sway_amount = 0.5
+shader_parameter/sway_speed = 1.0
+shader_parameter/fire_color_hot = Color(1, 0.9, 0.3, 1)
+shader_parameter/fire_color_mid = Color(1, 0.3, 0.05, 1)
+shader_parameter/fire_color_dark = Color(0.4, 0.05, 0.02, 1)
+
+[node name="main2" type="Node2D"]
+
+[node name="Player" parent="." instance=ExtResource("1_f0jk7")]
+position = Vector2(-592, 325)
+max_speed = 750.0
+
+[node name="Node" type="Node2D" parent="."]
+
+[node name="GroundBasic" parent="Node" instance=ExtResource("2_iw8sm")]
+position = Vector2(-1277, -12139.999)
+scale = Vector2(1, 2.28)
+
+[node name="GroundBasic2" parent="Node" instance=ExtResource("2_iw8sm")]
+position = Vector2(-1463, -12539.001)
+rotation = -0.63795894
+scale = Vector2(1, 2.28)
+
+[node name="Node2D3" parent="Node" instance=ExtResource("4_jgvmg")]
+position = Vector2(-2155.0022, -12519)
+rotation = -0.42306215
+scale = Vector2(2.7690918, 1)
+
+[node name="GroundBasic3" parent="Node" instance=ExtResource("2_iw8sm")]
+position = Vector2(-2576.002, -12533.999)
+rotation = -1.4982228
+scale = Vector2(1.455879, 5.5200295)
+
+[node name="GroundBasic4" parent="Node" instance=ExtResource("2_iw8sm")]
+position = Vector2(-3518.002, -12739.001)
+rotation = -1.1971649
+scale = Vector2(1.455879, 5.52003)
+
+[node name="GroundBasic5" parent="Node" instance=ExtResource("2_iw8sm")]
+position = Vector2(-4251.002, -13131.998)
+rotation = -0.7309079
+scale = Vector2(1.455879, 5.52003)
+
+[node name="GroundBasic6" parent="Node" instance=ExtResource("2_iw8sm")]
+position = Vector2(-4752.002, -13837.998)
+rotation = -0.37298274
+scale = Vector2(1.455879, 5.5200295)
+
+[node name="GroundBasic33" parent="Node" instance=ExtResource("2_iw8sm")]
+position = Vector2(-4906.998, -14720.001)
+rotation = 0.0104177
+scale = Vector2(1.4558792, 5.5200295)
+
+[node name="Wind" parent="Node" instance=ExtResource("6_5sc0d")]
+position = Vector2(-4923, -15329)
+rotation = 1.5620341
+scale = Vector2(1, 3.2826953)
+blow_force = 250.0
+
+[node name="GroundBasic34" parent="Node" instance=ExtResource("2_iw8sm")]
+position = Vector2(-4893.002, -15683)
+scale = Vector2(2.600078, 2.88)
+
+[node name="StaticBody2D4" parent="Node" instance=ExtResource("5_s3lan")]
+position = Vector2(-3049, -11266)
+scale = Vector2(17.72, 1)
+
+[node name="StaticBody2D5" parent="Node" instance=ExtResource("5_s3lan")]
+position = Vector2(4209, -11266)
+scale = Vector2(17.72, 1)
+
+[node name="GroundBasic35" parent="Node" instance=ExtResource("2_iw8sm")]
+position = Vector2(-4764, -16104.001)
+rotation = 0.4582091
+scale = Vector2(1.36, 2.4)
+
+[node name="GroundBasic36" parent="Node" instance=ExtResource("2_iw8sm")]
+position = Vector2(-4041.002, -15908.001)
+rotation = -0.6512717
+scale = Vector2(1.36, 4.9863477)
+
+[node name="GroundBasic37" parent="Node" instance=ExtResource("2_iw8sm")]
+position = Vector2(-2956, -15762)
+rotation = 0.8518486
+scale = Vector2(1.36, 4.9863477)
+
+[node name="GroundBasic38" parent="Node" instance=ExtResource("2_iw8sm")]
+position = Vector2(-3583.0042, -15339)
+rotation = -1.4964086
+scale = Vector2(2.1387115, 2.9269724)
+
+[node name="rock12" parent="Node" instance=ExtResource("3_ahky1")]
+position = Vector2(-5086, -15984)
+rotation = 0.47433072
+scale = Vector2(2.0399218, 1)
+
+[node name="Node2D4" parent="Node" instance=ExtResource("4_jgvmg")]
+position = Vector2(-4709.998, -15929.998)
+rotation = -1.136343
+scale = Vector2(0.9999999, 0.9999999)
+
+[node name="Node2D5" parent="Node" instance=ExtResource("4_jgvmg")]
+position = Vector2(-3989, -16192)
+
+[node name="rock13" parent="Node" instance=ExtResource("3_ahky1")]
+position = Vector2(-3758, -16038)
+
+[node name="Node2D6" parent="Node" instance=ExtResource("4_jgvmg")]
+position = Vector2(-3324, -15841)
+
+[node name="rock14" parent="Node" instance=ExtResource("3_ahky1")]
+position = Vector2(-3564, -15579)
+
+[node name="rock15" parent="Node" instance=ExtResource("3_ahky1")]
+position = Vector2(-3749, -15185)
+
+[node name="Node2D7" parent="Node" instance=ExtResource("4_jgvmg")]
+position = Vector2(-3518, -15136)
+
+[node name="rock16" parent="Node" instance=ExtResource("3_ahky1")]
+position = Vector2(-5031, -14272)
+
+[node name="Node2D8" parent="Node" instance=ExtResource("4_jgvmg")]
+position = Vector2(-4069.0022, -15331)
+rotation = -2.9853013
+scale = Vector2(2.0471094, 0.25546867)
+
+[node name="Wind2" parent="Node" instance=ExtResource("6_5sc0d")]
+position = Vector2(-2555.0022, -16123)
+rotation = -1.3196828
+scale = Vector2(1.3828164, 0.9550097)
+blow_force = 1000.0
+
+[node name="GroundBasic39" parent="Node" instance=ExtResource("2_iw8sm")]
+position = Vector2(-3222.002, -16517.004)
+rotation = 0.5853817
+scale = Vector2(6.1600003, 1.4000001)
+
+[node name="GroundBasic40" parent="Node" instance=ExtResource("2_iw8sm")]
+position = Vector2(-3846, -16884)
+
+[node name="GroundBasic41" parent="Node" instance=ExtResource("2_iw8sm")]
+position = Vector2(-4313, -17064)
+
+[node name="GroundBasic42" parent="Node" instance=ExtResource("2_iw8sm")]
+position = Vector2(-5363, -17000)
+rotation = 0.08166975
+scale = Vector2(1, 10.28)
+
+[node name="Node2D9" parent="Node" instance=ExtResource("4_jgvmg")]
+position = Vector2(-5596.002, -17163)
+rotation = 0.5608965
+
+[node name="Node2D10" parent="Node" instance=ExtResource("4_jgvmg")]
+position = Vector2(-5600, -16684)
+
+[node name="rock17" parent="Node" instance=ExtResource("3_ahky1")]
+position = Vector2(-5469, -17028)
+
+[node name="Node2D11" parent="Node" instance=ExtResource("4_jgvmg")]
+position = Vector2(-5520, -16285)
+
+[node name="Node2D12" parent="Node" instance=ExtResource("4_jgvmg")]
+position = Vector2(-5616, -17402)
+rotation = 0.8486237
+
+[node name="Node2D13" parent="Node" instance=ExtResource("4_jgvmg")]
+position = Vector2(-5661, -16861)
+
+[node name="rock18" parent="Node" instance=ExtResource("3_ahky1")]
+position = Vector2(-5520, -16518)
+
+[node name="GroundBasic43" parent="Node" instance=ExtResource("2_iw8sm")]
+position = Vector2(-4102.002, -16994)
+rotation = -3.1161988
+
+[node name="rock19" parent="Node" instance=ExtResource("3_ahky1")]
+position = Vector2(-4723.004, -17692)
+rotation = -0.2365964
+scale = Vector2(5.221437, 4.354994)
+
+[node name="GroundBasic44" parent="Node" instance=ExtResource("2_iw8sm")]
+position = Vector2(-5263.002, -18473.002)
+rotation = 0.09346079
+scale = Vector2(2.4, 3.912071)
+
+[node name="GroundBasic45" parent="Node" instance=ExtResource("2_iw8sm")]
+position = Vector2(-5087.004, -19308)
+rotation = 1.5620992
+scale = Vector2(2.4, 2.0766792)
+
+[node name="GroundBasic46" parent="Node" instance=ExtResource("2_iw8sm")]
+position = Vector2(-5426.004, -19705)
+rotation = 1.5620992
+scale = Vector2(2.4, 2.0766792)
+
+[node name="GroundBasic47" parent="Node" instance=ExtResource("2_iw8sm")]
+position = Vector2(-5448.004, -20255)
+rotation = 1.5620992
+scale = Vector2(2.4, 2.0766792)
+
+[node name="GroundBasic48" parent="Node" instance=ExtResource("2_iw8sm")]
+position = Vector2(-4777.002, -20116.002)
+rotation = 1.5620992
+scale = Vector2(2.4, 2.0766792)
+
+[node name="GroundBasic49" parent="Node" instance=ExtResource("2_iw8sm")]
+position = Vector2(-4694, -18297.002)
+rotation = -0.22172406
+scale = Vector2(0.54937506, 7.7759295)
+
+[node name="rock20" parent="Node" instance=ExtResource("3_ahky1")]
+position = Vector2(-5388, -18251)
+
+[node name="rock21" parent="Node" instance=ExtResource("3_ahky1")]
+position = Vector2(-5166, -18237)
+
+[node name="StaticBody2D6" parent="Node" instance=ExtResource("5_s3lan")]
+position = Vector2(-4929, -18372)
+rotation = 1.5329791
+scale = Vector2(1.5604298, 0.28)
+
+[node name="Node2D14" parent="Node" instance=ExtResource("4_jgvmg")]
+position = Vector2(-5146, -20348)
+
+[node name="rock22" parent="Node" instance=ExtResource("3_ahky1")]
+position = Vector2(-5116, -20103)
+
+[node name="Node2D15" parent="Node" instance=ExtResource("4_jgvmg")]
+position = Vector2(-5124, -19865)
+
+[node name="GroundBasic32" parent="Node" instance=ExtResource("2_iw8sm")]
+position = Vector2(-1321.002, -11489)
+scale = Vector2(49.699883, 4.4712143)
+
+[node name="GroundBasic29" parent="Node" instance=ExtResource("2_iw8sm")]
+position = Vector2(-2678, -7582)
+
+[node name="GroundBasic19" parent="Node" instance=ExtResource("2_iw8sm")]
+position = Vector2(-2951, -4274)
+rotation = -3.1415925
+scale = Vector2(2.8251092, -3.0631375)
+
+[node name="GroundBasic20" parent="Node" instance=ExtResource("2_iw8sm")]
+position = Vector2(-2166, -3937)
+rotation = -3.1415925
+scale = Vector2(2.8251092, -3.0631375)
+
+[node name="GroundBasic24" parent="Node" instance=ExtResource("2_iw8sm")]
+position = Vector2(-2072.9958, -5677)
+rotation = -2.920309
+scale = Vector2(4.893962, -0.9553034)
+
+[node name="GroundBasic25" parent="Node" instance=ExtResource("2_iw8sm")]
+position = Vector2(-2208.0002, -6166.9995)
+rotation = -1.7711862
+scale = Vector2(4.893962, -0.35237378)
+
+[node name="GroundBasic26" parent="Node" instance=ExtResource("2_iw8sm")]
+position = Vector2(-2434, -6652.0005)
+rotation = 3.1307497
+scale = Vector2(1.2607198, -0.9145027)
+
+[node name="GroundBasic28" parent="Node" instance=ExtResource("2_iw8sm")]
+position = Vector2(-2486.0022, -8275)
+rotation = 3.1307497
+scale = Vector2(3.5806026, -5.1881943)
+
+[node name="GroundBasic30" parent="Node" instance=ExtResource("2_iw8sm")]
+position = Vector2(-1329.0061, -8287.999)
+rotation = 3.1307497
+scale = Vector2(3.5806026, -5.1881943)
+
+[node name="GroundBasic27" parent="Node" instance=ExtResource("2_iw8sm")]
+position = Vector2(-3109.002, -6215.001)
+rotation = -2.8058197
+scale = Vector2(0.8592609, -12.847403)
+
+[node name="GroundBasic31" parent="Node" instance=ExtResource("2_iw8sm")]
+position = Vector2(-1319.0022, -9592.001)
+rotation = -3.1415925
+scale = Vector2(0.8592608, -12.847403)
+
+[node name="GroundBasic21" parent="Node" instance=ExtResource("2_iw8sm")]
+position = Vector2(-1299.9939, -3269.9998)
+rotation = 2.3461967
+scale = Vector2(0.938117, -6.2783327)
+
+[node name="GroundBasic22" parent="Node" instance=ExtResource("2_iw8sm")]
+position = Vector2(-621.0022, -3142.002)
+rotation = -2.4008594
+scale = Vector2(1.1494017, -6.2695556)
+
+[node name="GroundBasic23" parent="Node" instance=ExtResource("2_iw8sm")]
+position = Vector2(-745, -4360)
+rotation = 2.5390403
+scale = Vector2(1.1494017, -16.341587)
+
+[node name="rock3" parent="Node" instance=ExtResource("3_ahky1")]
+position = Vector2(-3344.0002, -4272)
+rotation = 0.38350725
+scale = Vector2(1, 3.1199996)
+
+[node name="rock4" parent="Node" instance=ExtResource("3_ahky1")]
+position = Vector2(-3293, -5115.001)
+rotation = 2.078803
+scale = Vector2(1, 5.812734)
+
+[node name="rock5" parent="Node" instance=ExtResource("3_ahky1")]
+position = Vector2(-2627, -4954.0005)
+rotation = -2.0893328
+scale = Vector2(0.99999994, 6.4480658)
+
+[node name="Node2D" parent="Node" instance=ExtResource("4_jgvmg")]
+position = Vector2(-2266.002, -5259.0005)
+rotation = -0.57361865
+scale = Vector2(1.2508601, 0.9063486)
+
+[node name="rock6" parent="Node" instance=ExtResource("3_ahky1")]
+position = Vector2(-3027, -4712)
+
+[node name="Node2D2" parent="Node" instance=ExtResource("4_jgvmg")]
+position = Vector2(-2618, -6904)
+
+[node name="rock7" parent="Node" instance=ExtResource("3_ahky1")]
+position = Vector2(-2072, -7179.001)
+rotation = -0.65967876
+scale = Vector2(5.56, 3.833914)
+
+[node name="rock8" parent="Node" instance=ExtResource("3_ahky1")]
+position = Vector2(-2088, -8628)
+
+[node name="rock9" parent="Node" instance=ExtResource("3_ahky1")]
+position = Vector2(-1956, -8683)
+
+[node name="rock10" parent="Node" instance=ExtResource("3_ahky1")]
+position = Vector2(-1815, -8675)
+
+[node name="rock11" parent="Node" instance=ExtResource("3_ahky1")]
+position = Vector2(-1692, -8624)
+
+[node name="StaticBody2D3" parent="Node" instance=ExtResource("5_s3lan")]
+position = Vector2(-2843, -4087)
+scale = Vector2(1, 0.16000003)
+
+[node name="Envidorment" type="Node2D" parent="."]
+
+[node name="HellGD0" type="Area2D" parent="Envidorment" groups=["ground"]]
+position = Vector2(129, -187)
+
+[node name="Polygon2D" type="Polygon2D" parent="Envidorment/HellGD0"]
+color = Color(0.4392157, 0.16862746, 0.16862746, 1)
+polygon = PackedVector2Array(-64, 88, -138, 19, -93, -32, -29, -51, 37, -37, 48, 50, -3, 75)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Envidorment/HellGD0"]
+polygon = PackedVector2Array(-29, -50, -93, -31, -136, 17, -62, 88, -4, 74, 47, 49, 38, -36)
+
+[node name="HellGD1" type="Area2D" parent="Envidorment" groups=["ground"]]
+position = Vector2(6, -478)
+
+[node name="Polygon2D" type="Polygon2D" parent="Envidorment/HellGD1"]
+color = Color(0.4392157, 0.16862746, 0.16862746, 1)
+polygon = PackedVector2Array(-17, 130, -131, 48, -93, -32, -1, -76, 78, -28, 48, 50, -3, 75)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Envidorment/HellGD1"]
+polygon = PackedVector2Array(-3, -76, -93, -31, -130, 47, -19, 128, -4, 74, 47, 49, 78, -28)
+
+[node name="HellGD2" type="Area2D" parent="Envidorment" groups=["ground"]]
+position = Vector2(-134.99998, -784.0001)
+rotation = 0.28794995
+
+[node name="Polygon2D" type="Polygon2D" parent="Envidorment/HellGD2"]
+color = Color(0.4392157, 0.16862746, 0.16862746, 1)
+polygon = PackedVector2Array(-17, 130, -110, 104, -190, 15, -157, -65, -112, -88, -43, -87, 26, -64, 32, 19, -3, 75)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Envidorment/HellGD2"]
+polygon = PackedVector2Array(-42, -87, -112, -88, -157, -64, -189, 15, -111, 104, -19, 130, -4, 74, 32, 18, 25, -64)
+
+[node name="HellGD3" type="Area2D" parent="Envidorment" groups=["ground"]]
+position = Vector2(-596, -1151)
+
+[node name="Polygon2D" type="Polygon2D" parent="Envidorment/HellGD3"]
+color = Color(0.4392157, 0.16862746, 0.16862746, 1)
+polygon = PackedVector2Array(-17, 130, -110, 104, -190, 15, -346, -55, -360, -131, -284, -176, -194, -132, -52, -117, 77, -32, 233, 67, 205, 161, 77, 145)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Envidorment/HellGD3"]
+polygon = PackedVector2Array(-52, -117, -193, -131, -285, -176, -360, -130, -346, -55, -190, 15, -107, 105, -20, 129, 206, 162, 232, 67)
+
+[node name="HellGD4" type="Area2D" parent="Envidorment" groups=["ground"]]
+position = Vector2(-1492, -1338.0001)
+rotation = 2.7379477
+
+[node name="Polygon2D" type="Polygon2D" parent="Envidorment/HellGD4"]
+color = Color(0.4392157, 0.16862746, 0.16862746, 1)
+polygon = PackedVector2Array(-3.928833, 113.58484, -80.67029, 66.67285, -165.43939, 5.458374, -346, -55, -345.22754, -123.52319, -284, -176, -173.26398, -162.0791, -46.805176, -48.262695, 67.8905, 3.9855957, 157.47852, 33.549316, 233, 67, 212.82135, 134.74265, 169.82532, 142.12439, 77, 145)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Envidorment/HellGD4"]
+polygon = PackedVector2Array(-47.197998, -47.343018, -173.26398, -162.0791, -284.76062, -175.98987, -345.22754, -123.52319, -346.0617, -55.374023, -166.35895, 5.065674, -78.831055, 67.458374, -3.928833, 113.58484, 77.25781, 144.9972, 169.82532, 142.12439, 213.27844, 134.5857, 232, 67, 155.63916, 32.76367, 69.72986, 4.77124)
+
+[node name="HellGD5" type="Area2D" parent="Envidorment" groups=["ground"]]
+position = Vector2(-2288, -1319.0001)
+rotation = 2.1322775
+
+[node name="Polygon2D" type="Polygon2D" parent="Envidorment/HellGD5"]
+color = Color(0.4392157, 0.16862746, 0.16862746, 1)
+polygon = PackedVector2Array(-78.803955, 94.46118, -180.39233, 43.767822, -204.16077, -1.5317383, -438.4928, -99.860596, -471.96808, -166.22632, -437.52167, -241.05566, -186.01477, -141.71631, -145.98523, -155.08179, 55.51245, -84.53613, 129.0174, -31.535889, 275.67285, 25.06958, 388.08716, 117.38989, 494.75427, 164.88843, 498.30322, 219.36255, 421.15198, 261.98486, 307.7815, 205.70752, 169.82532, 142.12439, 105.53284, 132.09009, -12.28833, 76.24951)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Envidorment/HellGD5"]
+polygon = PackedVector2Array(-145.98523, -155.08179, -185.4823, -140.86987, -437.52167, -241.05566, -471.96808, -166.22632, -438.4928, -99.860596, -204.69324, -2.3781738, -180.39233, 43.767822, -78.803955, 94.46118, -13.667114, 75.93555, 106.379395, 131.55786, 165.76794, 141.45654, 421.466, 260.60596, 496.92444, 219.04858, 495.6007, 164.35596, 388.08716, 117.38989, 273.76154, 23.90918, 129.54987, -30.689453, 55.51245, -84.53613)
+
+[node name="HellGD6" type="Area2D" parent="Envidorment" groups=["ground"]]
+position = Vector2(-1647, -1890.0001)
+rotation = 2.7379477
+
+[node name="Polygon2D" type="Polygon2D" parent="Envidorment/HellGD6"]
+color = Color(0.4392157, 0.16862746, 0.16862746, 1)
+polygon = PackedVector2Array(-102.733215, 169.25073, -153.4378, 153.03198, -168.4867, 88.973145, -241.19482, 12.249512, -248.15796, -96.20093, -215.97913, -194.4585, -94.270386, -204.45825, 2.455017, -242.52637, 102.03436, -203.25854, 133.32935, -62.668213, 170.46838, 26.048584, 132.73364, 91.48633, 76.97052, 125.30151, -18.988342, 146.29907)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Envidorment/HellGD6"]
+polygon = PackedVector2Array(5.213928, -241.34814, -93.35083, -204.06543, -215.5863, -195.37793, -248.68488, -97.51343, -241.19482, 12.249512, -168.4867, 88.973145, -153.4378, 153.03198, -101.81366, 169.64355, 76.97052, 125.30151, 133.65332, 91.87915, 170.46838, 26.048584, 132.40967, -63.061035, 101.6416, -202.33887)
+
+[node name="HellGD7" type="Area2D" parent="Envidorment" groups=["ground"]]
+position = Vector2(-2018.9998, -2302)
+rotation = -2.9086967
+scale = Vector2(0.99999994, 0.99999994)
+
+[node name="Polygon2D" type="Polygon2D" parent="Envidorment/HellGD7"]
+color = Color(0.4392157, 0.16862746, 0.16862746, 1)
+polygon = PackedVector2Array(-52.809326, 54.66394, -161.02002, -2.9160156, -222.53174, -10.935791, -269.94116, -41.82776, -324.3247, -97.78711, -294.35596, -149.08887, -208.75, -147.81189, -104.593994, -115.99158, -92.62402, -82.85986, 116.2124, 17.655151, 191.07886, 64.64514, 173.24756, 115.12317, 64.14014, 131.7539)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Envidorment/HellGD7"]
+polygon = PackedVector2Array(-92.62402, -82.85986, -104.593994, -115.99158, -208.75, -147.81189, -294.35596, -149.08887, -324.094, -96.81421, -269.94116, -41.82776, -223.73535, -11.677856, -161.02002, -2.9160156, -54.01294, 53.921875, 62.936523, 131.0116, 172.27466, 115.35388, 190.10596, 64.87598, 117.64722, 19.370483)
+
+[node name="HellGD8" type="Area2D" parent="Envidorment" groups=["ground"]]
+position = Vector2(-2561, -2515)
+rotation = -2.9086967
+scale = Vector2(0.99999994, 0.99999994)
+
+[node name="Polygon2D" type="Polygon2D" parent="Envidorment/HellGD8"]
+color = Color(0.4392157, 0.16862746, 0.16862746, 1)
+polygon = PackedVector2Array(-321.98535, -70.59277, -112.5376, 19.499756, -92.78369, 50.7854, 84.70459, 136.12561, 123.34375, 130.0437, 186.27173, 161.3656, 214.19507, 118.77124, 215.09155, 44.56079, 424.7202, 139.74915, 433.35938, 167.50464, 659.8911, 268.96118, 710.6367, 244.59131, 738.6279, 176.28687, 710.62866, 144.90161, 631.30884, 105.13452, 602.1687, 107.93579, 495.062, 59.34375, 474.53467, 11.797852, 297.96973, -69.650635, 201.03638, -97.01782, 108.55127, -70.96924, -40.507324, -140.44287, -168.93848, -170.61584, -279.59326, -186.5061, -325.77246, -138.55347)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Envidorment/HellGD8"]
+polygon = PackedVector2Array(215.32227, 45.53369, 423.74756, 139.97998, 434.79395, 169.21985, 659.8911, 268.96118, 710.40576, 243.61816, 739.3701, 175.08301, 711.60156, 144.67078, 632.0513, 103.93091, 602.1687, 107.93579, 494.55078, 61.520508, 475.27686, 10.593872, 298.7119, -70.85449, 200.80566, -97.99072, 109.524414, -71.19995, -42.91455, -141.92725, -168.19604, -171.81982, -279.3623, -185.5332, -325.77246, -138.55347, -322.9585, -70.36182, -111.333984, 20.242065, -93.756836, 51.016113, 85.166016, 138.07166, 124.316895, 129.81299, 187.24487, 161.13477, 215.16797, 118.540405)
+
+[node name="HellGD9" type="Area2D" parent="Envidorment" groups=["ground"]]
+position = Vector2(-3686, -3803)
+rotation = -2.9086967
+scale = Vector2(0.99999994, 0.99999994)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Envidorment/HellGD9"]
+polygon = PackedVector2Array(135.8711, -3.4516602, 141.17969, 18.927246, 44.262695, 190.93945, -99.38281, 74.96069, -102.74512, 52.12036, -69.56348, 36.027344, -102.17383, -75.456055, -107.993164, -95.6582, 82.43457, -137.74414, 85.10449, -117.82251, 96.30859, -1.2617188)
+
+[node name="Polygon2D" type="Polygon2D" parent="Envidorment/HellGD9"]
+color = Color(0.93, 0.58404005, 0.3534, 1)
+polygon = PackedVector2Array(78.395996, 35.875244, 46.233887, -112.71362, -68.34961, -84.50659, -36.648926, 62.135986, 22.685547, 69.64453)
+
+[node name="Polygon2D9" type="Polygon2D" parent="Envidorment/HellGD9"]
+position = Vector2(-6.680664, 10.83374)
+rotation = 1.4698824
+scale = Vector2(0.9999999, 0.9999999)
+color = Color(0.7086874, 0.47092414, 0.2978043, 1)
+polygon = PackedVector2Array(-7.050293, -99.04663, 16.24707, -39.82495, 19.11084, 24.243896, 25.344727, 54.134766, 20.31836, 61.86328, 14.107422, 60.67041, 7.2041016, 26.040283, 5.5439453, -37.286377, -16.780273, -96.73877, -12.838379, -101.78491)
+
+[node name="Polygon2D10" type="Polygon2D" parent="Envidorment/HellGD9"]
+position = Vector2(22.95858, -33.195084)
+rotation = 4.5827503
+scale = Vector2(0.9999999, 0.9999999)
+color = Color(0.7086874, 0.47092414, 0.2978043, 1)
+polygon = PackedVector2Array(-7.050293, -99.04663, 16.24707, -39.82495, 19.11084, 24.243896, 25.344727, 54.134766, 20.31836, 61.86328, 14.107422, 60.67041, 7.2041016, 26.040283, 5.5439453, -37.286377, -16.780273, -96.73877, -12.838379, -101.78491)
+
+[node name="Polygon2D7" type="Polygon2D" parent="Envidorment/HellGD9"]
+color = Color(0.7086874, 0.47092414, 0.2978043, 1)
+polygon = PackedVector2Array(-7.050293, -99.04663, 16.24707, -39.82495, 19.11084, 24.243896, 25.935547, 61.679443, 21.251465, 67.928955, 15.462891, 65.19092, 7.2041016, 26.040283, 5.5439453, -37.286377, -16.780273, -96.73877, -12.838379, -101.78491)
+
+[node name="Polygon2D8" type="Polygon2D" parent="Envidorment/HellGD9"]
+color = Color(0.7086874, 0.47092414, 0.2978043, 1)
+polygon = PackedVector2Array(-7.050293, -99.04663, 16.24707, -39.82495, 19.11084, 24.243896, 25.935547, 61.679443, 21.251465, 67.928955, 15.462891, 65.19092, 7.2041016, 26.040283, 5.5439453, -37.286377, -16.780273, -96.73877, -12.838379, -101.78491)
+
+[node name="Polygon2D2" type="Polygon2D" parent="Envidorment/HellGD9"]
+color = Color(0.2627451, 0.2627451, 0.2627451, 1)
+polygon = PackedVector2Array(100.18262, 19.4021, 74.9126, -117.46094, 44.288086, -112.25195, 75.24609, 35.594482)
+
+[node name="Polygon2D3" type="Polygon2D" parent="Envidorment/HellGD9"]
+color = Color(0.26293245, 0.26293245, 0.26293242, 1)
+polygon = PackedVector2Array(-63.97412, 55.25708, -94.38965, -77.30249, -64.45752, -85.42969, -34.191406, 59.497314)
+
+[node name="Polygon2D4" type="Polygon2D" parent="Envidorment/HellGD9"]
+color = Color(0.2627451, 0.2627451, 0.2627451, 1)
+polygon = PackedVector2Array(85.10449, -117.82251, -102.916016, -74.25195, -107.993164, -95.6582, 82.43457, -137.74414)
+
+[node name="Polygon2D5" type="Polygon2D" parent="Envidorment/HellGD9"]
+color = Color(0.19215687, 0.19215687, 0.19215687, 1)
+polygon = PackedVector2Array(136.61377, -4.6555176, 20.559082, 65.01001, -102.975586, 51.147217, -99.151855, 75.93384, 43.29004, 191.17017, 140.94873, 17.954102)
+
+[node name="Polygon2D6" type="Polygon2D" parent="Envidorment/HellGD9"]
+
+[node name="HellGD10" type="Area2D" parent="Envidorment" groups=["ground"]]
+position = Vector2(-3654, -4396)
+rotation = -2.9086967
+scale = Vector2(0.99999994, 0.99999994)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Envidorment/HellGD10"]
+polygon = PackedVector2Array(135.8711, -3.4516602, 141.17969, 18.927246, 44.262695, 190.93945, -99.38281, 74.96069, -102.74512, 52.12036, -69.56348, 36.027344, -102.17383, -75.456055, -107.993164, -95.6582, 82.43457, -137.74414, 85.10449, -117.82251, 96.30859, -1.2617188)
+
+[node name="Polygon2D" type="Polygon2D" parent="Envidorment/HellGD10"]
+color = Color(0.93, 0.58404005, 0.3534, 1)
+polygon = PackedVector2Array(78.395996, 35.875244, 46.233887, -112.71362, -68.34961, -84.50659, -36.648926, 62.135986, 22.685547, 69.64453)
+
+[node name="Polygon2D9" type="Polygon2D" parent="Envidorment/HellGD10"]
+position = Vector2(-6.680664, 10.83374)
+rotation = 1.4698824
+scale = Vector2(0.9999999, 0.9999999)
+color = Color(0.7086874, 0.47092414, 0.2978043, 1)
+polygon = PackedVector2Array(-7.050293, -99.04663, 16.24707, -39.82495, 19.11084, 24.243896, 25.344727, 54.134766, 20.31836, 61.86328, 14.107422, 60.67041, 7.2041016, 26.040283, 5.5439453, -37.286377, -16.780273, -96.73877, -12.838379, -101.78491)
+
+[node name="Polygon2D10" type="Polygon2D" parent="Envidorment/HellGD10"]
+position = Vector2(22.95858, -33.195084)
+rotation = 4.5827503
+scale = Vector2(0.9999999, 0.9999999)
+color = Color(0.7086874, 0.47092414, 0.2978043, 1)
+polygon = PackedVector2Array(-7.050293, -99.04663, 16.24707, -39.82495, 19.11084, 24.243896, 25.344727, 54.134766, 20.31836, 61.86328, 14.107422, 60.67041, 7.2041016, 26.040283, 5.5439453, -37.286377, -16.780273, -96.73877, -12.838379, -101.78491)
+
+[node name="Polygon2D7" type="Polygon2D" parent="Envidorment/HellGD10"]
+color = Color(0.7086874, 0.47092414, 0.2978043, 1)
+polygon = PackedVector2Array(-7.050293, -99.04663, 16.24707, -39.82495, 19.11084, 24.243896, 25.935547, 61.679443, 21.251465, 67.928955, 15.462891, 65.19092, 7.2041016, 26.040283, 5.5439453, -37.286377, -16.780273, -96.73877, -12.838379, -101.78491)
+
+[node name="Polygon2D8" type="Polygon2D" parent="Envidorment/HellGD10"]
+color = Color(0.7086874, 0.47092414, 0.2978043, 1)
+polygon = PackedVector2Array(-7.050293, -99.04663, 16.24707, -39.82495, 19.11084, 24.243896, 25.935547, 61.679443, 21.251465, 67.928955, 15.462891, 65.19092, 7.2041016, 26.040283, 5.5439453, -37.286377, -16.780273, -96.73877, -12.838379, -101.78491)
+
+[node name="Polygon2D2" type="Polygon2D" parent="Envidorment/HellGD10"]
+color = Color(0.2627451, 0.2627451, 0.2627451, 1)
+polygon = PackedVector2Array(100.18262, 19.4021, 74.9126, -117.46094, 44.288086, -112.25195, 75.24609, 35.594482)
+
+[node name="Polygon2D3" type="Polygon2D" parent="Envidorment/HellGD10"]
+color = Color(0.26293245, 0.26293245, 0.26293242, 1)
+polygon = PackedVector2Array(-63.97412, 55.25708, -94.38965, -77.30249, -64.45752, -85.42969, -34.191406, 59.497314)
+
+[node name="Polygon2D4" type="Polygon2D" parent="Envidorment/HellGD10"]
+color = Color(0.2627451, 0.2627451, 0.2627451, 1)
+polygon = PackedVector2Array(85.10449, -117.82251, -102.916016, -74.25195, -107.993164, -95.6582, 82.43457, -137.74414)
+
+[node name="Polygon2D5" type="Polygon2D" parent="Envidorment/HellGD10"]
+color = Color(0.19215687, 0.19215687, 0.19215687, 1)
+polygon = PackedVector2Array(136.61377, -4.6555176, 20.559082, 65.01001, -102.975586, 51.147217, -99.151855, 75.93384, 43.29004, 191.17017, 140.94873, 17.954102)
+
+[node name="Polygon2D6" type="Polygon2D" parent="Envidorment/HellGD10"]
+
+[node name="HellGD11" type="Area2D" parent="Envidorment" groups=["ground"]]
+position = Vector2(-3684.0002, -4126)
+rotation = -2.9086967
+scale = Vector2(0.99999994, 0.99999994)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Envidorment/HellGD11"]
+polygon = PackedVector2Array(-221.43262, 58.690186, 237.85547, -32.781494, 232.25342, -91.06177, -228.75049, 1.8442383)
+
+[node name="Polygon2D" type="Polygon2D" parent="Envidorment/HellGD11"]
+color = Color(0.2627451, 0.2627451, 0.2627451, 1)
+polygon = PackedVector2Array(235.4165, -51.72998, 233.71973, -71.882324, -33.145508, -27.081543, -226.36084, 24.915771, -222.4873, 45.579834, -27.836914, -4.7023926)
+
+[node name="HellGD12" type="Area2D" parent="Envidorment" groups=["ground"]]
+position = Vector2(-3372.9998, -3131.9998)
+rotation = -1.9074237
+scale = Vector2(0.9999999, 0.9999999)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Envidorment/HellGD12"]
+polygon = PackedVector2Array(-238.27222, 93.54761, 239.07983, 1.0268555, 232.25342, -91.06177, -228.75049, 1.8442383)
+
+[node name="Polygon2D3" type="Polygon2D" parent="Envidorment/HellGD12"]
+color = Color(0.33333334, 0.33333334, 0.33333334, 1)
+polygon = PackedVector2Array(200.0476, -75.140625, 207.41333, 3.7182617, 200.75952, 4.568115, 194.62231, -29.363281, 194.33765, -73.96069)
+
+[node name="Polygon2D4" type="Polygon2D" parent="Envidorment/HellGD12"]
+color = Color(0.33333334, 0.33333334, 0.33333334, 1)
+polygon = PackedVector2Array(144.87964, -65.841064, 156.44312, -35.308105, 151.30151, 12.6875, 145.26099, 14.811523, 150.73315, -34.127686, 137.89526, -64.04736)
+
+[node name="Polygon2D11" type="Polygon2D" parent="Envidorment/HellGD12"]
+position = Vector2(-343.5918, 66.685356)
+color = Color(0.33333334, 0.33333334, 0.33333334, 1)
+polygon = PackedVector2Array(200.0476, -75.140625, 207.41333, 3.7182617, 200.75952, 4.568115, 194.62231, -29.363281, 194.33765, -73.96069)
+
+[node name="Polygon2D12" type="Polygon2D" parent="Envidorment/HellGD12"]
+position = Vector2(-343.5918, 66.685356)
+color = Color(0.33333334, 0.33333334, 0.33333334, 1)
+polygon = PackedVector2Array(144.87964, -65.841064, 156.44312, -35.308105, 151.30151, 12.6875, 145.26099, 14.811523, 150.73315, -34.127686, 137.89526, -64.04736)
+
+[node name="Polygon2D5" type="Polygon2D" parent="Envidorment/HellGD12"]
+position = Vector2(-5.709977, 1.179944)
+color = Color(0.33333334, 0.33333334, 0.33333334, 1)
+polygon = PackedVector2Array(104.29419, -58.854492, 106.608154, -23.08252, 114.82153, 20.05127, 105.94946, 21.18457, 102.17212, -22.51587, 97.309326, -57.061035)
+
+[node name="Polygon2D6" type="Polygon2D" parent="Envidorment/HellGD12"]
+position = Vector2(182.02187, -32.71347)
+rotation = 3.1372042
+color = Color(0.33333334, 0.33333334, 0.33333334, 1)
+polygon = PackedVector2Array(199.03906, -76.41235, 207.60889, 4.0895996, 200.95117, 4.9104004, 194.62231, -29.363281, 193.32373, -75.25708)
+
+[node name="Polygon2D7" type="Polygon2D" parent="Envidorment/HellGD12"]
+position = Vector2(173.9754, -30.846043)
+rotation = 3.1372042
+color = Color(0.33333334, 0.33333334, 0.33333334, 1)
+polygon = PackedVector2Array(144.87964, -65.841064, 156.44312, -35.308105, 151.30151, 12.6875, 145.26099, 14.811523, 150.73315, -34.127686, 137.89526, -64.04736)
+
+[node name="Polygon2D8" type="Polygon2D" parent="Envidorment/HellGD12"]
+position = Vector2(168.26543, -29.6661)
+rotation = 3.1372042
+color = Color(0.33333334, 0.33333334, 0.33333334, 1)
+polygon = PackedVector2Array(104.29419, -58.854492, 106.608154, -23.08252, 114.82153, 20.05127, 105.94946, 21.18457, 102.17212, -22.51587, 97.309326, -57.061035)
+
+[node name="Polygon2D9" type="Polygon2D" parent="Envidorment/HellGD12"]
+color = Color(0.33333334, 0.33333334, 0.33333334, 1)
+polygon = PackedVector2Array(-62.861816, -26.236328, -66.635254, 14.821533, -56.912354, 41.532227, -55.496094, 52.62256, -62.150146, 53.472168, -61.678955, 43.042725, -73.61987, 16.615234, -69.79907, -27.604736)
+
+[node name="Polygon2D10" type="Polygon2D" parent="Envidorment/HellGD12"]
+color = Color(0.33333334, 0.33333334, 0.33333334, 1)
+polygon = PackedVector2Array(-107.6001, -16.465332, -99.906006, 19.070557, -100.376465, 50.689697, -98.29956, 59.892334, -105.61426, 62.629883, -106.086914, 51.870117, -108.448, 19.259521, -111.09253, -15.5686035)
+
+[node name="Polygon2D" type="Polygon2D" parent="Envidorment/HellGD12"]
+position = Vector2(-2.5959473, -16.800781)
+scale = Vector2(1.0000001, 1.0000001)
+color = Color(0.2627451, 0.2627451, 0.2627451, 1)
+polygon = PackedVector2Array(235.2539, -60.70117, 235.11182, -72.40503, -33.145508, -27.081543, -225.48682, 20.681152, -226.28857, 32.054688, -31.384033, -16.28003)
+
+[node name="Polygon2D2" type="Polygon2D" parent="Envidorment/HellGD12"]
+scale = Vector2(1.0000001, 1.0000001)
+color = Color(0.2627451, 0.2627451, 0.2627451, 1)
+polygon = PackedVector2Array(-239.82983, 91.943115, -25.81128, 55.59424, 239.07983, 1.0268555, 236.6726, -7.2319336, -30.106445, 46.674805, -239.07495, 83.731445)
+
+[node name="Net" type="Area2D" parent="Envidorment" groups=["ground"]]
+visible = false
+position = Vector2(-4617, -3643)
+rotation = -2.9086967
+scale = Vector2(0.99999994, 0.99999994)
+
+[node name="Polygon2D" type="Polygon2D" parent="Envidorment/Net"]
+position = Vector2(-56.433887, 13.38613)
+color = Color(0.89411765, 0.8039216, 0.6431373, 1)
+polygon = PackedVector2Array(219.27246, 140.177, 196.22461, 60.34131, 174.79199, -12.683594, 155.37305, -111.88037, 139.52979, -165.67578, 130.75977, -202.65015, 126.04443, -213.8645, 125.20215, -204.41504, 133.27979, -170.3601, 141.68799, -143.57764, 149.3042, -111.46826, 156.64014, -76.20947, 168.49268, -13.245117, 197.229, 77.57471, 210.66504, 129.88599, 213.05469, 152.95728, 215.59326, 163.6604, 222.4043, 162.04492)
+
+[node name="Polygon2D2" type="Polygon2D" parent="Envidorment/Net"]
+color = Color(0.8951656, 0.8066455, 0.6456512, 1)
+polygon = PackedVector2Array(218.34961, 136.2854, 196.22461, 60.34131, 174.79199, -12.683594, 147.12793, -111.97974, 139.52979, -165.67578, 130.75977, -202.65015, 126.04443, -213.8645, 125.20215, -204.41504, 133.09912, -175.45557, 136.87354, -146.54639, 140.4165, -118.60986, 148.03271, -86.50049, 168.49268, -13.245117, 197.229, 77.57471, 210.66504, 129.88599, 213.05469, 152.95728, 215.59326, 163.6604, 222.4043, 162.04492, 218.2002, 148.65356)
+
+[node name="Polygon2D3" type="Polygon2D" parent="Envidorment/Net"]
+position = Vector2(-27.243822, 6.4622407)
+color = Color(0.89411765, 0.8039216, 0.6431373, 1)
+polygon = PackedVector2Array(219.27246, 140.177, 193.84814, 76.321045, 174.79199, -12.683594, 156.9209, -79.35913, 139.52979, -165.67578, 130.75977, -202.65015, 126.04443, -213.8645, 125.20215, -204.41504, 133.09912, -175.45557, 138.30762, -144.83081, 149.46729, -84.7854, 168.49268, -13.245117, 189.6753, 80.3938, 210.66504, 129.88599, 215.97314, 152.2649, 215.59326, 163.6604, 222.4043, 162.04492)
+
+[node name="Polygon2D4" type="Polygon2D" parent="Envidorment/Net"]
+position = Vector2(-82.93574, 18.644629)
+color = Color(0.89411765, 0.8039216, 0.6431373, 1)
+polygon = PackedVector2Array(219.27246, 140.177, 193.84814, 76.321045, 174.79199, -12.683594, 156.9209, -79.35913, 139.52979, -165.67578, 130.75977, -202.65015, 126.04443, -213.8645, 125.20215, -204.41504, 133.09912, -175.45557, 138.30762, -144.83081, 149.46729, -84.7854, 168.49268, -13.245117, 189.6753, 80.3938, 210.66504, 129.88599, 215.97314, 152.2649, 215.59326, 163.6604, 222.4043, 162.04492)
+
+[node name="Polygon2D5" type="Polygon2D" parent="Envidorment/Net"]
+position = Vector2(-166.2804, 38.854103)
+color = Color(0.89411765, 0.8039216, 0.6431373, 1)
+polygon = PackedVector2Array(219.27246, 140.177, 196.22461, 60.34131, 174.79199, -12.683594, 155.37305, -111.88037, 139.52979, -165.67578, 130.75977, -202.65015, 126.04443, -213.8645, 125.20215, -204.41504, 133.27979, -170.3601, 141.68799, -143.57764, 149.3042, -111.46826, 156.64014, -76.20947, 168.49268, -13.245117, 197.229, 77.57471, 210.66504, 129.88599, 213.05469, 152.95728, 215.59326, 163.6604, 222.4043, 162.04492)
+
+[node name="Polygon2D6" type="Polygon2D" parent="Envidorment/Net"]
+position = Vector2(-109.84651, 25.467972)
+color = Color(0.8951656, 0.8066455, 0.6456512, 1)
+polygon = PackedVector2Array(218.34961, 136.2854, 196.22461, 60.34131, 174.79199, -12.683594, 147.12793, -111.97974, 139.52979, -165.67578, 130.75977, -202.65015, 126.04443, -213.8645, 125.20215, -204.41504, 133.09912, -175.45557, 136.87354, -146.54639, 140.4165, -118.60986, 148.03271, -86.50049, 168.49268, -13.245117, 197.229, 77.57471, 210.66504, 129.88599, 213.05469, 152.95728, 215.59326, 163.6604, 222.4043, 162.04492, 218.2002, 148.65356)
+
+[node name="Polygon2D7" type="Polygon2D" parent="Envidorment/Net"]
+position = Vector2(-137.09033, 31.930212)
+color = Color(0.89411765, 0.8039216, 0.6431373, 1)
+polygon = PackedVector2Array(219.27246, 140.177, 193.84814, 76.321045, 174.79199, -12.683594, 156.9209, -79.35913, 139.52979, -165.67578, 130.75977, -202.65015, 126.04443, -213.8645, 125.20215, -204.41504, 133.09912, -175.45557, 138.30762, -144.83081, 149.46729, -84.7854, 168.49268, -13.245117, 189.6753, 80.3938, 210.66504, 129.88599, 215.97314, 152.2649, 215.59326, 163.6604, 222.4043, 162.04492)
+
+[node name="Polygon2D8" type="Polygon2D" parent="Envidorment/Net"]
+position = Vector2(-192.78226, 44.112602)
+color = Color(0.89411765, 0.8039216, 0.6431373, 1)
+polygon = PackedVector2Array(219.27246, 140.177, 193.84814, 76.321045, 174.79199, -12.683594, 156.9209, -79.35913, 139.52979, -165.67578, 130.75977, -202.65015, 126.04443, -213.8645, 125.20215, -204.41504, 133.09912, -175.45557, 138.30762, -144.83081, 149.46729, -84.7854, 168.49268, -13.245117, 189.6753, 80.3938, 210.66504, 129.88599, 215.97314, 152.2649, 215.59326, 163.6604, 222.4043, 162.04492)
+
+[node name="Polygon2D9" type="Polygon2D" parent="Envidorment/Net"]
+position = Vector2(-278.86804, 62.476673)
+color = Color(0.89411765, 0.8039216, 0.6431373, 1)
+polygon = PackedVector2Array(219.27246, 140.177, 196.22461, 60.34131, 174.79199, -12.683594, 155.37305, -111.88037, 139.52979, -165.67578, 130.75977, -202.65015, 126.04443, -213.8645, 125.20215, -204.41504, 133.27979, -170.3601, 141.68799, -143.57764, 149.3042, -111.46826, 156.64014, -76.20947, 168.49268, -13.245117, 197.229, 77.57471, 210.66504, 129.88599, 213.05469, 152.95728, 215.59326, 163.6604, 222.4043, 162.04492)
+
+[node name="Polygon2D25" type="Polygon2D" parent="Envidorment/Net"]
+position = Vector2(-334.20108, 77.21708)
+color = Color(0.89411765, 0.8039216, 0.6431373, 1)
+polygon = PackedVector2Array(219.27246, 140.177, 196.22461, 60.34131, 174.79199, -12.683594, 155.37305, -111.88037, 139.52979, -165.67578, 130.75977, -202.65015, 126.04443, -213.8645, 125.20215, -204.41504, 133.27979, -170.3601, 141.68799, -143.57764, 149.3042, -111.46826, 156.64014, -76.20947, 168.49268, -13.245117, 197.229, 77.57471, 210.66504, 129.88599, 213.05469, 152.95728, 215.59326, 163.6604, 222.4043, 162.04492)
+
+[node name="Polygon2D10" type="Polygon2D" parent="Envidorment/Net"]
+position = Vector2(-222.43414, 49.09054)
+color = Color(0.8951656, 0.8066455, 0.6456512, 1)
+polygon = PackedVector2Array(218.34961, 136.2854, 196.22461, 60.34131, 174.79199, -12.683594, 147.12793, -111.97974, 139.52979, -165.67578, 130.75977, -202.65015, 126.04443, -213.8645, 125.20215, -204.41504, 133.09912, -175.45557, 136.87354, -146.54639, 140.4165, -118.60986, 148.03271, -86.50049, 168.49268, -13.245117, 197.229, 77.57471, 210.66504, 129.88599, 213.05469, 152.95728, 215.59326, 163.6604, 222.4043, 162.04492, 218.2002, 148.65356)
+
+[node name="Polygon2D11" type="Polygon2D" parent="Envidorment/Net"]
+position = Vector2(-249.67798, 55.55278)
+color = Color(0.89411765, 0.8039216, 0.6431373, 1)
+polygon = PackedVector2Array(219.27246, 140.177, 193.84814, 76.321045, 174.79199, -12.683594, 156.9209, -79.35913, 139.52979, -165.67578, 130.75977, -202.65015, 126.04443, -213.8645, 125.20215, -204.41504, 133.09912, -175.45557, 138.30762, -144.83081, 149.46729, -84.7854, 168.49268, -13.245117, 189.6753, 80.3938, 210.66504, 129.88599, 215.97314, 152.2649, 215.59326, 163.6604, 222.4043, 162.04492)
+
+[node name="Polygon2D12" type="Polygon2D" parent="Envidorment/Net"]
+position = Vector2(-305.3699, 67.73517)
+color = Color(0.89411765, 0.8039216, 0.6431373, 1)
+polygon = PackedVector2Array(219.27246, 140.177, 193.84814, 76.321045, 174.79199, -12.683594, 156.9209, -79.35913, 139.52979, -165.67578, 130.75977, -202.65015, 126.04443, -213.8645, 125.20215, -204.41504, 133.09912, -175.45557, 138.30762, -144.83081, 149.46729, -84.7854, 168.49268, -13.245117, 189.6753, 80.3938, 210.66504, 129.88599, 215.97314, 152.2649, 215.59326, 163.6604, 222.4043, 162.04492)
+
+[node name="Polygon2D13" type="Polygon2D" parent="Envidorment/Net"]
+position = Vector2(14.102142, -22.872225)
+rotation = 1.5707964
+color = Color(0.89411765, 0.8039216, 0.6431373, 1)
+polygon = PackedVector2Array(210.69629, 147.3501, 211.58813, 133.77832, 209.37988, 115.802246, 196.22461, 60.34131, 174.79199, -12.683594, 155.37305, -111.88037, 139.52979, -165.67578, 130.75977, -202.65015, 126.04443, -213.8645, 125.20215, -204.41504, 133.27979, -170.3601, 141.68799, -143.57764, 149.3042, -111.46826, 156.64014, -76.20947, 168.49268, -13.245117, 197.229, 77.57471, 204.51465, 116.956055, 209.72314, 147.58105)
+
+[node name="Polygon2D14" type="Polygon2D" parent="Envidorment/Net"]
+position = Vector2(-22.413498, -172.48376)
+rotation = 1.5707964
+color = Color(0.8951656, 0.8066455, 0.6456512, 1)
+polygon = PackedVector2Array(218.34961, 136.2854, 196.22461, 60.34131, 174.79199, -12.683594, 147.86963, -113.18359, 139.52979, -165.67578, 130.75977, -202.65015, 126.04443, -213.8645, 125.20215, -204.41504, 126.536865, -194.4541, 133.09912, -175.45557, 136.87354, -146.54639, 140.4165, -118.60986, 148.03271, -86.50049, 168.49268, -13.245117, 197.229, 77.57471, 210.66504, 129.88599, 219.0232, 160.7915, 220.78833, 155.23389)
+
+[node name="Polygon2D15" type="Polygon2D" parent="Envidorment/Net"]
+position = Vector2(9.255417, -43.30527)
+rotation = 1.5707964
+color = Color(0.89411765, 0.8039216, 0.6431373, 1)
+polygon = PackedVector2Array(211.17578, 127.708984, 193.84814, 76.321045, 174.79199, -12.683594, 156.9209, -79.35913, 139.52979, -165.67578, 130.75977, -202.65015, 126.04443, -213.8645, 125.20215, -204.41504, 133.09912, -175.45557, 138.30762, -144.83081, 149.46729, -84.7854, 168.49268, -13.245117, 189.6753, 80.3938, 208.30664, 124.27881, 211.90015, 148.09277, 218.38086, 153.74951)
+
+[node name="Polygon2D16" type="Polygon2D" parent="Envidorment/Net"]
+position = Vector2(1.589325, -71.291534)
+rotation = 1.5707964
+color = Color(0.89411765, 0.8039216, 0.6431373, 1)
+polygon = PackedVector2Array(219.27246, 140.177, 193.84814, 76.321045, 174.79199, -12.683594, 156.9209, -79.35913, 139.52979, -165.67578, 130.75977, -202.65015, 126.04443, -213.8645, 125.20215, -204.41504, 133.09912, -175.45557, 138.30762, -144.83081, 149.46729, -84.7854, 168.49268, -13.245117, 189.6753, 80.3938, 210.66504, 129.88599, 215.97314, 152.2649, 218.56152, 158.8457, 222.4043, 162.04492)
+
+[node name="Polygon2D17" type="Polygon2D" parent="Envidorment/Net"]
+position = Vector2(-6.1265907, -95.15499)
+rotation = 1.5707964
+color = Color(0.89411765, 0.8039216, 0.6431373, 1)
+polygon = PackedVector2Array(219.27246, 140.177, 196.22461, 60.34131, 174.79199, -12.683594, 155.37305, -111.88037, 139.52979, -165.67578, 130.75977, -202.65015, 126.04443, -213.8645, 125.20215, -204.41504, 133.27979, -170.3601, 141.68799, -143.57764, 149.3042, -111.46826, 156.64014, -76.20947, 168.49268, -13.245117, 197.229, 77.57471, 210.66504, 129.88599, 220.45801, 162.50635, 222.4043, 162.04492)
+
+[node name="Polygon2D18" type="Polygon2D" parent="Envidorment/Net"]
+position = Vector2(-45.68735, -313.93103)
+rotation = 1.5707964
+color = Color(0.8951656, 0.8066455, 0.6456512, 1)
+polygon = PackedVector2Array(218.34961, 136.2854, 196.22461, 60.34131, 174.79199, -12.683594, 147.12793, -111.97974, 139.52979, -165.67578, 130.75977, -202.65015, 126.04443, -213.8645, 125.20215, -204.41504, 133.09912, -175.45557, 136.87354, -146.54639, 140.4165, -118.60986, 148.03271, -86.50049, 168.49268, -13.245117, 197.229, 77.57471, 210.66504, 129.88599, 213.05469, 152.95728, 217.53882, 163.19873, 218.2002, 148.65356)
+
+[node name="Polygon2D19" type="Polygon2D" parent="Envidorment/Net"]
+position = Vector2(-13.380915, -117.07246)
+rotation = 1.5707964
+color = Color(0.89411765, 0.8039216, 0.6431373, 1)
+polygon = PackedVector2Array(219.27246, 140.177, 193.84814, 76.321045, 174.79199, -12.683594, 156.9209, -79.35913, 139.52979, -165.67578, 130.75977, -202.65015, 126.04443, -213.8645, 125.20215, -204.41504, 133.09912, -175.45557, 138.30762, -144.83081, 149.46729, -84.7854, 168.49268, -13.245117, 189.6753, 80.3938, 210.66504, 129.88599, 215.97314, 152.2649, 222.4043, 162.04492)
+
+[node name="Polygon2D20" type="Polygon2D" parent="Envidorment/Net"]
+position = Vector2(-21.789223, -143.85492)
+rotation = 1.5707964
+color = Color(0.89411765, 0.8039216, 0.6431373, 1)
+polygon = PackedVector2Array(219.27246, 140.177, 193.84814, 76.321045, 174.79199, -12.683594, 156.9209, -79.35913, 139.52979, -165.67578, 130.75977, -202.65015, 126.04443, -213.8645, 125.20215, -204.41504, 133.09912, -175.45557, 138.30762, -144.83081, 149.46729, -84.7854, 168.49268, -13.245117, 189.6753, 80.3938, 210.66504, 129.88599, 215.97314, 152.2649, 222.45361, 157.92188)
+
+[node name="Polygon2D21" type="Polygon2D" parent="Envidorment/Net"]
+position = Vector2(-27.391396, -202.1354)
+rotation = 1.5707964
+color = Color(0.89411765, 0.8039216, 0.6431373, 1)
+polygon = PackedVector2Array(219.27246, 140.177, 196.22461, 60.34131, 174.79199, -12.683594, 155.37305, -111.88037, 139.52979, -165.67578, 130.2478, -200.47314, 130.75977, -202.65015, 126.04443, -213.8645, 125.20215, -204.41504, 133.27979, -170.3601, 141.68799, -143.57764, 149.3042, -111.46826, 156.64014, -76.20947, 168.49268, -13.245117, 197.229, 77.57471, 210.66504, 129.88599, 216.94604, 152.03418, 222.4043, 162.04492)
+
+[node name="Polygon2D22" type="Polygon2D" parent="Envidorment/Net"]
+position = Vector2(-30.70388, -229.09886)
+rotation = 1.5707964
+color = Color(0.8951656, 0.8066455, 0.6456512, 1)
+polygon = PackedVector2Array(218.34961, 136.2854, 196.22461, 60.34131, 174.79199, -12.683594, 147.12793, -111.97974, 139.52979, -165.67578, 132.70532, -203.11182, 126.04443, -213.8645, 125.20215, -204.41504, 133.09912, -175.45557, 136.87354, -146.54639, 140.4165, -118.60986, 148.03271, -86.50049, 168.49268, -13.245117, 197.229, 77.57471, 210.66504, 129.88599, 213.05469, 152.95728, 215.59326, 163.6604, 218.2002, 148.65356)
+
+[node name="Polygon2D23" type="Polygon2D" parent="Envidorment/Net"]
+position = Vector2(-34.016388, -256.06232)
+rotation = 1.5707964
+color = Color(0.89411765, 0.8039216, 0.6431373, 1)
+polygon = PackedVector2Array(219.27246, 140.177, 193.84814, 76.321045, 174.79199, -12.683594, 156.9209, -79.35913, 139.52979, -165.67578, 130.75977, -202.65015, 126.04443, -213.8645, 125.20215, -204.41504, 133.09912, -175.45557, 138.30762, -144.83081, 149.46729, -84.7854, 168.49268, -13.245117, 189.6753, 80.3938, 210.66504, 129.88599, 215.97314, 152.2649, 219.25415, 161.76416)
+
+[node name="Polygon2D24" type="Polygon2D" parent="Envidorment/Net"]
+position = Vector2(-37.048264, -286.17554)
+rotation = 1.5707964
+color = Color(0.89411765, 0.8039216, 0.6431373, 1)
+polygon = PackedVector2Array(219.27246, 140.177, 193.84814, 76.321045, 174.79199, -12.683594, 156.9209, -79.35913, 139.52979, -165.67578, 130.75977, -202.65015, 126.04443, -213.8645, 125.20215, -204.41504, 133.09912, -175.45557, 138.30762, -144.83081, 149.46729, -84.7854, 168.49268, -13.245117, 189.6753, 80.3938, 210.66504, 129.88599, 215.97314, 152.2649, 222.4043, 162.04492)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Envidorment/Net"]
+
+[node name="Decor1" type="Node2D" parent="Envidorment"]
+z_index = 1
+position = Vector2(500, -388)
+rotation = 0.30959284
+scale = Vector2(3.5925682, 3.54924)
+
+[node name="Polygon2D3" type="Polygon2D" parent="Envidorment/Decor1"]
+position = Vector2(-653.33417, -393.41144)
+rotation = 0.2054376
+scale = Vector2(1.5025127, 1.5741645)
+color = Color(0.94761235, 0.93827975, 0.914117, 1)
+polygon = PackedVector2Array(444, 347, 437, 356, 404, 363, 402, 371, 440, 363, 456, 361, 461, 350, 500, 344, 546, 343, 610, 352, 631, 351, 609, 348, 544, 338, 499, 339, 461, 344, 453, 342)
+
+[node name="Polygon2D4" type="Polygon2D" parent="Envidorment/Decor1"]
+position = Vector2(-653.33417, -393.41144)
+rotation = 0.2054376
+scale = Vector2(1.5025127, 1.5752112)
+color = Color(0.94509804, 0.9372549, 0.9137255, 1)
+polygon = PackedVector2Array(407, 370, 409, 372, 409, 369, 413, 368, 415, 370, 416, 367, 421, 366, 423, 368, 424, 365, 429, 364, 430, 366, 431, 364, 436, 363, 437, 365, 438, 363, 444, 362, 445, 364, 446, 362, 454, 361, 454, 359, 406, 367)
+
+[node name="Polygon2D5" type="Polygon2D" parent="Envidorment/Decor1"]
+position = Vector2(-653.33417, -393.41144)
+rotation = 0.2054376
+scale = Vector2(1.5025127, 1.5752112)
+color = Color(0.94509804, 0.9372549, 0.9137255, 1)
+polygon = PackedVector2Array(472, 348, 470, 362, 474, 378, 476, 377, 472, 362, 474, 348, 479, 347, 478, 362, 482, 378, 484, 377, 480, 362, 481, 346, 487, 345, 486, 362, 491, 379, 493, 378, 488, 362, 489, 345, 495, 344, 494, 362, 498, 376, 500, 374, 496, 362, 498, 343, 504, 343, 502, 362, 505, 371, 508, 371, 504, 362, 506, 343, 512, 343, 510, 360, 512, 369, 514, 368, 512, 359, 514, 343, 519, 343, 517, 355, 519, 361, 521, 360, 519, 355, 521, 343, 524, 341, 496, 341, 469, 345)
+
+[node name="HellRK1" type="StaticBody2D" parent="Envidorment"]
+position = Vector2(-2183.1982, -2689.4688)
+
+[node name="Polygon2D" type="Polygon2D" parent="Envidorment/HellRK1"]
+color = Color(0.23, 0.105799995, 0.10786997, 1)
+polygon = PackedVector2Array(-47.801758, 189.46875, 19.198242, 174.46875, 30.198242, 116.46875, -25.801758, 37.46875, -95.80176, 16.46875, -165.80176, -39.53125, -235.80176, 32.46875, -207.80176, 114.46875, -150.80176, 186.46875)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Envidorment/HellRK1"]
+polygon = PackedVector2Array(-149.80176, 186.46875, -206.80176, 114.46875, -235.80176, 32.46875, -164.80176, -39.53125, -95.80176, 17.46875, -25.801758, 38.46875, 30.198242, 116.46875, 21.198242, 174.46875, -47.801758, 189.46875)
+
+[node name="HellStart" type="Area2D" parent="Envidorment" groups=["ground"]]
+position = Vector2(1, -87)
+
+[node name="Polygon2D" type="Polygon2D" parent="Envidorment/HellStart"]
+color = Color(0.44, 0.1716, 0.1716, 1)
+polygon = PackedVector2Array(-6046, 201, -2471, 58, 449, 117, 4108, -228, 4930, 860, 2855, 1846, 33, 1506, -3333, 2050, -6224, 1336)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Envidorment/HellStart"]
+visible = false
+polygon = PackedVector2Array(-6048, 199, -2467, 55, 444, 117, 4108, -228, 4931, 861, 2858, 1845, 29, 1504, -3335, 2053, -6226, 1339)
+
+[node name="HellBedrock" type="StaticBody2D" parent="Envidorment" groups=["ground"]]
+position = Vector2(1, -87)
+physics_material_override = ExtResource("7_ahky1")
+
+[node name="Polygon2D" type="Polygon2D" parent="Envidorment/HellBedrock"]
+color = Color(0.23529412, 0.12156863, 0.12156863, 1)
+polygon = PackedVector2Array(-6019, 235, -6140, -114, -6733, -304, -7074, -597, -7283, -673, -7431, -931, -7842, -1037, -7974, -1254, -8263, -1394, -8677, -1474, -8829, -1611, -8893, -1975, -9163, -2142, -9715, -2405, -10057, -2951, -10366, -3781, -11099, -4310, -12157, -4766, -13004, -5784, -16802, -9122, -17033, 4636, 18587, 4867, 16092, -8891, 12011, -5935, 11398, -5055, 10647, -4793, 9479, -4650, 9181, -4173, 8991, -3804, 8713, -3620, 8528, -3369, 8476, -3132, 8306, -2984, 8017, -2895, 7721, -2740, 7640, -2510, 7395, -2407, 7292, -2126, 6951, -1763, 6604, -1600, 6345, -1585, 6145, -1408, 5982, -1149, 5671, -1090, 5479, -927, 5412, -705, 5175, -631, 4902, -505, 4591, -505, 4339, -424, 4058, -187, 4775, 880, 2861, 1768, -55, 1394, -3355, 1985, -6172, 1246)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Envidorment/HellBedrock"]
+visible = false
+polygon = PackedVector2Array(-6140, -113, -6019, 237, -6172, 1249, -3352, 1987, -54, 1393, 2861, 1768, 4775, 879, 4060, -188, 4341, -426, 4591, -506, 4902, -505, 5177, -633, 5414, -706, 5480, -929, 5673, -1090, 5983, -1149, 6145, -1409, 6347, -1585, 6604, -1599, 6951, -1763, 7293, -2127, 7396, -2408, 7641, -2510, 7722, -2740, 8017, -2896, 8308, -2985, 8477, -3131, 8529, -3370, 8715, -3622, 8990, -3802, 9180, -4170, 9480, -4650, 10651, -4792, 11400, -5054, 12013, -5933, 16093, -8892, 18575, 4825, -17045, 4609, -16803, -9138, -14465, -7071, -12997, -5780, -12160, -4762, -11098, -4308, -10367, -3782, -10054, -2942, -9714, -2402, -9164, -2142, -8895, -1973, -8828, -1607, -8677, -1470, -8260, -1396, -7973, -1249, -7839, -1036, -7431, -930, -7283, -671, -7073, -596, -6731, -300)
+
+[node name="HellBG1" type="Polygon2D" parent="Envidorment"]
+z_index = -1
+position = Vector2(-231.15771, -355.2898)
+color = Color(0.35929987, 0.13163203, 0.13177809, 1)
+polygon = PackedVector2Array(114.157715, 518.2898, -127.842285, -41.710205, -790.8423, -583.7102, -1639.8423, -593.7102, -2305.8423, -61.710205, -2630.8423, 524.2898, -3037.8423, 556.2898, -3223.8423, -727.7102, -3181.8423, -1764.7102, -3150.8423, -2545.7102, -2268.8423, -2722.7102, -1525.8423, -2723.7102, -735.8423, -2377.7102, 80.157715, -1794.7102, 164.15771, -1072.7102, 661.1577, -467.7102, 627.1577, 481.2898)
+
+[node name="HellBG2" type="Node2D" parent="Envidorment"]
+z_index = -1
+position = Vector2(-2791.5488, -3336.9888)
+rotation = -2.1067774
+scale = Vector2(3.7050314, -0.78313744)
+
+[node name="Polygon2D2" type="Polygon2D" parent="Envidorment/HellBG2"]
+scale = Vector2(0.99999994, 0.99999994)
+color = Color(0.33660764, 0.3366076, 0.3366076, 1)
+polygon = PackedVector2Array(466.604, 348.40698, 372.62903, 605.0625, 272.98706, 981.6057, 214.94568, 1174.4131, 82.20203, 1507.3398, 64.46277, 1716.1042, -12.960571, 1006.91736, 75.6875, 852.85693, 157.81726, 541.86206, 260.65393, 263.2744, 384.5099, -167.94653, 442.8999, 57.088623)
+
+[node name="Polygon2D" type="Polygon2D" parent="Envidorment/HellBG2"]
+z_index = -1
+color = Color(0.19434929, 0.19434926, 0.19434926, 1)
+polygon = PackedVector2Array(-197.38776, 1465.7732, 71.39807, 1773.8442, -20.52063, 924.19885, -51.724, 1028.2214, -37.193848, 1328.9824, -127.67029, 1260.9473)
+
+[node name="Polygon2D3" type="Polygon2D" parent="Envidorment/HellBG2"]
+color = Color(0.19215687, 0.19215687, 0.19215687, 1)
+polygon = PackedVector2Array(450.8661, 545.6067, 434.16907, 87.563965, 343.89343, -243.91333, 394.31543, -357.38696, 490.74854, -224.40527, 573.33167, -229.24097, 518.6122, -24.976074, 510.03992, 379.32104)
+
+[node name="HellRK2" type="StaticBody2D" parent="Envidorment"]
+
+[node name="Polygon2D" type="Polygon2D" parent="Envidorment/HellRK2"]
+color = Color(0.33333334, 0.33333334, 0.33333334, 1)
+polygon = PackedVector2Array(-3077, -2960, -3082, -3380, -3209, -3828, -3236, -4070, -3192, -4068, -3167, -3835, -3097, -3600, -3034, -3384, -3036, -2970)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Envidorment/HellRK2"]
+polygon = PackedVector2Array(-3236, -4070, -3192, -4067, -3167, -3834, -3034, -3383, -3036, -2970, -3077, -2960, -3082, -3379, -3210, -3829)
+
+[node name="ColorRect" type="ColorRect" parent="Envidorment"]
+z_index = -5
+material = SubResource("ShaderMaterial_ahky1")
+offset_left = -14856.0
+offset_top = -11197.0
+offset_right = 15144.0
+offset_bottom = 788.0

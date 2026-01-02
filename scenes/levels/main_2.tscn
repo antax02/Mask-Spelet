@@ -1466,6 +1466,18 @@ position = Vector2(-3181.0059, -7870.001)
 rotation = 1.5620992
 scale = Vector2(2.4, 2.0766795)
 
+[node name="GroundBasic24" parent="Main3" instance=ExtResource("2_iw8sm")]
+position = Vector2(14215.119, -16258.996)
+rotation = 3.1228445
+scale = Vector2(4.9840937, 4.983983)
+skew = 0.002525568
+
+[node name="GroundBasic25" parent="Main3" instance=ExtResource("2_iw8sm")]
+position = Vector2(14215.119, -16258.996)
+rotation = 3.1228445
+scale = Vector2(4.9840937, 4.983983)
+skew = 0.002525568
+
 [node name="GroundBasic22" parent="Main3" instance=ExtResource("2_iw8sm")]
 position = Vector2(-3203.0059, -8420.001)
 rotation = 1.5620992
@@ -1508,7 +1520,7 @@ position = Vector2(664, -322)
 z_index = -75
 position = Vector2(-312, 78)
 color = Color(0.30692267, 0.3069227, 0.3069227, 1)
-polygon = PackedVector2Array(-3225, -8611, -3785, -8238, -4223, -7281, -4921, -6322, -5828, -4001, -7172, -2064, -8136, 232, 2593, 236, 1690, 29, 1031, -237, 649, -576, 349, -666, 211, -263, 165, -73, 55, -77, -17, -180, 21, -662, -407, -520, -969, -1114, -1299, -2207, -1359, -3558, -1854, -4942, -2621, -7121, -2764, -8325)
+polygon = PackedVector2Array(-3225, -8611, -3646.88, -8329.998, -3785, -8238, -4223, -7281, -4921, -6322, -5828, -4001, -7172, -2064, -8136, 232, 2593, 236, 1690, 29, 1031, -237, 649, -576, 349, -666, 211, -263, 165, -73, 55, -77, -17, -180, 21, -662, -407, -520, -969, -1114, -1299, -2207, -1359, -3558, -1854, -4942, -2621, -7121, -2764, -8325)
 uv = PackedVector2Array(-470, -25, -193, 48, -26, -20)
 
 [node name="CaveBG" type="Node2D" parent="Main3/MountainBG"]
@@ -1699,3 +1711,35 @@ polygon = PackedVector2Array(-793, -11072, -704, -11244, -177, -11397, 160, -114
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D2"]
 polygon = PackedVector2Array(-791, -11071, -707, -11242, -170, -11398, 3196, -11741, 3393, -12045, 3373, -12107, 4131, -12729, 6279, -13569, 7020, -11167)
+
+[node name="Area2D" type="Area2D" parent="." groups=["ground"]]
+
+[node name="Polygon2D6" type="Polygon2D" parent="Area2D"]
+position = Vector2(-57, -2288)
+color = Color(0.32941177, 0.6431373, 0.4117647, 1)
+polygon = PackedVector2Array(-5022, -21448, -4949, -21611, -4706, -21727, -4520, -21695, -4555, -21510, -4850, -21378, -5017, -21426, -4665, -21598, -4686, -21608, -4789.154, -21558.879)
+
+[node name="Polygon2D3" type="Polygon2D" parent="Area2D"]
+color = Color(0.2501596, 0.50808567, 0.31860605, 1)
+polygon = PackedVector2Array(-5056, -21431, -4686, -21610, -4662, -21599, -5047, -21411)
+
+[node name="Polygon2D" type="Polygon2D" parent="Area2D/Polygon2D3"]
+color = Color(0.32941177, 0.6431373, 0.4117647, 1)
+polygon = PackedVector2Array(-5022, -21448, -4949, -21611, -4706, -21727, -4520, -21695, -4555, -21510, -4850, -21378, -5017, -21426, -4665, -21598, -4686, -21608, -4789.154, -21558.879)
+
+[node name="Polygon2D" type="Polygon2D" parent="Area2D"]
+color = Color(0.33183855, 0.64427644, 0.41425586, 1)
+polygon = PackedVector2Array(-5289, -20267, -5220, -20692, -5186, -21200, -5311, -21708, -5338, -22267, -5226, -22939, -5293, -23595, -5415, -24274, -5448, -24869, -5539, -25187, -5546, -26037, -5455, -26419, -5421, -26415, -5383, -26024, -5379, -25234, -5255, -24838, -5246, -24338, -5098, -23666, -5056, -22937, -5155, -22246, -5143, -21748, -4992, -21205, -5029, -20628, -5056, -20245, -5184, -20317)
+
+[node name="Polygon2D" type="Polygon2D" parent="Area2D/Polygon2D"]
+position = Vector2(-57, -2288)
+color = Color(0.2501596, 0.50808567, 0.31860605, 1)
+polygon = PackedVector2Array(-5056, -21431, -4686, -21610, -4662, -21599, -5047, -21411)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D"]
+polygon = PackedVector2Array(-5288, -20267, -5184, -20316, -5055, -20243, -4989, -21201, -5142, -21757, -5155, -22250, -5057, -22943, -5100, -23679, -5252, -24335, -5256, -24844, -5380, -25234, -5381, -26031, -5421, -26418, -5454, -26419, -5545, -26041, -5539, -25182, -5449, -24854, -5421, -24269, -5290, -23590, -5222, -22933, -5336, -22263, -5311, -21709, -5183, -21192)
+
+[node name="Polygon2D4" type="Polygon2D" parent="."]
+scale = Vector2(1.0012138, 1)
+
+[node name="Polygon2D5" type="Polygon2D" parent="."]

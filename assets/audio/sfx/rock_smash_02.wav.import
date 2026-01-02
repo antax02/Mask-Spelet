@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://ctsqwxlu3qs05"
-path="res://.godot/imported/rock_smash_02.wav-b0fded1bde66d339d38399ba418ed656.sample"
+path="res://.godot/imported/rock_smash_02.wav-89f4315e8310dbe1ae7745d471c25796.sample"
 
 [deps]
 
-source_file="res://Assets/audio/sfx/rock_smash_02.wav"
-dest_files=["res://.godot/imported/rock_smash_02.wav-b0fded1bde66d339d38399ba418ed656.sample"]
+source_file="res://assets/audio/sfx/rock_smash_02.wav"
+dest_files=["res://.godot/imported/rock_smash_02.wav-89f4315e8310dbe1ae7745d471c25796.sample"]
 
 [params]
 

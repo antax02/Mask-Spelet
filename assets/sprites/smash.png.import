@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dd4wis17tlt54"
-path="res://.godot/imported/smash.png-cfb39725a79da6153fa2f222727733f5.ctex"
+path="res://.godot/imported/smash.png-c7e0b9561a61f97274b4d75d9d669863.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/sprites/smash.png"
-dest_files=["res://.godot/imported/smash.png-cfb39725a79da6153fa2f222727733f5.ctex"]
+source_file="res://assets/sprites/smash.png"
+dest_files=["res://.godot/imported/smash.png-c7e0b9561a61f97274b4d75d9d669863.ctex"]
 
 [params]
 

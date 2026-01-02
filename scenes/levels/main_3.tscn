@@ -1,0 +1,393 @@
+[gd_scene load_steps=18 format=3 uid="uid://ur4vfldje50s"]
+
+[ext_resource type="PackedScene" uid="uid://dr2whnta44ipn" path="res://scenes/enviroment/ground_basic.tscn" id="1_plbar"]
+[ext_resource type="PackedScene" uid="uid://duj85t2set7o1" path="res://scenes/enviroment/rock_2.tscn" id="2_y81wk"]
+[ext_resource type="PackedScene" uid="uid://bdbrjrh82eloc" path="res://scenes/enviroment/wind.tscn" id="3_mnswm"]
+[ext_resource type="PackedScene" uid="uid://diaamrlicrfi4" path="res://scenes/enviroment/rock.tscn" id="4_uhmy0"]
+[ext_resource type="PackedScene" uid="uid://bjg75r1hpp535" path="res://scenes/enviroment/floor.tscn" id="5_vm6d6"]
+[ext_resource type="Shader" uid="uid://dpxkkyequlsx0" path="res://scenes/levels/vine_2.gdshader" id="6_uhmy0"]
+[ext_resource type="Shader" uid="uid://cplf23wcv5cg4" path="res://scenes/levels/vines.gdshader" id="7_vm6d6"]
+[ext_resource type="PackedScene" uid="uid://bggnwmnubx1wk" path="res://scenes/player/player.tscn" id="8_wp3se"]
+[ext_resource type="PhysicsMaterial" uid="uid://bpp202scb04tp" path="res://resources/frictionless_physics_material.tres" id="9_vm6d6"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_diypk"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_yr1i5"]
+width = 6600
+height = 3500
+noise = SubResource("FastNoiseLite_diypk")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_2aaxb"]
+shader = ExtResource("6_uhmy0")
+shader_parameter/noise_tex = SubResource("NoiseTexture2D_yr1i5")
+shader_parameter/vine_threshold = 0.665
+shader_parameter/stretch = Vector2(0.2, 0.2)
+shader_parameter/color_a = Vector3(0.53, 0.235, 0.38)
+shader_parameter/color_b = Vector3(0.42, 0.585, 0.205)
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_7qmka"]
+noise_type = 0
+frequency = 0.0346
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_e85ur"]
+noise = SubResource("FastNoiseLite_7qmka")
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_yder2"]
+seed = 1
+frequency = 0.0661
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_bqpuh"]
+width = 6652
+height = 3547
+noise = SubResource("FastNoiseLite_yder2")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_eckwy"]
+shader = ExtResource("7_vm6d6")
+shader_parameter/noise_tex = SubResource("NoiseTexture2D_bqpuh")
+shader_parameter/vine_threshold = 0.57
+shader_parameter/stretch = Vector2(0.04, 0.02)
+shader_parameter/color_a = Vector3(0.285, 0.235, 0.045)
+shader_parameter/color_b = Vector3(0.375, 0.59, 0.105)
+
+[node name="Main3" type="Node2D"]
+
+[node name="Node2D" parent="." instance=ExtResource("2_y81wk")]
+position = Vector2(89.99811, -684.00104)
+rotation = -0.42306215
+scale = Vector2(2.7690918, 1)
+
+[node name="Wind" parent="." instance=ExtResource("3_mnswm")]
+position = Vector2(-2678, -3494.001)
+rotation = 1.5620341
+scale = Vector2(1, 3.2826953)
+blow_force = 250.0
+
+[node name="GroundBasic8" parent="." instance=ExtResource("1_plbar")]
+position = Vector2(-2648.002, -3848.001)
+scale = Vector2(2.600078, 2.88)
+
+[node name="GroundBasic9" parent="." instance=ExtResource("1_plbar")]
+position = Vector2(-2519, -4269.001)
+rotation = 0.4582091
+scale = Vector2(1.36, 2.4)
+
+[node name="GroundBasic10" parent="." instance=ExtResource("1_plbar")]
+position = Vector2(-1796.002, -4073.001)
+rotation = -0.6512717
+scale = Vector2(1.36, 4.9863477)
+
+[node name="GroundBasic12" parent="." instance=ExtResource("1_plbar")]
+position = Vector2(-1338.0039, -3504.001)
+rotation = -1.4964086
+scale = Vector2(2.1387112, 2.9269724)
+
+[node name="rock" parent="." instance=ExtResource("4_uhmy0")]
+position = Vector2(-2841, -4149)
+rotation = 0.47433072
+scale = Vector2(2.0399218, 1)
+
+[node name="Node2D2" parent="." instance=ExtResource("2_y81wk")]
+position = Vector2(-2464.998, -4094.998)
+rotation = -1.136343
+scale = Vector2(0.99999994, 0.99999994)
+
+[node name="Node2D3" parent="." instance=ExtResource("2_y81wk")]
+position = Vector2(-1744, -4357)
+
+[node name="rock2" parent="." instance=ExtResource("4_uhmy0")]
+position = Vector2(-1513, -4203)
+
+[node name="Node2D4" parent="." instance=ExtResource("2_y81wk")]
+position = Vector2(-1079, -4006)
+
+[node name="rock3" parent="." instance=ExtResource("4_uhmy0")]
+position = Vector2(-1319, -3744)
+
+[node name="rock4" parent="." instance=ExtResource("4_uhmy0")]
+position = Vector2(-1504, -3350)
+
+[node name="Node2D5" parent="." instance=ExtResource("2_y81wk")]
+position = Vector2(-1273, -3301)
+
+[node name="rock5" parent="." instance=ExtResource("4_uhmy0")]
+position = Vector2(-2786, -2437)
+
+[node name="Node2D6" parent="." instance=ExtResource("2_y81wk")]
+position = Vector2(-1824.002, -3496.001)
+rotation = -2.9853013
+scale = Vector2(2.0471094, 0.25546867)
+
+[node name="Wind2" parent="." instance=ExtResource("3_mnswm")]
+position = Vector2(-160.9999, -4643.0005)
+rotation = -1.022269
+scale = Vector2(1.3828164, 3.3062747)
+blow_force = 20000.0
+
+[node name="GroundBasic14" parent="." instance=ExtResource("1_plbar")]
+position = Vector2(-1601, -5049)
+
+[node name="GroundBasic15" parent="." instance=ExtResource("1_plbar")]
+position = Vector2(-2068, -5229)
+
+[node name="GroundBasic16" parent="." instance=ExtResource("1_plbar")]
+position = Vector2(-3118, -5165)
+rotation = 0.08166975
+scale = Vector2(1, 10.28)
+
+[node name="Node2D7" parent="." instance=ExtResource("2_y81wk")]
+position = Vector2(-3351.002, -5328)
+rotation = 0.5608965
+
+[node name="Node2D8" parent="." instance=ExtResource("2_y81wk")]
+position = Vector2(-3355, -4849)
+
+[node name="rock6" parent="." instance=ExtResource("4_uhmy0")]
+position = Vector2(-3224, -5193)
+
+[node name="Node2D9" parent="." instance=ExtResource("2_y81wk")]
+position = Vector2(-3275, -4450)
+
+[node name="Node2D10" parent="." instance=ExtResource("2_y81wk")]
+position = Vector2(-3371, -5567)
+rotation = 0.8486237
+
+[node name="Node2D11" parent="." instance=ExtResource("2_y81wk")]
+position = Vector2(-3416, -5026)
+
+[node name="rock7" parent="." instance=ExtResource("4_uhmy0")]
+position = Vector2(-3275, -4683)
+
+[node name="GroundBasic17" parent="." instance=ExtResource("1_plbar")]
+position = Vector2(-1857.002, -5159)
+rotation = -3.1161988
+
+[node name="rock8" parent="." instance=ExtResource("4_uhmy0")]
+position = Vector2(-2478.004, -5857.001)
+rotation = -0.2365964
+scale = Vector2(5.221437, 4.354994)
+
+[node name="GroundBasic18" parent="." instance=ExtResource("1_plbar")]
+position = Vector2(-3018.002, -6638.003)
+rotation = 0.09346079
+scale = Vector2(2.4, 3.9120708)
+
+[node name="GroundBasic19" parent="." instance=ExtResource("1_plbar")]
+position = Vector2(-2842.0059, -7473.001)
+rotation = 1.5620992
+scale = Vector2(2.4, 2.0766795)
+
+[node name="GroundBasic21" parent="." instance=ExtResource("1_plbar")]
+position = Vector2(-3181.0059, -7870.001)
+rotation = 1.5620992
+scale = Vector2(2.4, 2.0766795)
+
+[node name="GroundBasic22" parent="." instance=ExtResource("1_plbar")]
+position = Vector2(-3203.0059, -8420.001)
+rotation = 1.5620992
+scale = Vector2(2.4, 2.0766795)
+
+[node name="GroundBasic23" parent="." instance=ExtResource("1_plbar")]
+position = Vector2(-2532.004, -8281.003)
+rotation = 1.5620992
+scale = Vector2(2.4, 2.0766795)
+
+[node name="GroundBasic20" parent="." instance=ExtResource("1_plbar")]
+position = Vector2(-2449, -6462.002)
+rotation = -0.22172406
+scale = Vector2(0.54937506, 7.775929)
+
+[node name="rock9" parent="." instance=ExtResource("4_uhmy0")]
+position = Vector2(-3143, -6416)
+
+[node name="rock10" parent="." instance=ExtResource("4_uhmy0")]
+position = Vector2(-2921, -6402)
+
+[node name="StaticBody2D3" parent="." instance=ExtResource("5_vm6d6")]
+position = Vector2(-2684, -6537)
+rotation = 1.5329791
+scale = Vector2(1.5604298, 0.28)
+
+[node name="Node2D12" parent="." instance=ExtResource("2_y81wk")]
+position = Vector2(-2901, -8513)
+
+[node name="rock11" parent="." instance=ExtResource("4_uhmy0")]
+position = Vector2(-2871, -8268)
+
+[node name="Node2D13" parent="." instance=ExtResource("2_y81wk")]
+position = Vector2(-2879, -8030)
+
+[node name="MountainBG" type="Node2D" parent="."]
+position = Vector2(664, -322)
+
+[node name="Polygon2D" type="Polygon2D" parent="MountainBG"]
+z_index = -75
+position = Vector2(-312, 78)
+color = Color(0.30692267, 0.3069227, 0.3069227, 1)
+polygon = PackedVector2Array(-3225, -8611, -3785, -8238, -4223, -7281, -4921, -6322, -5828, -4001, -7172, -2064, -8136, 232, 2593, 236, 1690, 29, 1031, -237, 649, -576, 349, -666, 211, -263, 165, -73, 55, -77, -17, -180, 21, -662, -407, -520, -969, -1114, -1299, -2207, -1359, -3558, -1854, -4942, -2621, -7121, -2764, -8325)
+uv = PackedVector2Array(-470, -25, -193, 48, -26, -20)
+
+[node name="CaveBG" type="Node2D" parent="MountainBG"]
+position = Vector2(664, -322)
+
+[node name="Polygon2D" type="Polygon2D" parent="MountainBG/CaveBG"]
+z_index = -75
+position = Vector2(-2236, -425)
+color = Color(0.14767182, 0.14767179, 0.14767179, 1)
+polygon = PackedVector2Array(910, 901, -131, 929, -1195, 322, -2345, -826, -2720, -1446, -2866, -1837, -2681, -2122, -2291, -1933, -2141.631, -1815.8589, -2036, -1827, -1919, -2094, -1819, -2211, -1635, -2194, -1519, -1955, -1198, -1316, -735, -1060, -32, -352, 597, 39, 913, 301)
+uv = PackedVector2Array(50.169983, -78.39, 16.289978, -131.63, 177.21997, -205.44, 277.64996, -134.05)
+
+[node name="CaveDC2" type="Node2D" parent="MountainBG/CaveBG"]
+position = Vector2(1328, -644)
+
+[node name="Polygon2D" type="Polygon2D" parent="MountainBG/CaveBG/CaveDC2"]
+z_index = -75
+material = SubResource("ShaderMaterial_2aaxb")
+position = Vector2(-6003, -1626)
+color = Color(0.4705295, 0.5659017, 0.40037125, 1)
+texture = SubResource("NoiseTexture2D_e85ur")
+polygon = PackedVector2Array(57, 620, 625, 1171, 828, 1592, 1034, 1814, 1401, 2079, 1961, 2331, 2233, 2556, 2436, 2384, 2502, 2258, 2544, 1972, 1881, 1375, 1667, 947, 1146, 557, 782, -48, 242, 36, 44, 98)
+uv = PackedVector2Array(-18.70581, 901.42883, 530.6018, 913.8192, 258.01318, 624.70984)
+
+[node name="Polygon2D2" type="Polygon2D" parent="MountainBG/CaveBG"]
+z_index = -75
+material = SubResource("ShaderMaterial_eckwy")
+position = Vector2(-4464, -2871)
+color = Color(0.4705295, 0.5659017, 0.40037125, 1)
+texture = SubResource("NoiseTexture2D_e85ur")
+polygon = PackedVector2Array(802, 1753, 779, 1829, 802, 1904, 761, 1942, 674, 2061, 611, 2193, 581, 2305, 760, 2487, 932, 2553, 1224, 2613, 1540, 2646, 1818, 2754, 2132, 2821, 2239, 2776, 2297, 2655, 2202, 2588, 1986, 2552, 1801, 2464, 1543, 2441, 1328, 2389, 1143, 2410, 1011, 2371, 975, 2222, 1041, 2130, 1074, 2026, 1061, 1856, 1009, 1661, 932, 1518, 872, 1310, 662, 1189, 535, 982, 428, 897, 463, 762, 524, 646, 555, 510, 609, 400, 607, 270, 496, 246, 393, 248, 324, 349, 188, 655, 177, 808, 245, 967, 367, 1161, 399, 1347, 496, 1538, 633, 1704, 720, 1755)
+uv = PackedVector2Array(22.870728, 377.47635, 347.08704, 385.57364, 98.523315, 209.50775)
+
+[node name="Area2D" type="Area2D" parent="MountainBG/CaveBG" groups=["ground"]]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="MountainBG/CaveBG/Area2D"]
+position = Vector2(664, -322)
+polygon = PackedVector2Array(-2998, 268, -2892, 242, -2833, 107, -2931, 38, -3340, -92, -3831, -157, -4139, -185, -4142, -361, -4043, -442, -4071, -765, -4263, -1255, -4452, -1356, -4619, -1597, -4711, -1629, -4704, -1711, -4514, -2262, -4723, -2322, -4954, -1789, -4849, -1516, -4704, -1147, -4521, -860, -4323, -798, -4339, -650, -4550, -262, -4358, -53, -3536, 103)
+
+[node name="MountainGD9" type="Area2D" parent="." groups=["ground"]]
+position = Vector2(-132, -4608)
+
+[node name="Polygon2D" type="Polygon2D" parent="MountainGD9"]
+position = Vector2(38, -84)
+color = Color(0.27059105, 0.37877473, 0.17564404, 1)
+polygon = PackedVector2Array(-438, 679, -350, 757, -202, 784, -84, 677, -60, 602, 35, 446, -28, 375, -49, 304, -167, 257, -339, 201, -488, 205, -641, 361, -582, 576)
+uv = PackedVector2Array(-242.8935, 373.4328, -102.339905, 310.4765, -273.6396, 269.4817)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="MountainGD9"]
+position = Vector2(-3, -3)
+polygon = PackedVector2Array(78, 359, 26, 316, -13, 228, -296, 125, -447, 132, -584, 279, -536, 496, -425, 574, -289, 671, -155, 695, -56, 607, -21, 520)
+
+[node name="MountainGD8" type="Area2D" parent="." groups=["ground"]]
+position = Vector2(-578, -4352)
+
+[node name="Polygon2D" type="Polygon2D" parent="MountainGD8"]
+position = Vector2(-1, 12)
+color = Color(0.26666668, 0.16078432, 0.105882354, 1)
+polygon = PackedVector2Array(-419, 674, -418, 785, -334, 707, -225, 623, -116, 476, -19, 402, 69, 340, -84, 241, -184, 354, -307, 419, -393, 443, -470, 428, -424, 565)
+uv = PackedVector2Array(-242.8935, 373.4328, -102.339905, 310.4765, -273.6396, 269.4817)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="MountainGD8"]
+polygon = PackedVector2Array(-100, 471, 70, 350, -82, 249, -185, 375, -318, 439, -398, 457, -470, 439, -425, 574, -417, 788, -224, 623)
+
+[node name="MountainGD7" type="Area2D" parent="." groups=["ground"]]
+position = Vector2(-1122, -4076)
+
+[node name="Polygon2D" type="Polygon2D" parent="MountainGD7"]
+position = Vector2(-3, -2)
+polygon = PackedVector2Array(-419, 674, -385, 668, -334, 707, -265, 709, -176, 718, -185, 662, -134, 655, -40, 701, -22, 619, -58, 547, -28, 503, -22, 447, -118, 445, -206, 431, -262, 449, -357, 415, -400, 441, -379, 500, -408, 585)
+uv = PackedVector2Array(-242.8935, 373.4328, -102.339905, 310.4765, -273.6396, 269.4817)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="MountainGD7"]
+polygon = PackedVector2Array(-187, 658, -131, 651, -41, 698, -25, 621, -63, 551, -35, 498, -27, 446, -205, 431, -267, 447, -367, 415, -404, 439, -380, 494, -419, 669, -389, 661, -334, 704, -183, 718)
+
+[node name="MountainGD6" type="Area2D" parent="." groups=["ground"]]
+position = Vector2(-1736, -4604)
+
+[node name="Polygon2D" type="Polygon2D" parent="MountainGD6"]
+position = Vector2(9, 0)
+polygon = PackedVector2Array(-361, 385, -152, 537, 12, 744, 115, 793, 154, 723, 85, 579, -37, 416, -25, 343, -194, 232, -287, 244, -336, 315)
+uv = PackedVector2Array(-242.8935, 373.4328, -102.339905, 310.4765, -273.6396, 269.4817)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="MountainGD6"]
+polygon = PackedVector2Array(131, 791, 159, 724, 68, 542, -28, 409, -21, 336, -187, 239, -274, 246, -320, 299, -351, 381, -144, 532, 27, 746)
+
+[node name="MountainGD5" type="Area2D" parent="." groups=["ground"]]
+position = Vector2(-2353, -4707)
+
+[node name="Polygon2D" type="Polygon2D" parent="MountainGD5"]
+position = Vector2(9, 0)
+polygon = PackedVector2Array(-321, 531, -241, 575, -226, 541, -126, 464, -95, 487, -25, 343, -85, 258, -185, 268, -254, 328)
+uv = PackedVector2Array(-242.8935, 373.4328, -102.339905, 310.4765, -273.6396, 269.4817)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="MountainGD5"]
+polygon = PackedVector2Array(-194, 520, -122, 465, -84, 485, -16, 338, -70, 258, -175, 268, -249, 329, -315, 530, -231, 578)
+
+[node name="MountainGD4" type="Area2D" parent="." groups=["ground"]]
+position = Vector2(-2540, -4234)
+
+[node name="Polygon2D" type="Polygon2D" parent="MountainGD4"]
+position = Vector2(9, 0)
+polygon = PackedVector2Array(-246, 484, -197, 594, -47, 575, -77, 482, -30, 300, -84, 257, -247, 235, -263, 262)
+uv = PackedVector2Array(-242.8935, 373.4328, -102.339905, 310.4765, -273.6396, 269.4817)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="MountainGD4"]
+polygon = PackedVector2Array(-54, 573, -75, 475, -25, 303, -81, 261, -236, 238, -253, 267, -231, 486, -182, 591)
+
+[node name="MountainGD3" type="Area2D" parent="." groups=["ground"]]
+position = Vector2(-98, -912)
+
+[node name="Polygon2D" type="Polygon2D" parent="MountainGD3"]
+polygon = PackedVector2Array(50, 345, 3, 288, 128, 207, 75, 152, 42, 129, -143, 113, -329, 131, -458, 79, -552, 106, -509, 205, -545, 278, -231, 294)
+uv = PackedVector2Array(-261, 25, -129, 26, -173, -73, -268, -6)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="MountainGD3"]
+polygon = PackedVector2Array(-272, 295, -89, 316, 39, 341, 14, 288, 125, 207, 37, 130, -146, 119, -324, 133, -456, 76, -553, 109, -507, 209, -539, 277)
+
+[node name="MountainGD2" type="Area2D" parent="." groups=["ground"]]
+position = Vector2(1340, -632)
+
+[node name="Polygon2D" type="Polygon2D" parent="MountainGD2"]
+position = Vector2(-342, 25)
+polygon = PackedVector2Array(-228, 14, -152, 51, -57, -39, -171, -254, -286, -291, -329, -148)
+uv = PackedVector2Array(-261, 25, -129, 26, -173, -73, -268, -6)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="MountainGD2"]
+position = Vector2(297, -16)
+polygon = PackedVector2Array(-861, 50, -801, 85, -699, 1, -810, -216, -922, -248, -961, -107)
+
+[node name="MountainGD" type="Area2D" parent="." groups=["ground"]]
+position = Vector2(670, -316)
+
+[node name="Polygon2D" type="Polygon2D" parent="MountainGD"]
+position = Vector2(498, 106)
+polygon = PackedVector2Array(-261, 25, -202, 64, -104, -29, -157, -247, -228, -257, -265, -203)
+uv = PackedVector2Array(-261, 25, -129, 26, -173, -73, -268, -6)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="MountainGD" groups=["ground"]]
+position = Vector2(297, -16)
+polygon = PackedVector2Array(-60, 146, -1, 184, 95, 93, 43, -125, -26, -135, -64, -78)
+
+[node name="Player" parent="." instance=ExtResource("8_wp3se")]
+position = Vector2(-412, -5153)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2(-1221, -5053)
+physics_material_override = ExtResource("9_vm6d6")
+
+[node name="Polygon2D" type="Polygon2D" parent="StaticBody2D"]
+color = Color(0.3924534, 0.30815384, 0.21764952, 1)
+polygon = PackedVector2Array(-210, 88, 562, 451, 585, 426, -250, -50)
+uv = PackedVector2Array(-229, 23, -126, 15, -221, -42)
+
+[node name="Polygon2D" type="Polygon2D" parent="StaticBody2D/Polygon2D"]
+color = Color(0.39215687, 0.30588236, 0.21568628, 1)
+polygon = PackedVector2Array(20, 702, 535, 429, 501, 410, 8, 666)
+uv = PackedVector2Array(-229, 23, -126, 15, -221, -42)
+
+[node name="Polygon2D" type="Polygon2D" parent="StaticBody2D/Polygon2D/Polygon2D"]
+position = Vector2(-203, -158)
+color = Color(0.39215687, 0.30588236, 0.21568628, 1)
+polygon = PackedVector2Array(499, 679, 549, 659, 542, 501, 495, 482)
+uv = PackedVector2Array(-229, 23, -126, 15, -221, -42)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
+polygon = PackedVector2Array(580, 417, -252, -50, -213, 74, 288, 324, 294, 503, 1, 667, 13, 712, 514, 431, 561, 464)

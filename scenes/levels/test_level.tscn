@@ -4,19 +4,21 @@
 [ext_resource type="PackedScene" uid="uid://dmsqs4k3jx847" path="res://scenes/UI/hud.tscn" id="3_cyt5c"]
 [ext_resource type="PackedScene" uid="uid://dr2whnta44ipn" path="res://scenes/enviroment/ground_basic.tscn" id="3_mr7is"]
 [ext_resource type="PackedScene" uid="uid://diaamrlicrfi4" path="res://scenes/enviroment/rock.tscn" id="5_48ne7"]
-[ext_resource type="Texture2D" uid="uid://dssvwtdwtfl75" path="res://Assets/sprites/rock_01.png" id="6_6xh4u"]
 [ext_resource type="PhysicsMaterial" uid="uid://bpp202scb04tp" path="res://resources/frictionless_physics_material.tres" id="7_cyt5c"]
 [ext_resource type="PackedScene" uid="uid://bjg75r1hpp535" path="res://scenes/enviroment/floor.tscn" id="8_2mu0v"]
 [ext_resource type="Texture2D" uid="uid://dbxt8py5723yj" path="res://icon.svg" id="8_7x1jh"]
-[ext_resource type="PackedScene" uid="uid://2lwf135igyfq" path="res://scenes/enviroment/wind.tscn" id="8_hfwtw"]
+[ext_resource type="PackedScene" uid="uid://bdbrjrh82eloc" path="res://scenes/enviroment/wind.tscn" id="8_hfwtw"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6xh4u"]
 size = Vector2(376, 120)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7x1jh"]
+size = Vector2(3773, 979.5)
+
 [node name="TestLevel" type="Node2D"]
 
 [node name="Player" parent="." instance=ExtResource("1_ipv86")]
-position = Vector2(482, 459)
+position = Vector2(6049, -738)
 scale = Vector2(0.5, 0.574359)
 max_speed = 450.0
 
@@ -187,22 +189,25 @@ scale = Vector2(1.3686339, 2.7281866)
 [node name="Sprite2D" parent="Ground/GroundBasic33" index="0" groups=["finish"]]
 self_modulate = Color(0, 0.34922138, 0.7371704, 0.32941177)
 
+[node name="GroundBasic33" parent="Ground/GroundBasic33" groups=["finish"] instance=ExtResource("3_mr7is")]
+position = Vector2(-4341.5557, 5345.6753)
+rotation = -1.5707964
+scale = Vector2(1.3686339, 2.7281866)
+
+[node name="Sprite2D" parent="Ground/GroundBasic33/GroundBasic33" index="0"]
+self_modulate = Color(0, 0.34922138, 0.7371704, 0.32941177)
+position = Vector2(-1.3390865, -0.00013085807)
+
 [node name="HUD" parent="." instance=ExtResource("3_cyt5c")]
 
 [node name="rock" parent="." instance=ExtResource("5_48ne7")]
 position = Vector2(-38, 313)
-
-[node name="Sprite2D" parent="rock" index="0"]
-texture = ExtResource("6_6xh4u")
 
 [node name="CollisionPolygon2D" parent="rock" index="1"]
 polygon = PackedVector2Array(-32, -42, 3, -48, 41, -32, 47, -21, 33, -6, 33, 24, 22, 47, 7, 50, -45, 34, -56, -9)
 
 [node name="rock2" parent="." instance=ExtResource("5_48ne7")]
 position = Vector2(109, -6)
-
-[node name="Sprite2D" parent="rock2" index="0"]
-texture = ExtResource("6_6xh4u")
 
 [node name="CollisionPolygon2D" parent="rock2" index="1"]
 z_index = 1
@@ -225,21 +230,6 @@ texture = ExtResource("8_7x1jh")
 [node name="StaticBody2D3" parent="." instance=ExtResource("8_2mu0v")]
 position = Vector2(468, -3)
 
-[node name="StaticBody2D2" type="StaticBody2D" parent="."]
-position = Vector2(-9, -67)
-physics_material_override = ExtResource("7_cyt5c")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2"]
-position = Vector2(-298, 134)
-rotation = 0.46335393
-shape = SubResource("RectangleShape2D_6xh4u")
-
-[node name="Icon" type="Sprite2D" parent="StaticBody2D2"]
-position = Vector2(-288, 144)
-rotation = 0.3910037
-scale = Vector2(2.9375, 1)
-texture = ExtResource("8_7x1jh")
-
 [node name="Wind" parent="." instance=ExtResource("8_hfwtw")]
 position = Vector2(1092, -53)
 rotation = -0.6487839
@@ -249,6 +239,26 @@ blow_force = 1000.0
 position = Vector2(-900, -3241)
 rotation = 0.06584528
 
+[node name="Polygon2D2" type="Polygon2D" parent="."]
+z_index = -180
+position = Vector2(5765, -289)
+polygon = PackedVector2Array(-3121, 2004, 4926, 2102, 4710, -2744, -2806, -2685)
+uv = PackedVector2Array(-305, 15, -108, 44, -251, -65)
+
+[node name="Area2D" type="Area2D" parent="." groups=["ground"]]
+position = Vector2(461, -43)
+
+[node name="Polygon2D" type="Polygon2D" parent="Area2D"]
+position = Vector2(5701, 182)
+color = Color(0.47788018, 0.47788012, 0.47788012, 1)
+polygon = PackedVector2Array(-816, -42, 1220, -41, 1193, 2303, -2505, 2667)
+uv = PackedVector2Array(-463, -42, -116, -11, -241, 31)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(5066.5, 633.25)
+shape = SubResource("RectangleShape2D_7x1jh")
+
 [editable path="Ground/GroundBasic33"]
+[editable path="Ground/GroundBasic33/GroundBasic33"]
 [editable path="rock"]
 [editable path="rock2"]

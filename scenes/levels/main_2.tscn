@@ -1,15 +1,19 @@
-[gd_scene load_steps=20 format=3 uid="uid://5njmrv3ailqa"]
+[gd_scene load_steps=25 format=3 uid="uid://5njmrv3ailqa"]
 
 [ext_resource type="PackedScene" uid="uid://bggnwmnubx1wk" path="res://scenes/player/player.tscn" id="1_f0jk7"]
+[ext_resource type="PackedScene" uid="uid://dmsqs4k3jx847" path="res://scenes/UI/hud.tscn" id="1_q3iq0"]
 [ext_resource type="PackedScene" uid="uid://dr2whnta44ipn" path="res://scenes/enviroment/ground_basic.tscn" id="2_iw8sm"]
 [ext_resource type="PackedScene" uid="uid://diaamrlicrfi4" path="res://scenes/enviroment/rock.tscn" id="3_ahky1"]
+[ext_resource type="Shader" uid="uid://dppwx0umixagg" path="res://resources/atmosphere.gdshader" id="4_5sc0d"]
 [ext_resource type="PackedScene" uid="uid://duj85t2set7o1" path="res://scenes/enviroment/rock_2.tscn" id="4_jgvmg"]
 [ext_resource type="PackedScene" uid="uid://bjg75r1hpp535" path="res://scenes/enviroment/floor.tscn" id="5_s3lan"]
 [ext_resource type="PackedScene" uid="uid://bdbrjrh82eloc" path="res://scenes/enviroment/wind.tscn" id="6_5sc0d"]
 [ext_resource type="Shader" uid="uid://cn4fx3wjsl5k0" path="res://resources/fire.gdshader" id="6_iw8sm"]
 [ext_resource type="PhysicsMaterial" uid="uid://bpp202scb04tp" path="res://resources/frictionless_physics_material.tres" id="7_ahky1"]
-[ext_resource type="Shader" path="res://scenes/levels/vine_2.gdshader" id="9_s3lan"]
-[ext_resource type="Shader" path="res://scenes/levels/vines.gdshader" id="10_5sc0d"]
+[ext_resource type="Shader" uid="uid://dpxkkyequlsx0" path="res://scenes/levels/vine_2.gdshader" id="9_s3lan"]
+[ext_resource type="Shader" uid="uid://cplf23wcv5cg4" path="res://scenes/levels/vines.gdshader" id="10_5sc0d"]
+[ext_resource type="Script" uid="uid://bcxq5y7j7epph" path="res://scenes/levels/transitoin.gd" id="12_nllfd"]
+[ext_resource type="PackedScene" uid="uid://dyknomx18w20k" path="res://scenes/levels/outro.tscn" id="14_w3vc0"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_ahky1"]
 shader = ExtResource("6_iw8sm")
@@ -23,6 +27,14 @@ shader_parameter/sway_speed = 1.0
 shader_parameter/fire_color_hot = Color(1, 0.9, 0.3, 1)
 shader_parameter/fire_color_mid = Color(1, 0.3, 0.05, 1)
 shader_parameter/fire_color_dark = Color(0.4, 0.05, 0.02, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_nllfd"]
+shader = ExtResource("4_5sc0d")
+shader_parameter/sea_color = Color(0.25, 0.55, 0.95, 1)
+shader_parameter/mid_color = Color(0.05, 0.1, 0.3, 1)
+shader_parameter/space_color = Color(0, 0, 0.02, 1)
+shader_parameter/horizon_height = 0.0
+shader_parameter/falloff = 1.7349999999999999
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_diypk"]
 
@@ -65,8 +77,10 @@ shader_parameter/color_b = Vector3(0.375, 0.59, 0.105)
 
 [node name="main2" type="Node2D"]
 
+[node name="HUD" parent="." instance=ExtResource("1_q3iq0")]
+
 [node name="Player" parent="." instance=ExtResource("1_f0jk7")]
-position = Vector2(40, 221)
+position = Vector2(-5103, -21305)
 max_speed = 750.0
 
 [node name="Envidorment" type="Node2D" parent="."]
@@ -1315,13 +1329,22 @@ z_index = -1
 color = Color(0.29586652, 0.2958665, 0.2958665, 1)
 polygon = PackedVector2Array(-3183, -3977, -3192, -4068, -3143, -4485, -2732, -4485, -2141, -4291, -1801, -4291, -1836, -3678, -2659, -3675, -2659, -3978)
 
-[node name="ColorRect" type="ColorRect" parent="Envidorment"]
+[node name="HellShader" type="ColorRect" parent="Envidorment"]
 z_index = -5
 material = SubResource("ShaderMaterial_ahky1")
 offset_left = -14856.0
 offset_top = -11197.0
 offset_right = 15144.0
 offset_bottom = 788.0
+metadata/_edit_use_anchors_ = true
+
+[node name="HellShader2" type="ColorRect" parent="Envidorment"]
+z_index = -220
+material = SubResource("ShaderMaterial_nllfd")
+offset_left = -14819.0
+offset_top = -31191.0
+offset_right = 15181.0
+offset_bottom = -11191.0
 metadata/_edit_use_anchors_ = true
 
 [node name="Main3" type="Node2D" parent="."]
@@ -1743,3 +1766,41 @@ polygon = PackedVector2Array(-5288, -20267, -5184, -20316, -5055, -20243, -4989,
 scale = Vector2(1.0012138, 1)
 
 [node name="Polygon2D5" type="Polygon2D" parent="."]
+
+[node name="Area2D2" type="Area2D" parent="." node_paths=PackedStringArray("fade_rect")]
+position = Vector2(-6166.697, -29771.184)
+script = ExtResource("12_nllfd")
+fade_rect = NodePath("../CanvasLayer/TextureRect")
+next_scene = ExtResource("14_w3vc0")
+
+[node name="Polygon2D" type="Polygon2D" parent="Area2D2"]
+color = Color(0.7615366, 0.7097106, 0.57084197, 1)
+polygon = PackedVector2Array(693.6968, 3040.1836, 693.6968, 3040.1836, 1928.6968, 2758.1836, 2766.6968, 1871.1836, 2733.6968, 591.1836, 1966.6968, -327.8164, 587.6968, -659.8164, -664.3032, -200.8164, -1405.3032, 949.1836, -1150.3032, 1920.1836, -409.30322, 2789.1836)
+
+[node name="Polygon2D2" type="Polygon2D" parent="Area2D2"]
+position = Vector2(-146.30322, 1205.1836)
+scale = Vector2(0.22823653, 0.22823653)
+color = Color(0.69660753, 0.64330876, 0.49979156, 1)
+polygon = PackedVector2Array(693.6968, 3040.1836, 693.6968, 3040.1836, 1928.6968, 2758.1836, 2766.6968, 1871.1836, 2733.6968, 591.1836, 1966.6968, -327.8164, 587.6968, -659.8164, -664.3032, -200.8164, -1405.3032, 949.1836, -1150.3032, 1920.1836, -409.30322, 2789.1836)
+
+[node name="Polygon2D3" type="Polygon2D" parent="Area2D2"]
+position = Vector2(1310.6968, 1929.1836)
+scale = Vector2(0.16480072, 0.16480072)
+color = Color(0.69660753, 0.64330876, 0.49979156, 1)
+polygon = PackedVector2Array(693.6968, 3040.1836, 693.6968, 3040.1836, 1928.6968, 2758.1836, 2766.6968, 1871.1836, 2733.6968, 591.1836, 1966.6968, -327.8164, 587.6968, -659.8164, -664.3032, -200.8164, -1405.3032, 949.1836, -1150.3032, 1920.1836, -409.30322, 2789.1836)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D2"]
+polygon = PackedVector2Array(-417.30322, 2797.1836, 721.6968, 3013.1836, 1933.6968, 2768.1836, 2769.6968, 1874.1836, 2755.6968, 591.1836, 1962.6968, -331.8164, 548.6968, -649.8164, -633.3032, -187.8164, -1455.3032, 951.1836, -1109.3032, 1946.1836)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Area2D2"]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="TextureRect" type="ColorRect" parent="CanvasLayer"]
+visible = false
+offset_left = -2482.0
+offset_top = -1180.0
+offset_right = 2522.0
+offset_bottom = 1220.0
+mouse_filter = 2
+color = Color(0.11372549, 0.13333334, 0.16078432, 1)

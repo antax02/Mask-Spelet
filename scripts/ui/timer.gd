@@ -1,7 +1,7 @@
 extends Control
 
 @onready var time_label = $TimeLabel
-
+@onready var animationplayer = $"../Escape menu/AnimationPlayer"
 var start_time: float = 0.0
 var is_running: bool = true
 
@@ -21,6 +21,8 @@ func _on_player_finished():
 	is_running = false
 	var final_time = (Time.get_ticks_msec() - start_time) / 1000.0
 	time_label.text = "Final Time: " + format_time(final_time)
+	PauseManager.final_time = final_time;
+	animationplayer.play("finish")
 
 func format_time(time: float) -> String:
 	var total_seconds = int(time)
@@ -33,3 +35,6 @@ func format_time(time: float) -> String:
 		return "%02d:%02d:%02d.%03d" % [hours, minutes, seconds, milliseconds]
 	else:
 		return "%02d:%02d.%03d" % [minutes, seconds, milliseconds]
+
+func change_to_outro():
+	SceneTransition.change_scene("res://scenes/levels/outro.tscn")

@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://5njmrv3ailqa"]
+[gd_scene load_steps=23 format=3 uid="uid://5njmrv3ailqa"]
 
 [ext_resource type="PackedScene" uid="uid://bggnwmnubx1wk" path="res://scenes/player/player.tscn" id="1_f0jk7"]
 [ext_resource type="PackedScene" uid="uid://dmsqs4k3jx847" path="res://scenes/UI/hud.tscn" id="1_q3iq0"]
@@ -12,8 +12,6 @@
 [ext_resource type="PhysicsMaterial" uid="uid://bpp202scb04tp" path="res://resources/frictionless_physics_material.tres" id="7_ahky1"]
 [ext_resource type="Shader" uid="uid://dpxkkyequlsx0" path="res://scenes/levels/vine_2.gdshader" id="9_s3lan"]
 [ext_resource type="Shader" uid="uid://cplf23wcv5cg4" path="res://scenes/levels/vines.gdshader" id="10_5sc0d"]
-[ext_resource type="Script" uid="uid://bcxq5y7j7epph" path="res://scenes/levels/transitoin.gd" id="12_nllfd"]
-[ext_resource type="PackedScene" uid="uid://dyknomx18w20k" path="res://scenes/levels/outro.tscn" id="14_w3vc0"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_ahky1"]
 shader = ExtResource("6_iw8sm")
@@ -34,7 +32,7 @@ shader_parameter/sea_color = Color(0.25, 0.55, 0.95, 1)
 shader_parameter/mid_color = Color(0.05, 0.1, 0.3, 1)
 shader_parameter/space_color = Color(0, 0, 0.02, 1)
 shader_parameter/horizon_height = 0.0
-shader_parameter/falloff = 1.7349999999999999
+shader_parameter/falloff = 1.735
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_diypk"]
 
@@ -1767,11 +1765,8 @@ scale = Vector2(1.0012138, 1)
 
 [node name="Polygon2D5" type="Polygon2D" parent="."]
 
-[node name="Area2D2" type="Area2D" parent="." node_paths=PackedStringArray("fade_rect")]
+[node name="Area2D2" type="Area2D" parent="." groups=["finish"]]
 position = Vector2(-6166.697, -29771.184)
-script = ExtResource("12_nllfd")
-fade_rect = NodePath("../CanvasLayer/TextureRect")
-next_scene = ExtResource("14_w3vc0")
 
 [node name="Polygon2D" type="Polygon2D" parent="Area2D2"]
 color = Color(0.7615366, 0.7097106, 0.57084197, 1)

@@ -54,10 +54,6 @@ func _on_area_2d_area_exited(area: Area2D) -> void:
 		
 	rumble_sfx.stop()
 
-func _input(event: InputEvent) -> void:
-	if event.is_action_pressed("restart"):
-		get_tree().reload_current_scene()
-
 func _on_effects_area_area_entered(area: Area2D) -> void:
 	if !area.is_in_group("ground"):
 		return

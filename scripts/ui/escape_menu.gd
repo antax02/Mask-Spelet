@@ -3,7 +3,7 @@ extends Control
 @onready var resume_button = $Panel/VBoxContainer/ResumeButton
 @onready var restart_button = $Panel/VBoxContainer/RestartButton
 @onready var menu_button = $Panel/VBoxContainer/MenuButton
-
+@onready var timer = $"../Timer"
 
 func _ready():
 	process_mode = Node.PROCESS_MODE_ALWAYS
@@ -19,9 +19,11 @@ func _ready():
 
 func _input(event):
 	if event.is_action_pressed("ui_cancel"):
-		PauseManager.toggle_pause()
-
-
+		if timer.is_running:
+			PauseManager.toggle_pause()
+	if event.is_action_pressed("restart"):
+		_on_restart_pressed()
+		
 func _on_game_paused(paused: bool):
 	visible = paused
 
@@ -37,12 +39,13 @@ func _on_resume_pressed():
 func _on_restart_pressed():
 	PauseManager.is_paused = false
 	get_tree().paused = false
-	
+		
 	var current_scene = get_tree().current_scene.scene_file_path
 	SceneTransition.change_scene(current_scene)
 
 
 func _on_menu_pressed():
+	
 	PauseManager.is_paused = false
 	get_tree().paused = false
 	

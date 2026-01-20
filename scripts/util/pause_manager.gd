@@ -2,6 +2,8 @@ extends Node
 
 var is_paused: bool = false
 
+var final_time = 0;
+
 signal game_paused(paused: bool)
 
 func _ready():

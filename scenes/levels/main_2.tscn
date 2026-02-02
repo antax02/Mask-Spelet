@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://5njmrv3ailqa"]
+[gd_scene load_steps=24 format=3 uid="uid://5njmrv3ailqa"]
 
 [ext_resource type="PackedScene" uid="uid://bggnwmnubx1wk" path="res://scenes/player/player.tscn" id="1_f0jk7"]
 [ext_resource type="PackedScene" uid="uid://dmsqs4k3jx847" path="res://scenes/UI/hud.tscn" id="1_q3iq0"]
@@ -12,6 +12,7 @@
 [ext_resource type="PhysicsMaterial" uid="uid://bpp202scb04tp" path="res://resources/frictionless_physics_material.tres" id="7_ahky1"]
 [ext_resource type="Shader" uid="uid://dpxkkyequlsx0" path="res://scenes/levels/vine_2.gdshader" id="9_s3lan"]
 [ext_resource type="Shader" uid="uid://cplf23wcv5cg4" path="res://scenes/levels/vines.gdshader" id="10_5sc0d"]
+[ext_resource type="AudioStream" uid="uid://j570urbtp6lu" path="res://assets/audio/music/cherry.mp3" id="13_q3iq0"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_ahky1"]
 shader = ExtResource("6_iw8sm")
@@ -78,7 +79,7 @@ shader_parameter/color_b = Vector3(0.375, 0.59, 0.105)
 [node name="HUD" parent="." instance=ExtResource("1_q3iq0")]
 
 [node name="Player" parent="." instance=ExtResource("1_f0jk7")]
-position = Vector2(-5103, -21305)
+position = Vector2(68, 610)
 max_speed = 750.0
 
 [node name="Envidorment" type="Node2D" parent="."]
@@ -1122,6 +1123,25 @@ polygon = PackedVector2Array(-249, -21, -254, -6, -217, 0, -193, -1, 152, 21, 17
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Envidorment/HellRK4"]
 polygon = PackedVector2Array(-250, -22, 181, 4, 310, 38, 301, 51, 276, 93, -244, 92, -254, 3, -254, -7)
 
+[node name="HellRK11" type="StaticBody2D" parent="Envidorment"]
+position = Vector2(-2648, -3770)
+physics_material_override = ExtResource("7_ahky1")
+
+[node name="Polygon2D" type="Polygon2D" parent="Envidorment/HellRK11"]
+color = Color(0.7148481, 0.6779541, 0.5421919, 1)
+polygon = PackedVector2Array(-191, 91, -217, 0, -192, -1, -163, 92)
+
+[node name="Polygon2D2" type="Polygon2D" parent="Envidorment/HellRK11"]
+color = Color(0.7148481, 0.6779541, 0.5421919, 1)
+polygon = PackedVector2Array(195, 92, 177, 71, 177, 22, 153, 21, 155, 70, 166, 71, 172, 72, 170, 76, 158, 85, 167, 93)
+
+[node name="Polygon2D3" type="Polygon2D" parent="Envidorment/HellRK11"]
+color = Color(0.7148481, 0.6779541, 0.5421919, 1)
+polygon = PackedVector2Array(-249, -21, -254, -6, -217, 0, -193, -1, 152, 21, 177, 23, 300, 50, 311, 38, 182, 5, -187, -18)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Envidorment/HellRK11"]
+polygon = PackedVector2Array(-250, -22, 181, 4, 310, 38, 301, 51, 276, 93, -244, 92, -254, 3, -254, -7)
+
 [node name="HellRK5" type="StaticBody2D" parent="Envidorment"]
 position = Vector2(-3340, -4440)
 scale = Vector2(1.8988364, 1.8988364)
@@ -1684,9 +1704,6 @@ uv = PackedVector2Array(-261, 25, -129, 26, -173, -73, -268, -6)
 position = Vector2(297, -16)
 polygon = PackedVector2Array(-60, 146, -1, 184, 95, 93, 43, -125, -26, -135, -64, -78)
 
-[node name="Player" parent="Main3" instance=ExtResource("1_f0jk7")]
-position = Vector2(-412, -5153)
-
 [node name="StaticBody2D" type="StaticBody2D" parent="Main3"]
 position = Vector2(-1221, -5053)
 physics_material_override = ExtResource("7_ahky1")
@@ -1799,3 +1816,9 @@ offset_right = 2522.0
 offset_bottom = 1220.0
 mouse_filter = 2
 color = Color(0.11372549, 0.13333334, 0.16078432, 1)
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("13_q3iq0")
+autoplay = true
+bus = &"Music"
+parameters/looping = true

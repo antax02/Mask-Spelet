@@ -101,13 +101,6 @@ theme_override_font_sizes/font_size = 36
 text = "Contributors"
 horizontal_alignment = 1
 
-[node name="HampusLabel" type="Label" parent="Panel/MarginContainer/VBoxContainer"]
-layout_mode = 2
-theme = ExtResource("1_oap8i")
-theme_override_font_sizes/font_size = 24
-text = "Hampus Vadstöm, Composer"
-horizontal_alignment = 1
-
 [node name="StevenLabel" type="Label" parent="Panel/MarginContainer/VBoxContainer"]
 layout_mode = 2
 theme = ExtResource("1_oap8i")
